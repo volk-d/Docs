@@ -43,7 +43,7 @@
     <link rel="stylesheet" href="https://gettransport.com/styles/slick-theme.css?v=1603836755" async="">
     <link rel="stylesheet" href="https://gettransport.com/styles/cccombo.css?v=1604009717" async="">
     <link rel="stylesheet" href="https://gettransport.com/styles/flag-icon.min.css?v=1603836755" async="">
-    <link rel="stylesheet" href="https://gettransport.com/styles/main.css?v=1626994003" async="">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
@@ -90,18 +90,7 @@
 				});
 			</script>
 
-    <script type="text/javascript" src="https://gettransport.com/scripts/libs/intl/Intl.min.js?v=1626994015"></script>
-    <script type="text/javascript" src="https://gettransport.com/scripts/libs/intl/locales/ru-RU.js?v=1603836754"></script>
-    <script type="text/javascript" src="https://gettransport.com/scripts/libs/dom4.max.js?v=1603836753"></script>
-    <script type="text/javascript" src="https://gettransport.com/scripts/libs/modernizr-custom.js?v=1603836753"></script>
-    <script type="text/javascript" src="https://gettransport.com/scripts/libs/svgxuse.min.js?v=1603836753"></script>
-    <script type="text/javascript" src="https://gettransport.com/scripts/libs/jquery.min.js?v=1603836753"></script>
-    <script type="text/javascript" src="https://gettransport.com/scripts/libs/jquery.ui.min.js?v=1603836755"></script>
-    <script type="text/javascript" src="https://gettransport.com/scripts/libs/jquery.datetimepicker.full.min.js?v=1603836753"></script>
-    <script type="text/javascript" src="https://gettransport.com/scripts/libs/slick.min.js?v=1603836753"></script>
-    <script type="text/javascript" src="https://gettransport.com/scripts/libs/cccombo.js?v=1603836753"></script>
-    <script type="text/javascript" src="https://gettransport.com/scripts/app/compiled/app.js?v=1626994015"></script>
-    <script type="text/javascript" src="https://gettransport.com/scripts/app/main.js?v=1619814729"></script>
+
 
     <script type="text/javascript">
 			window.locale = 'ru-RU';
@@ -154,10 +143,8 @@
 
 <body>
 <header th:insert = "blocks/headerGT :: header"></header>
-<p th:text="'Hello, ' + ${name} + '!'" />
 
 <div th:insert = "blocks/main :: main"></div>
-
 
 <footer th:insert = "blocks/footerGT :: footer"></footer>
 

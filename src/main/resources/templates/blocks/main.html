@@ -1,63 +1,55 @@
 <main th:fragment = "main">
 
 
-  <div id="transportation_request_form" class="container">
+  <div id="transportation_request_form" class="container" style="margin-top: 2%;margin-bottom: 5%">
     <form method="post">
-
-        <div class="form_part">
-            <h2>
+        <div class="form_part" >
+<div style="width: 93%">
+            <h3>
                 Реквизиты сторон
-            </h2>
-
-            <label class="ui-front">
+            </h3><br>
+            <label class="ui-front" >
                 <span class="required">Грузоотправитель</span>
-                <input type="text"  name="shipper_name" value="" placeholder="Наименование организации грузоотправителя" autocomplete="shipping name">
-                <input type="text"  name="shipper_signatory" value="" placeholder="Подписант со стороны грузоотправителя" autocomplete="shipping name">
+                <input type="text"  name="shipper_name" value="" placeholder="Наименование организации грузоотправителя" autocomplete="shipping name" required="">
+                <input type="text"  name="shipper_signatory" value="" placeholder="Подписант со стороны грузоотправителя" autocomplete="shipping name" required="">
                 <textarea name="shipper_requisites" placeholder="Реквизиты грузотправителя" autocomplete="off" rows="3" required=""></textarea>
             </label>
+            <button type="submit" class="success large" style="width:70%; font-size:10pt">
+                Лицензионное соглашение
+            </button>
+    <br><br>
 
 
             <label class="ui-front">
                 <span class="required">Перевозчик</span>
-                <input type="text" name="carrier_name" value="" placeholder="Наименование организации перевозчика" autocomplete="shipping name">
-                <input type="text"  name="carrier_signatory" value="" placeholder="Подписант со стороны переевозчика" autocomplete="shipping name">
+                <input type="text" name="carrier_name" placeholder="Наименование организации перевозчика" autocomplete="shipping name">
+                <input type="text"  name="carrier_signatory" placeholder="Подписант со стороны переевозчика" autocomplete="shipping name">
                 <textarea name="carrier_requisites" placeholder="Реквизиты перевозчика" autocomplete="off" rows="3" required=""></textarea>
         </label>
 
-            <button type="submit" class="success large">
+            <button type="submit" class="success large" style="width:70%; font-size:10pt">
                 Агентский договор
             </button>
 
-            <button type="submit" class="success large">
-                Лицензионное соглашение
-            </button>
+            </div>
         </div>
 
         <div class="form_part">
-          <h2 class="details">
-              Характеристики груза
-              <svg class="
-		icon
-		icon-caret-down
-			baseline
-	">
-                  <use xlink:href="https://gettransport.com/images/icons/symbol-defs.svg?v=1625265366#icon-caret-down"></use>
-              </svg>
-          </h2>
+            <div style="width: 93%">
+          <h3 class="details">
+              Детали перевозки
+          </h3> <br>
 
         <label>
             <span class="required">Места погрузки - выгрузки</span>
-            <input type="text" class="with_clear_button pac-target-input" name="place_loading" value="sdf" placeholder="Место погрузки" required="" autocomplete="off">
-            <input type="text" class="with_clear_button pac-target-input" name="transportation_request[route][destination_point][address]" value="SDF Building, GP Block, Sector V, Bidhannagar, Калькутта, Западная Бенгалия, Индия" placeholder="Место выгрузки" required="" autocomplete="off" data-map="{ &quot;selector&quot;: &quot;.google_map&quot;, &quot;marker&quot;: { &quot;label&quot;: &quot;B&quot; } }">
+            <input type="text" class="with_clear_button pac-target-input" name="place_loading"  placeholder="Место погрузки" required="" autocomplete="off">
+            <input type="text" class="with_clear_button pac-target-input" name="transportation_request[route][destination_point][address]" placeholder="Место выгрузки"  autocomplete="off">
+            <label>
+                <span class="required">Описание груза</span>
+            </label>
+            <textarea name="transportation_request[shipment_description]" placeholder="Опишите груз" autocomplete="off"></textarea>
         </label>
 
-
-        <div class="with_block">
-          <div id="pick_up_date_block">
-            <div>
-              <label>
-                <span class="required">Даты перевозки</span>
-              </label>
               <label>
                 <svg class="
                             icon
@@ -66,8 +58,12 @@
                             ">
                   <use xlink:href="https://gettransport.com/images/icons/symbol-defs.svg?v=1625265366#icon-calendar"></use>
                 </svg>
-
-                <input type="text" id="pick_up_date" name="transportation_request[pick_up_date][date]" value="" placeholder="Дата погрузки" autocomplete="off" required="">
+                  <span class="required">Даты перевозки</span>
+                <div style="  float: left;
+                  display: inline ; width : 100%;">
+                      <input type="text" id="pick_up_date" name="transportation_request[pick_up_date][date]" value="" placeholder="Погрузка" autocomplete="off" required="" style="width:49%" >
+                      <input type="text" id="pick_down_date" name="transportation_request[pick_down_date][date]" value="" placeholder="Выгрузка" autocomplete="off" required="" style="width:49%" >
+                </div>
               </label>
 
                 <label>
@@ -78,40 +74,34 @@
 	                            ">
                         <use xlink:href="https://gettransport.com/images/icons/symbol-defs.svg?v=1625265366#icon-calendar"></use>
                     </svg>
-                    <input type="text" id="pick_down_date" name="transportation_request[pick_down_date][date]" value="" placeholder="Дата выгрузки" autocomplete="off" required="">
+
                 </label>
 
-                <div class="display_by_state with_block">
-                </div>
                 <div class="price_input">
-                    <label>
-                        <span class="required">Стоимость перевозки</span>
-                    </label>
-                    <div class="price_from_shipper">
-                        <input type="number" name="transportation_request[price_from_shipper]" placeholder="Цена" data-rub-min="100" data-min="1" data-range-underflow-error="Предложите цену больше или равную 100." step="1" value="" min="100">
+
+                    <div class="price_from_shipper" >
+                        <div style="width : 100%">
                         <label>
-                            <input type="checkbox" name="transportation_request[loaders]">
-                             С НДС
+                            <span class="required" style="width : 50%">Стоимость перевозки</span>
                         </label>
+                        <label >
+                            <input type="checkbox" name="transportation_request[loaders]"  >
+                            С НДС
+                        </label>
+                        </div>
+                        <input type="number" name="transportation_request[price_from_shipper]" placeholder="Цена" style="width:5    0%; float: left;">
+
                     </div>
-                </div>
-            </div>
-        </div>
       </div>
+                <button type="submit" class="success large" style="width:70%; font-size:10pt">
+                    Договор грузоперевозки
+                </button>
+            </div>
+
 
       <div class="second_block">
 
 
-        <div class="additional_requirements">
-
-        <label>
-          <span class="required">Описание груза</span>
-          <textarea name="transportation_request[shipment_description]" placeholder="Опишите груз" autocomplete="off" rows="3" required=""></textarea>
-        </label>
-      </div>
-          <button type="submit" class="success large">
-              Договор грузоперевозки
-          </button>
 
 
 
