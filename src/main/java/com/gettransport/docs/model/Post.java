@@ -1,14 +1,12 @@
 package com.gettransport.docs.model;
 
-import org.springframework.web.bind.annotation.RequestParam;
-
 public class Post {
-    String carrier_name, carrier_signatory, carrier_requisites;
+    String shipper_name, shipper_signatory, shipper_requisites;
 
 
-    public Post(String carrier_name, String carrier_signatory, String carrier_requisites) {
-        this.carrier_name = carrier_name;
-        this.carrier_signatory = carrier_signatory;
-        this.carrier_requisites = carrier_requisites;
+    public Post(String shipper_name, String shipper_signatory, String shipper_requisites) {
+        this.shipper_name = shipper_name;
+        this.shipper_signatory = shipper_signatory;
+        this.shipper_requisites = shipper_requisites;
     }
 }
