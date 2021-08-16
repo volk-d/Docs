@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--    <form method="POST" th:action="@{/test}" th:object="${post}">-->
+<!--        <label for="shipper_name">Shipper_name</label>-->
+<!--        <input type="text" th:field="*{shipper_name}" id="shipper_name"/>-->
+
+<!--        <input type="submit" value="ADD"/>-->
+<!--    </form>-->
+
+    <form method="POST" action="/test">
+        <label for="shipper_name">Shipper_name</label>
+        <input name="shipper_name" type="text" id="shipper_name"/>
+
+        <input type="submit" value="ADD"/>
+    </form>
+
+
+</body>
+</html>

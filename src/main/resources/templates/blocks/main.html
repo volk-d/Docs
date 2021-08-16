@@ -8,14 +8,16 @@
             <h3>
                 Реквизиты сторон
             </h3><br>
-            <label class="ui-front" method="post" >
-                <span class="required">Грузоотправитель</span>
-                <input type="text"  name="shipper_name" value="" placeholder="Наименование организации грузоотправителя" autocomplete="shipping name" >
-                <input type="text"  name="shipper_signatory" value="" placeholder="Подписант со стороны грузоотправителя" autocomplete="shipping name" >
-                <textarea name="shipper_requisites" placeholder="Реквизиты грузотправителя" autocomplete="off" rows="3" ></textarea>
-                <button type="submit" class="success large" style="width:70%; font-size:10pt">
-                    Лицензионное соглашение
-                </button>
+            <label class="ui-front" >
+                <form action="/" method="post">
+                    <span class="required">Грузоотправитель</span>
+                    <input type="text"  name="shipper_name" value="" placeholder="Наименование организации грузоотправителя" autocomplete="shipping name" >
+                    <input type="text"  name="shipper_signatory" value="" placeholder="Подписант со стороны грузоотправителя" autocomplete="shipping name" >
+                    <textarea name="shipper_requisites" placeholder="Реквизиты грузотправителя" autocomplete="off" rows="3" ></textarea>
+                    <button type="submit" class="success large" style="width:70%; font-size:10pt">
+                        Лицензионное соглашение
+                    </button>
+                </form>
             </label>
 
     <br><br>

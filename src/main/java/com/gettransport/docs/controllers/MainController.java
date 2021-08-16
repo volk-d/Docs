@@ -1,23 +1,23 @@
 package com.gettransport.docs.controllers;
 
+import com.gettransport.docs.DocsApplication;
 import com.gettransport.docs.model.Post;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
+@RequestMapping("/")
 public class MainController {
 
-    @GetMapping("/")
+    @GetMapping()
     public String greeting(Model model) {
-        model.addAttribute("title", "Документы");
-        return "home";
+        model.addAttribute("post", new Post());
+        return "test";
     }
-    @PostMapping("/")
-    public String agent(@RequestParam String carrier_name, @RequestParam String carrier_signatory, @RequestParam String carrier_requisites, Model model){
-        Post post = new Post(carrier_name, carrier_signatory, carrier_requisites);
-        return "";
+    @PostMapping("/test")
+    public String agent(@RequestParam("shipper_name") String shipper_name){
+        System.out.println(shipper_name);
+        return "test";
     }
 }
