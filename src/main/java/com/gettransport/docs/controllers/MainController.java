@@ -1,27 +1,47 @@
 package com.gettransport.docs.controllers;
 
-import com.gettransport.docs.DocsApplication;
-import com.gettransport.docs.model.Post;
+import com.gettransport.docs.model.Signer;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping("/")
 public class MainController {
 
-    @GetMapping()
-    public String greeting(Model model) {
-        model.addAttribute("post", new Post());
-        return "test";
+    @GetMapping("/")
+    public String index(Model model) {
+        model.addAttribute("post", new Signer());
+        return "carriage_contract";
     }
-    @PostMapping("/test")
+
+    @GetMapping("/agency_contract")
+    public String agency_contract(Model model) {
+        model.addAttribute("post", new Signer());
+        return "agency_contract";
+    }
+
+    @GetMapping("/license_agreement")
+    public String license_agreement(Model model) {
+        model.addAttribute("post", new Signer());
+        return "license_agreement";
+    }
+
+    @PostMapping("/shipper")
     public String agent(@RequestParam("shipper_name") String shipper_name,
                         @RequestParam("shipper_signatory") String shipper_signatory,
                         @RequestParam("shipper_requisites") String shipper_requisites){
         System.out.println(shipper_name);
         System.out.println(shipper_signatory);
         System.out.println(shipper_requisites);
-        return "test";
+        return "index";
+    }
+    @PostMapping("/carrier")
+    public String licensed( @RequestParam("carrier_name") String carrier_name,
+                            @RequestParam("carrier_signatory") String carrier_signatory,
+                            @RequestParam("carrier_requisites") String carrier_requisites){
+        System.out.println(carrier_name);
+        System.out.println(carrier_signatory);
+        System.out.println(carrier_requisites);
+        return "agency_contract";
     }
 }

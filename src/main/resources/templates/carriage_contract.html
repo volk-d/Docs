@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--    <form method="POST" th:action="@{/test}" th:object="${post}">-->
+<!--        <label for="shipper_name">Shipper_name</label>-->
+<!--        <input type="text" th:field="*{shipper_name}" id="shipper_name"/>-->
+
+<!--        <input type="submit" value="ADD"/>-->
+<!--    </form>-->
+
+                    <!--Forms shipper-->
+<div th:insert = "blocks/menu :: menu"></div>
+
+<form method="POST" action="/shipper">
+    <span class="required">Грузоотправитель</span>
+    <br/>
+
+    <label for="shipper_name">Наименование организации грузоотправителя</label>
+    <input name="shipper_name" placeholder="" type="text" id="shipper_name"/>
+
+    <br/>
+
+    <label for="shipper_signatory">Подписант со стороны грузоотправителя</label>
+    <input name="shipper_signatory" placeholder="" type="text" id="shipper_signatory"/>
+
+    <br/>
+
+    <label for="shipper_requisites">Реквизиты грузотправителя</label>
+    <textarea name="shipper_requisites" placeholder="" id="shipper_requisites"></textarea>
+    <br/>
+    <input type="submit" value="Лицензионное соглашение"/>
+</form>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

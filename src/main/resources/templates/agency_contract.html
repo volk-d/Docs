@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <div th:insert = "blocks/menu :: menu"></div>
+
+    <form method="POST" action="/carrier">
+        <span class="required">Перевозчик</span>
+        <br/>
+
+        <label for="carrier_name">Наименование организации перевозчика</label>
+        <input name="carrier_name" placeholder="" type="text" id="carrier_name"/>
+
+        <br/>
+
+        <label for="carrier_signatory">Подписант со стороны переевозчика</label>
+        <input name="carrier_signatory" placeholder="" type="text" id="carrier_signatory"/>
+
+        <br/>
+
+        <label for="carrier_requisites">Реквизиты перевозчика</label>
+        <textarea name="carrier_requisites" placeholder="" id="carrier_requisites"></textarea>
+        <br/>
+        <input type="submit" value="Агентский договор"/>
+    </form>
+</body>
+</html>
