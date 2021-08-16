@@ -57,12 +57,12 @@ public class MainController {
                             @RequestParam("shipper_name") String shipper_name,
                             @RequestParam("shipper_signatory") String shipper_signatory,
                             @RequestParam("shipper_requisites") String shipper_requisites){
-        System.out.println(carrier_name);
-        System.out.println(carrier_signatory);
-        System.out.println(carrier_requisites);
         System.out.println(shipper_name);
         System.out.println(shipper_signatory);
         System.out.println(shipper_requisites);
+        System.out.println(carrier_name);
+        System.out.println(carrier_signatory);
+        System.out.println(carrier_requisites);
         return "carriage_contract";
     }
 }

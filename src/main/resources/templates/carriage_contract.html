@@ -17,56 +17,41 @@
 <div th:insert = "blocks/menu :: menu"></div>
 
 <form method="POST" action="/carriage">
-
     <span class="required">Грузоотправитель</span>
     <br/>
-
     <label for="shipper_name">Наименование организации грузоотправителя</label>
     <input name="shipper_name" placeholder="" type="text" id="shipper_name"/>
-
     <br/>
-
     <label for="shipper_signatory">Подписант со стороны грузоотправителя</label>
     <input name="shipper_signatory" placeholder="" type="text" id="shipper_signatory"/>
-
     <br/>
-
     <label for="shipper_requisites">Реквизиты грузотправителя</label>
     <textarea name="shipper_requisites" placeholder="" id="shipper_requisites"></textarea>
-
     <br/>
-
     <span class="required">Перевозчик</span>
-
     <br/>
-
     <label for="carrier_name">Наименование организации перевозчика</label>
     <input name="carrier_name" placeholder="" type="text" id="carrier_name"/>
-
     <br/>
-
     <label for="carrier_signatory">Подписант со стороны переевозчика</label>
     <input name="carrier_signatory" placeholder="" type="text" id="carrier_signatory"/>
-
     <br/>
-
     <label for="carrier_requisites">Реквизиты перевозчика</label>
     <textarea name="carrier_requisites" placeholder="" id="carrier_requisites"></textarea>
     <br/>
-        <label>
+    <span class="required">Детали перевозки</span>
+    <br/>
+    <label>
             <span class="required">Места погрузки - выгрузки</span>
             <br/>
             <input type="text" name="loading_place"  placeholder="Место погрузки" />
             <input type="text" name="unloading_place" placeholder="Место выгрузки"  />
         </label>
     <br/>
-
     <span class="required">Описание груза</span>
-
-
-        <textarea name="cargo" placeholder="Опишите груз"></textarea>
-
-
+    <br/>
+    <textarea name="cargo" placeholder="Опишите груз"></textarea>
+    <br/>
     <label>
         <span class="required">Даты перевозки</span>
         <br/>
@@ -82,7 +67,7 @@
         <input type="checkbox" name="transportation_request[loaders]"/>
         С НДС
     </label>
-
+    <br/>
     <label>
         <span  class="required">Номер заявки </span>
         <br/>
