@@ -14,11 +14,34 @@
 <!--    </form>-->
 
     <form method="POST" action="/test">
-        <label for="shipper_name">Shipper_name</label>
-        <input name="shipper_name" type="text" id="shipper_name"/>
+        <span class="required">Грузоотправитель</span>
+        <br/>
 
-        <input type="submit" value="ADD"/>
+        <label for="shipper_name">Наименование организации грузоотправителя</label>
+        <input name="shipper_name" placeholder="" type="text" id="shipper_name"/>
+
+        <br/>
+
+        <label for="shipper_signatory">Подписант со стороны грузоотправителя</label>
+        <input name="shipper_signatory" placeholder="" type="text" id="shipper_signatory"/>
+
+        <br/>
+
+        <label for="shipper_requisites">Реквизиты грузотправителя</label>
+        <textarea name="shipper_requisites" placeholder="" id="shipper_requisites"></textarea>
+        <br/>
+        <input type="submit" value="Лицензионное соглашение"/>
     </form>
+
+<!--<form action="/" method="post">-->
+<!--    <span class="required">Грузоотправитель</span>-->
+<!--    <input type="text"  name="shipper_name" value="" placeholder="Наименование организации грузоотправителя" autocomplete="shipping name" >-->
+<!--    <input type="text"  name="shipper_signatory" value="" placeholder="Подписант со стороны грузоотправителя" autocomplete="shipping name" >-->
+<!--    <textarea name="shipper_requisites" placeholder="Реквизиты грузотправителя" autocomplete="off" rows="3" ></textarea>-->
+<!--    <button type="submit" class="success large" style="width:70%; font-size:10pt">-->
+<!--        Лицензионное соглашение-->
+<!--    </button>-->
+<!--</form>-->
 
 
 </body>

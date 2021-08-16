@@ -16,8 +16,12 @@ public class MainController {
         return "test";
     }
     @PostMapping("/test")
-    public String agent(@RequestParam("shipper_name") String shipper_name){
+    public String agent(@RequestParam("shipper_name") String shipper_name,
+                        @RequestParam("shipper_signatory") String shipper_signatory,
+                        @RequestParam("shipper_requisites") String shipper_requisites){
         System.out.println(shipper_name);
+        System.out.println(shipper_signatory);
+        System.out.println(shipper_requisites);
         return "test";
     }
 }
