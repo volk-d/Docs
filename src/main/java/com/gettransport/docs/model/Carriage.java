@@ -56,7 +56,7 @@ public class Carriage implements Data {
     }
 
     @Override
-    public Map<String, String> getMap(Data data) {
+    public Map<String, String> getMap() {
         Map<String,String> variable = new HashMap<>();
 
         variable.put("carrier_name", carrier_name);
@@ -76,5 +76,10 @@ public class Carriage implements Data {
 
         return variable;
 
+    }
+    @Override
+    public boolean isTax() {
+        if(tax.isEmpty()) return false;
+        else return true;
     }
 }

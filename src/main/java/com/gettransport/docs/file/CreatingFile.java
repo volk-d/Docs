@@ -7,8 +7,15 @@ import org.apache.poi.xwpf.usermodel.XWPFRun;
 
 import java.io.*;
 import java.util.List;
+import java.util.Map;
+import java.lang.String;
 
 public class CreatingFile {
+
+    private static File fileAgency;
+    private static File fileLicense = new File("docs.docx"); ;
+    private static File fileCarriage = new File("docs.docx"); ;
+    private static File fileFinish;
 
     public static void creating(Data data,TypeContract type){
         switch (type) {
@@ -20,25 +27,42 @@ public class CreatingFile {
     }
     private static void agencyCreating(Data data){
 
+        if(data.isTax()){ fileAgency = new File("docs/start/Agency_contract/Agency_contract_Enterprise_start.docx");
+                          fileFinish = new File("docs/finish/Agency_contract/Agency_contract_Enterprise.docx");
+        }
+        else{ fileAgency = new File("docs/start/Agency_contract/Agency_contract_Business_start.docx");
+              fileFinish = new File("docs/finish/Agency_contract/Agency_contract_Business.docx");}
+
+
+        findAndWrite(data.getMap(), fileAgency, fileFinish);
+
     }
-    private static void licenseCreating(Data data){}
-    private static void carriageCreating(Data data){}
+    private static void licenseCreating(Data data){
+        fileFinish = new File("docs/start/License_contract_start.docx");
+        findAndWrite(data.getMap(), fileLicense, fileFinish);
+    }
+    private static void carriageCreating(Data data){
+        if(data.isTax()) fileCarriage = new File("docs/start/Carriage_contract/Carriage_contract_Enterprise_start.docx");
+        else fileCarriage = new File("docs/start/Carriage_contract/Carriage_contract_Business_start.docx");
+        findAndWrite(data.getMap(), fileCarriage, fileFinish);
+    }
 
-    private static void findAndWrite (String find){
-        File file = new File("docs.docx");
+    private static void findAndWrite (Map<String,String> map, File fileStart, File fileFinish){
 
-        try(FileInputStream fileInputStream = new FileInputStream (file.getAbsoluteFile());
-            FileOutputStream fileOutputStream = new FileOutputStream("docsGet.docx")){
+
+        try(FileInputStream fileInputStream = new FileInputStream (fileStart.getAbsoluteFile());
+            FileOutputStream fileOutputStream = new FileOutputStream(fileFinish)){
             XWPFDocument doc = new XWPFDocument(fileInputStream);
-
-            for (XWPFParagraph p : doc.getParagraphs()) {
-                List<XWPFRun> runs = p.getRuns();
-                if (runs != null) {
-                    for (XWPFRun r : runs) {
-                        String text = r.getText(0);
-                        if (text != null && text.contains("name")) {
-                            text = text.replace("name", "zaika");//your content
-                            r.setText(text, 0);
+            for(Map.Entry<String, String> entry: map.entrySet()) {
+                for (XWPFParagraph p : doc.getParagraphs()) {
+                    List<XWPFRun> runs = p.getRuns();
+                    if (runs != null) {
+                        for (XWPFRun r : runs) {
+                            String text = r.getText(0);
+                            if (text != null && text.contains(entry.getKey())) {
+                                text = text.replace(entry.getKey(), entry.getValue());//your content
+                                r.setText(text, 0);
+                            }
                         }
                     }
                 }
