@@ -25,4 +25,9 @@ public class Signer implements Data {
 
         return variable;
     }
+
+    @Override
+    public boolean isTax() {
+        return false;
+    }
 }

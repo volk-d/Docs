@@ -2,6 +2,9 @@ package com.gettransport.docs.model;
 
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -58,6 +61,9 @@ public class Carriage implements Data {
     @Override
     public Map<String, String> getMap() {
         Map<String,String> variable = new HashMap<>();
+        DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
+        Date date = new Date();
+        System.out.println(dateFormat.format(date));
 
         variable.put("carrier_name", carrier_name);
         variable.put("carrier_signatory", carrier_signatory);
@@ -73,6 +79,7 @@ public class Carriage implements Data {
         variable.put("price", price);
         variable.put("tax", tax);
         variable.put("number", number);
+        variable.put("tdata", dateFormat.format(date));
 
         return variable;
 

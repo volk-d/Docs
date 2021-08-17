@@ -31,19 +31,24 @@ public class CreatingFile {
                           fileFinish = new File("docs/finish/Agency_contract/Agency_contract_Enterprise.docx");
         }
         else{ fileAgency = new File("docs/start/Agency_contract/Agency_contract_Business_start.docx");
-              fileFinish = new File("docs/finish/Agency_contract/Agency_contract_Business.docx");}
-
+              fileFinish = new File("docs/finish/Agency_contract/Agency_contract_Business.docx");
+        }
 
         findAndWrite(data.getMap(), fileAgency, fileFinish);
 
     }
     private static void licenseCreating(Data data){
-        fileFinish = new File("docs/start/License_contract_start.docx");
+        fileFinish = new File("C:\\Users\\Huawei\\project\\gtt\\docs\\src\\main\\resources\\docs\\Carriage_contract_Business.docx");
+        try {
+            fileFinish.createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         findAndWrite(data.getMap(), fileLicense, fileFinish);
     }
     private static void carriageCreating(Data data){
-        if(data.isTax()) fileCarriage = new File("docs/start/Carriage_contract/Carriage_contract_Enterprise_start.docx");
-        else fileCarriage = new File("docs/start/Carriage_contract/Carriage_contract_Business_start.docx");
+        if(data.isTax()) fileCarriage = new File("src/main/resources/docs/Carriage_contract_Busness.docx");
+        else fileCarriage = new File("C:\\Users\\Huawei\\project\\gtt\\docs\\src\\main\\resources\\docs\\start\\Carriage_contract\\Carriage_contract_Business_start.docx");
         findAndWrite(data.getMap(), fileCarriage, fileFinish);
     }
 
@@ -51,7 +56,7 @@ public class CreatingFile {
 
 
         try(FileInputStream fileInputStream = new FileInputStream (fileStart.getAbsoluteFile());
-            FileOutputStream fileOutputStream = new FileOutputStream(fileFinish)){
+            FileOutputStream fileOutputStream = new FileOutputStream("docsGet.docx")){
             XWPFDocument doc = new XWPFDocument(fileInputStream);
             for(Map.Entry<String, String> entry: map.entrySet()) {
                 for (XWPFParagraph p : doc.getParagraphs()) {

@@ -1,11 +1,16 @@
 package com.gettransport.docs.controllers;
 
 import com.gettransport.docs.file.CreatingFile;
+import com.gettransport.docs.file.TypeContract;
 import com.gettransport.docs.model.Carriage;
 import com.gettransport.docs.model.Signer;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Controller
 public class MainController {
@@ -83,6 +88,7 @@ public class MainController {
                                          tax,
                                          number);
 
+        CreatingFile.creating(carriage, TypeContract.CARRIAGE);
       //  CreatingFile.creating(cargo);
         System.out.println(carrier_name.toString());
 
