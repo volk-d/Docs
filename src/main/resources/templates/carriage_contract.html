@@ -63,15 +63,16 @@
     <label>
         <span class="required">Стоимость перевозки</span>
         <br/>
-        <input type="number" name="transportation_request[price_from_shipper]" placeholder="Цена">
-        <input type="checkbox" name="transportation_request[loaders]"/>
+        <input type="number" name="price" placeholder="Цена">
+        <input type="checkbox" name="tax" value="true"/>
+        <input type="hidden" name="tax" value=""/>
         С НДС
     </label>
     <br/>
     <label>
         <span  class="required">Номер заявки </span>
         <br/>
-        <input type="number" name="transportation_request[price_from_shipper]" placeholder="Заявка" />
+        <input type="number" name="number" placeholder="Заявка" />
     </label>
 
     <br>

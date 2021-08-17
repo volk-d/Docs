@@ -1,7 +1,7 @@
 package com.gettransport.docs.model;
 
 
-public class Signer {
+public class Signer implements Data {
     String name, signatory, requisites;
 
     public Signer(){}
