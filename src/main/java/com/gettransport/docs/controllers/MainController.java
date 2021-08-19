@@ -63,7 +63,7 @@ public class MainController {
         return "license_agreement";
     }
     @PostMapping("/carriage")
-    public String carriage( @RequestParam("carrier_name") String carrier_name,
+    public String carriage ( @RequestParam("carrier_name") String carrier_name,
                             @RequestParam("carrier_signatory") String carrier_signatory,
                             @RequestParam("carrier_requisites") String carrier_requisites,
                             @RequestParam("shipper_name") String shipper_name,
@@ -76,7 +76,8 @@ public class MainController {
                             @RequestParam("pick_down_date") String pick_down_date,
                             @RequestParam("price") String price,
                             @RequestParam("tax") String tax,
-                            @RequestParam("number") String number){
+                            @RequestParam("number") String number,
+                            HttpServletRequest request, HttpServletResponse response) throws Exception{
 
         Carriage carriage = new Carriage(carrier_name,
                                          carrier_signatory,
@@ -94,21 +95,33 @@ public class MainController {
                                          number);
 
         CreatingFile.creating(carriage, TypeContract.CARRIAGE);
-      //  CreatingFile.creating(cargo);
-        System.out.println(carrier_name.toString());
+    if(carriage.getMap().isEmpty()) {
+        File file = new File("src/main/resources/docs/docsGet.docx"); // EXTERNAL_FILE_PATH + fileName
 
-       // System.out.println(carriage);
+        if (file.exists()) {
+            String mimeType = URLConnection.guessContentTypeFromName(file.getName());
+            if (mimeType == null) {
+                mimeType = "application/octet-stream";
+            }
+            response.setContentType(mimeType);
+            response.setHeader("Content-Disposition", String.format("inline; filename=\"" + file.getName() + "\""));
+            response.setContentLength((int) file.length());
+            InputStream inputStream = new BufferedInputStream(new FileInputStream(file));
+            FileCopyUtils.copy(inputStream, response.getOutputStream());
 
+            file.delete();
+        }
+    }
 
         return "carriage_contract";
     }
 
-    private static final String EXTERNAL_FILE_PATH = "C:\\Users\\Huawei\\project\\gtt\\docs\\src\\main\\resources\\docs";
+   // private static final String EXTERNAL_FILE_PATH = "C:\\Users\\Huawei\\project\\gtt\\docs\\src\\main\\resources\\docs";
 
     @RequestMapping("/file") // /{fileName:.+}
     public void downloadPDFResource(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        File file = new File("C:\\Users\\Huawei\\project\\gtt\\docs\\src\\main\\resources\\docs"); // EXTERNAL_FILE_PATH + fileName
+        File file = new File("src/main/resources/docs/docsGet.docx"); // EXTERNAL_FILE_PATH + fileName
         if (file.exists()) {
 
             //get the mimetype
@@ -141,6 +154,7 @@ public class MainController {
             InputStream inputStream = new BufferedInputStream(new FileInputStream(file));
 
             FileCopyUtils.copy(inputStream, response.getOutputStream());
+
 
         }
     }

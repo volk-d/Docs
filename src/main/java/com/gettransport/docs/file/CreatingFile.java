@@ -48,15 +48,15 @@ public class CreatingFile {
     }
     private static void carriageCreating(Data data){
         if(data.isTax()) fileCarriage = new File("src/main/resources/docs/Carriage_contract_Busness.docx");
-        else fileCarriage = new File("C:\\Users\\Huawei\\project\\gtt\\docs\\src\\main\\resources\\docs\\start\\Carriage_contract\\Carriage_contract_Business_start.docx");
+        else fileCarriage = new File("src/main/resources/docs/start/Carriage_contract/Carriage_contract_Business_start.docx");
         findAndWrite(data.getMap(), fileCarriage, fileFinish);
     }
 
     private static void findAndWrite (Map<String,String> map, File fileStart, File fileFinish){
 
 
-        try(FileInputStream fileInputStream = new FileInputStream (fileStart.getAbsoluteFile());
-            FileOutputStream fileOutputStream = new FileOutputStream("docsGet.docx")){
+        try(FileInputStream fileInputStream = new FileInputStream (fileStart.getCanonicalFile());
+            FileOutputStream fileOutputStream = new FileOutputStream("src/main/resources/docs/docsGet.docx")){
             XWPFDocument doc = new XWPFDocument(fileInputStream);
             for(Map.Entry<String, String> entry: map.entrySet()) {
                 for (XWPFParagraph p : doc.getParagraphs()) {

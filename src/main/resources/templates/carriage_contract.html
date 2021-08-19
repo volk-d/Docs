@@ -14,6 +14,9 @@
 <!--    </form>-->
 
                     <!--Forms shipper-->
+
+
+
 <div th:insert = "blocks/menu :: menu"></div>
 
 <form method="POST" action="/carriage">
@@ -77,12 +80,26 @@
 
     <br>
 
-    <input type="submit" value="Договор перевозки"/>
+    <button onclick="add()" type="submit" value="Договор перевозки">Сформировать договор</button>
 
+    <br>
+    <a href="file" onclick="isEmpty()"> Скачать договор </a>
 </form>
 
 
+<!--don't work code
+<div id="Insert"></div>
 
+<script >
+      function isEmail() {
+         let div = document.createElement('div');
+         div.className = "Insert";
+         div.innerHTML = "<a>Рад вас видеть</a>";
+         document.body.append(div);
+      }
+</script>
+
+-->
 
 
 
