@@ -103,13 +103,12 @@ public class MainController {
         return "carriage_contract";
     }
 
-    private static final String EXTERNAL_FILE_PATH = "C:/fileDownloadExample/";
+    private static final String EXTERNAL_FILE_PATH = "C:\\Users\\Huawei\\project\\gtt\\docs\\src\\main\\resources\\docs";
 
-    @RequestMapping("/file/{fileName:.+}")
-    public void downloadPDFResource(HttpServletRequest request, HttpServletResponse response,
-                                    @PathVariable("fileName") String fileName) throws IOException {
+    @RequestMapping("/file") // /{fileName:.+}
+    public void downloadPDFResource(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        File file = new File(EXTERNAL_FILE_PATH + fileName);
+        File file = new File("C:\\Users\\Huawei\\project\\gtt\\docs\\src\\main\\resources\\docs"); // EXTERNAL_FILE_PATH + fileName
         if (file.exists()) {
 
             //get the mimetype
