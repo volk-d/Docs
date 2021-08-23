@@ -120,7 +120,6 @@ public class MainController {
 
             CreatingFile.creating(carriage, TypeContract.CARRIAGE);
 
-            model.addAttribute("carriage",carriage);
             return "redirect:/download";
         } else {
             model.addAttribute("errorMessage", errorMessage);
@@ -129,7 +128,8 @@ public class MainController {
     }
 
     @GetMapping("/download")
-    public String download(){
+    public String download(Model model){
+        model.addAttribute("carriage",carriage);
         return "download";
     }
 

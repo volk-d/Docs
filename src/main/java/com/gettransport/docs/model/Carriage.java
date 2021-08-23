@@ -110,4 +110,60 @@ public class Carriage implements Data {
                 ", number='" + number + '\'' +
                 '}';
     }
+
+    public String getCarrier_name() {
+        return carrier_name;
+    }
+
+    public String getCarrier_signatory() {
+        return carrier_signatory;
+    }
+
+    public String getCarrier_requisites() {
+        return carrier_requisites;
+    }
+
+    public String getShipper_name() {
+        return shipper_name;
+    }
+
+    public String getShipper_signatory() {
+        return shipper_signatory;
+    }
+
+    public String getShipper_requisites() {
+        return shipper_requisites;
+    }
+
+    public String getLoading_place() {
+        return loading_place;
+    }
+
+    public String getUnloading_place() {
+        return unloading_place;
+    }
+
+    public String getCargo() {
+        return cargo;
+    }
+
+    public String getPick_up_date() {
+        return pick_up_date;
+    }
+
+    public String getPick_down_date() {
+        return pick_down_date;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public String getTax() {
+        return tax;
+    }
+
+    public String getNumber() {
+        return number;
+    }
 }

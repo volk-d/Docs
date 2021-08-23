@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<header th:insert = "blocks/headerGT :: header"></header>
 <body>
 
 <!--    <form method="POST" th:action="@{/test}" th:object="${post}">-->
@@ -14,12 +11,12 @@
 <!--    </form>-->
 
                     <!--Forms shipper-->
+<div th:insert = "blocks/menu :: menu" style="margin-left: 35%;margin-bottom: 1%" ></div>
+<div id="transportation_request_form" class="container" style="margin-bottom: 2%">
 
 
-
-<div th:insert = "blocks/menu :: menu"></div>
-
-<form method="POST" action="/carriage">
+<form method="POST" action="/carriage" class="ui-front">
+    <div style="width: 93%">
     <span class="required">Грузоотправитель</span>
     <br/>
     <label for="shipper_name">Наименование организации грузоотправителя</label>
@@ -80,14 +77,16 @@
 
     <br>
 
-    <button type="submit" value="Договор перевозки">Сформировать договор</button>
-
+    <button type="submit" value="Договор перевозки" style="margin-top:1%">Сформировать договор</button>
+    </div>
 </form>
     <br>
     <div th:if="${errorMessage}" th:utext="${errorMessage}"
          style="color:red;font-style:italic;">
         ...
     </div>
+</div>
+<footer th:insert = "blocks/footerGT :: footer"></footer>
 
 <!--don't work code
 <div id="Insert"></div>
