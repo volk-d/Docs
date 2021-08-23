@@ -80,12 +80,14 @@
 
     <br>
 
-    <button onclick="add()" type="submit" value="Договор перевозки">Сформировать договор</button>
+    <button type="submit" value="Договор перевозки">Сформировать договор</button>
 
-    <br>
-    <a href="file" onclick="isEmpty()"> Скачать договор </a>
 </form>
-
+    <br>
+    <div th:if="${errorMessage}" th:utext="${errorMessage}"
+         style="color:red;font-style:italic;">
+        ...
+    </div>
 
 <!--don't work code
 <div id="Insert"></div>

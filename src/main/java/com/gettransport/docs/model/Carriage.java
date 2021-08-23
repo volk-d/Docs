@@ -89,6 +89,25 @@ public class Carriage implements Data {
         if(tax.isEmpty()) return false;
         else return true;
     }
-    
 
+
+    @Override
+    public String toString() {
+        return "Carriage{" +
+                "carrier_name='" + carrier_name + '\'' +
+                ", carrier_signatory='" + carrier_signatory + '\'' +
+                ", carrier_requisites='" + carrier_requisites + '\'' +
+                ", shipper_name='" + shipper_name + '\'' +
+                ", shipper_signatory='" + shipper_signatory + '\'' +
+                ", shipper_requisites='" + shipper_requisites + '\'' +
+                ", loading_place='" + loading_place + '\'' +
+                ", unloading_place='" + unloading_place + '\'' +
+                ", cargo='" + cargo + '\'' +
+                ", pick_up_date='" + pick_up_date + '\'' +
+                ", pick_down_date='" + pick_down_date + '\'' +
+                ", price='" + price + '\'' +
+                ", tax='" + tax + '\'' +
+                ", number='" + number + '\'' +
+                '}';
+    }
 }

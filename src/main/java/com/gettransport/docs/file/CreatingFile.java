@@ -47,7 +47,7 @@ public class CreatingFile {
         findAndWrite(data.getMap(), fileLicense, fileFinish);
     }
     private static void carriageCreating(Data data){
-        if(data.isTax()) fileCarriage = new File("src/main/resources/docs/Carriage_contract_Busness.docx");
+        if(data.isTax()) fileCarriage = new File("src/main/resources/docs/start/Carriage_contract/Carriage_contract_Enterprise_start.docx");
         else fileCarriage = new File("src/main/resources/docs/start/Carriage_contract/Carriage_contract_Business_start.docx");
         findAndWrite(data.getMap(), fileCarriage, fileFinish);
     }
