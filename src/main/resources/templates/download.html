@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <header th:insert = "blocks/headerGT :: header"></header>
 <body>
-<div th:insert = "blocks/menu :: menu" style="margin-left: 35%;margin-bottom: 1%" ></div>
+
 <div id="transportation_request_form" class="container" style="margin-bottom: 2%">
 
     <div th:each="carriage:${carriage}">
@@ -66,7 +66,7 @@
         <br>
     </div>
     <br>
-    <a href="">Изменить договор</a>
+    <a href="carriage_contract">Изменить договор</a>
     <br>
     <a href="file" > Скачать договор </a>
 </div>

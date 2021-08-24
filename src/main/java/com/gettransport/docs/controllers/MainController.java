@@ -25,7 +25,7 @@ public class MainController {
 
     @GetMapping("/")
     public String index(Model model) {
-        model.addAttribute("post", new Signer());
+//        model.addAttribute("post", new Signer());
         return "carriage_contract";
     }
 
