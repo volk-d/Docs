@@ -2,73 +2,90 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <header th:insert = "blocks/headerGT :: header"></header>
 <body>
+<style>
+    table {
+    margin-left:20%;
+    }
+</style>
+
 
 <div id="transportation_request_form" class="container" style="margin-bottom: 2%">
 
     <div th:each="carriage:${carriage}">
-
+        <table>
+            <tr>
+                <th>
+        <span  class="required">Номер заявки </span>
+                </th>
+                <th>
+        <p th:utext="${carriage.number}">...</p>
+                </th>
+            </tr>
+        </table>
+        <table>
+    <tr>
+        <th>
         <span class="required">Грузоотправитель</span>
-        <br/>
         <label>Наименование организации грузоотправителя</label>
         <p th:utext="${carriage.shipper_name}">...</p>
-        <br/>
         <label>Подписант со стороны грузоотправителя</label>
         <p th:utext="${carriage.shipper_signatory}">...</p>
-        <br/>
+
         <label>Реквизиты грузотправителя</label>
         <p th:utext="${carriage.shipper_requisites}">...</p>
-        <br/>
+        </th>
+        <th>
         <span class="required">Перевозчик</span>
-        <br/>
         <label>Наименование организации перевозчика</label>
         <p th:utext="${carriage.carrier_name}">...</p>
-        <br/>
         <label >Подписант со стороны переевозчика</label>
         <p th:utext="${carriage.carrier_signatory}">...</p>
-        <br/>
         <label>Реквизиты перевозчика</label>
         <p th:utext="${carriage.carrier_requisites}">...</p>
-        <br/>
-        <span class="required">Детали перевозки</span>
-        <br/>
-        <label>
+        </th>
+    </tr>
+</table>
+        <table >
+            <tr>
+                <th>
+                    <span class="required">Детали перевозки</span>
+                </th>
+            </tr>
+        </table>
+        <table >
+
+            <tr>
+                <th style="margin-top:0%">
+
             <span class="required">Места погрузки - выгрузки</span>
-            <br/>
             <p th:utext="${carriage.loading_place} ">...</p>
             <p th:utext="${carriage.unloading_place}">...</p>
-        </label>
-        <br/>
+
         <span class="required">Описание груза</span>
-        <br/>
         <p th:utext="${carriage.cargo}">...</p>
-        <br/>
-        <label>
+                </th>
+                <th>
+
             <span class="required">Даты перевозки</span>
-            <br/>
+
             <p th:utext="${carriage.pick_up_date}">...</p>
             <p th:utext="${carriage.pick_down_date}">...</p>
-        </label>
-        <br/>
 
-        <label>
             <span class="required">Стоимость перевозки</span>
-            <br/>
             <p th:utext="${carriage.price}">...</p>
-
             <p th:utext="${carriage.tax}">...</p>
-        </label>
-        <br/>
-        <label>
-            <span  class="required">Номер заявки </span>
-            <br/>
-            <p th:utext="${carriage.number}">...</p>
-        </label>
-        <br>
+                </th>
+            <tr>
+            <th>
+                <a href="carriage_contract">Изменить договор</a>
+                </th>
+            <th>
+                <a href="file" > Скачать договор </a>
+            </th>
+        </tr>
+        </table>
     </div>
-    <br>
-    <a href="carriage_contract">Изменить договор</a>
-    <br>
-    <a href="file" > Скачать договор </a>
+
 </div>
 </div>
 </body>
