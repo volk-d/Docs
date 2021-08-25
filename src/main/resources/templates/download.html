@@ -13,7 +13,7 @@
 
     <div th:each="carriage:${carriage}">
         <table>
-            <tr>
+
                 <th>
         <span  class="required">Номер заявки </span>
                 </th>
@@ -23,7 +23,7 @@
             </tr>
         </table>
         <table>
-    <tr>
+
         <th>
         <span class="required">Грузоотправитель</span>
         <label>Наименование организации грузоотправителя</label>
@@ -46,7 +46,7 @@
     </tr>
 </table>
         <table >
-            <tr>
+
                 <th>
                     <span class="required">Детали перевозки</span>
                 </th>
@@ -54,7 +54,7 @@
         </table>
         <table >
 
-            <tr>
+
                 <th style="margin-top:0%">
 
             <span class="required">Места погрузки - выгрузки</span>
@@ -75,7 +75,7 @@
             <p th:utext="${carriage.price}">...</p>
             <p th:utext="${carriage.tax}">...</p>
                 </th>
-            <tr>
+
             <th>
                 <a href="carriage_contract">Изменить договор</a>
                 </th>

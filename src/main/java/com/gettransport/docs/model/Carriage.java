@@ -24,7 +24,7 @@ public class Carriage implements Data {
     private String pick_up_date;
     private String pick_down_date;
     private String price;
-    private String tax;
+    private boolean tax;
     private String number;
 
 
@@ -42,7 +42,7 @@ public class Carriage implements Data {
                     String pick_up_date,
                     String pick_down_date,
                     String price,
-                    String tax,
+                    boolean tax,
                     String number) {
         this.carrier_name = carrier_name;
         this.carrier_signatory = carrier_signatory;
@@ -58,6 +58,9 @@ public class Carriage implements Data {
         this.price = price;
         this.tax = tax;
         this.number = number;
+    }
+
+    public Carriage() {
     }
 
     @Override
@@ -79,7 +82,7 @@ public class Carriage implements Data {
         variable.put("pick_up_date", pick_up_date);
         variable.put("pick_down_date", pick_down_date);
         variable.put("price", price);
-        variable.put("tax", tax);
+      //  variable.put("tax", tax);
         variable.put("number", number);
         variable.put("tdata", dateFormat.format(date));
 
@@ -88,8 +91,8 @@ public class Carriage implements Data {
     }
     @Override
     public boolean isTax() {
-        if(tax.isEmpty()) return false;
-        else return true;
+//        if(tax.isEmpty()) return false;
+         return true;
     }
 
 
@@ -161,11 +164,67 @@ public class Carriage implements Data {
         return price;
     }
 
-    public String getTax() {
+    public boolean getTax() {
         return tax;
     }
 
     public String getNumber() {
         return number;
+    }
+
+    public void setCarrier_name(String carrier_name) {
+        this.carrier_name = carrier_name;
+    }
+
+    public void setCarrier_signatory(String carrier_signatory) {
+        this.carrier_signatory = carrier_signatory;
+    }
+
+    public void setCarrier_requisites(String carrier_requisites) {
+        this.carrier_requisites = carrier_requisites;
+    }
+
+    public void setShipper_name(String shipper_name) {
+        this.shipper_name = shipper_name;
+    }
+
+    public void setShipper_signatory(String shipper_signatory) {
+        this.shipper_signatory = shipper_signatory;
+    }
+
+    public void setShipper_requisites(String shipper_requisites) {
+        this.shipper_requisites = shipper_requisites;
+    }
+
+    public void setLoading_place(String loading_place) {
+        this.loading_place = loading_place;
+    }
+
+    public void setUnloading_place(String unloading_place) {
+        this.unloading_place = unloading_place;
+    }
+
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
+
+    public void setPick_up_date(String pick_up_date) {
+        this.pick_up_date = pick_up_date;
+    }
+
+    public void setPick_down_date(String pick_down_date) {
+        this.pick_down_date = pick_down_date;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    public void setTax(boolean tax) {
+        this.tax = tax;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
     }
 }

@@ -25,7 +25,7 @@ public class MainController {
 
     @GetMapping("/")
     public String index(Model model) {
-//        model.addAttribute("post", new Signer());
+        model.addAttribute("carriage", new Carriage());
         return "carriage_contract";
     }
 
@@ -83,7 +83,7 @@ public class MainController {
                             @RequestParam("tax") String tax,
                             @RequestParam("number") String number,
                             Model model) throws Exception{
-
+        System.out.println(model.getAttribute("carriage"));
 
 
         if (
@@ -102,21 +102,21 @@ public class MainController {
                 && number != null && number.length() > 0
         ){
 
-            carriage = new Carriage(
-                    carrier_name,
-                    carrier_signatory,
-                    carrier_requisites,
-                    shipper_name,
-                    shipper_signatory,
-                    shipper_requisites,
-                    loading_place,
-                    unloading_place,
-                    cargo,
-                    pick_up_date,
-                    pick_down_date,
-                    price,
-                    tax,
-                    number);
+//            carriage = new Carriage(
+//                    carrier_name,
+//                    carrier_signatory,
+//                    carrier_requisites,
+//                    shipper_name,
+//                    shipper_signatory,
+//                    shipper_requisites,
+//                    loading_place,
+//                    unloading_place,
+//                    cargo,
+//                    pick_up_date,
+//                    pick_down_date,
+//                    price,
+//
+//                    number);
 
 
             return "redirect:/download";
@@ -128,7 +128,7 @@ public class MainController {
 
     @GetMapping("/download")
     public String download(Model model){
-        model.addAttribute("carriage",carriage);
+
 //        Carriage carriagePrint = (Carriage) model.addAttribute("carriage");
 
         return "download";
