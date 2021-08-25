@@ -18,7 +18,7 @@ import java.net.URLConnection;
 @Controller
 public class MainController {
 
-    private Carriage carriage;
+    private Carriage saveCarriage;
 
     @Value("${error.message}")
     private String errorMessage;
@@ -67,58 +67,25 @@ public class MainController {
 //    }
 
     @PostMapping("/carriage")
-    public String carriage (
-                            @RequestParam("carrier_name") String carrier_name,
-                            @RequestParam("carrier_signatory") String carrier_signatory,
-                            @RequestParam("carrier_requisites") String carrier_requisites,
-                            @RequestParam("shipper_name") String shipper_name,
-                            @RequestParam("shipper_signatory") String shipper_signatory,
-                            @RequestParam("shipper_requisites") String shipper_requisites,
-                            @RequestParam("loading_place") String loading_place,
-                            @RequestParam("unloading_place") String unloading_place,
-                            @RequestParam("cargo") String cargo,
-                            @RequestParam("pick_up_date") String pick_up_date,
-                            @RequestParam("pick_down_date") String pick_down_date,
-                            @RequestParam("price") String price,
-                            @RequestParam("tax") String tax,
-                            @RequestParam("number") String number,
-                            Model model) throws Exception{
-        System.out.println(model.getAttribute("carriage"));
+    public String carriage (@ModelAttribute("carriage") Carriage carriage,Model model) throws Exception{
 
 
         if (
-                carrier_name != null && carrier_name.length() > 0
-                && carrier_signatory != null && carrier_signatory.length() > 0
-                && carrier_requisites != null && carrier_requisites.length() > 0
-                && shipper_name != null && shipper_name.length() > 0
-                && shipper_signatory != null && shipper_signatory.length() > 0
-                && shipper_requisites != null && shipper_requisites.length() > 0
-                && loading_place != null && loading_place.length() > 0
-                && unloading_place != null && unloading_place.length() > 0
-                && cargo != null && cargo.length() > 0
-                && pick_up_date != null && pick_up_date.length() > 0
-                && pick_down_date != null && pick_down_date.length() > 0
-                && price != null && price.length() > 0
-                && number != null && number.length() > 0
+                carriage.getCarrier_name() != null && carriage.getCarrier_name().length() > 0
+                && carriage.getCarrier_signatory() != null && carriage.getCarrier_signatory().length() > 0
+                && carriage.getCarrier_requisites() != null && carriage.getShipper_requisites().length() > 0
+                && carriage.getShipper_name() != null && carriage.getShipper_name().length() > 0
+                && carriage.getShipper_signatory() != null && carriage.getCarrier_signatory().length() > 0
+                && carriage.getShipper_requisites() != null && carriage.getShipper_requisites().length() > 0
+                && carriage.getLoading_place() != null && carriage.getLoading_place().length() > 0
+                && carriage.getUnloading_place() != null && carriage.getUnloading_place().length() > 0
+                && carriage.getCargo() != null && carriage.getCargo().length() > 0
+                && carriage.getPick_up_date() != null && carriage.getPick_up_date().length() > 0
+                && carriage.getPick_down_date() != null && carriage.getPick_down_date().length() > 0
+                && carriage.getPrice() != null && carriage.getPrice().length() > 0
+                && carriage.getNumber() != null && carriage.getNumber().length() > 0
         ){
-
-//            carriage = new Carriage(
-//                    carrier_name,
-//                    carrier_signatory,
-//                    carrier_requisites,
-//                    shipper_name,
-//                    shipper_signatory,
-//                    shipper_requisites,
-//                    loading_place,
-//                    unloading_place,
-//                    cargo,
-//                    pick_up_date,
-//                    pick_down_date,
-//                    price,
-//
-//                    number);
-
-
+            saveCarriage = carriage;
             return "redirect:/download";
         } else {
             model.addAttribute("errorMessage", errorMessage);
@@ -127,9 +94,9 @@ public class MainController {
     }
 
     @GetMapping("/download")
-    public String download(Model model){
+    public String downloa( Model model){
+        model.addAttribute("carriage",saveCarriage);
 
-//        Carriage carriagePrint = (Carriage) model.addAttribute("carriage");
 
         return "download";
     }
