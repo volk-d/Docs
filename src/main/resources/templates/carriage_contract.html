@@ -25,7 +25,7 @@
     }
     .long-area-input{
         width: 90%;
-        height: 13em;
+        height: 12em;
     text-align:left;
     }
        table {
@@ -76,14 +76,13 @@
                 </th>
                 <th>
     <textarea class="long-area-input" name="shipper_requisites" placeholder="ООО «Сапфит»
-Юридический адрес:112345,  г.Москва, ул Саватеева 14, оф.30
-Телефон:  8(495)777-77-77
-К/С	10101410500450000871
-Р/С 23101488800340002557
-БИК	424852237
-ИНН 7204000001
+Юридический адрес:112345, г.Москва, ул Саватеева 14, оф.30
 ОГРН 1024735852200
+ИНН 7204000001
 КПП	775500005
+Р/С 23101488800340002557
+К/С	10101410500450000871
+БИК	424852237
 " id="shipper_requisites"></textarea>
                 </th>
             </tr>
@@ -97,7 +96,7 @@
     <label for="carrier_name">Наименование организации перевозчика</label>
                 </th>
                 <th>
-    <input class="long-input" name="carrier_name" placeholder="" type="text" id="carrier_name" style=""/>
+    <input class="long-input" name="carrier_name" placeholder="Индивидуальный предприниматель Фадеев Антон Павлович" type="text" id="carrier_name" style=""/>
                 </th>
             </tr>
             <tr>
@@ -105,7 +104,7 @@
     <label for="carrier_signatory" >Подписант со стороны переевозчика</label>
                 </th>
                 <th>
-    <input class="long-input" name="carrier_signatory" placeholder="" type="text" id="carrier_signatory" >
+    <input class="long-input" name="carrier_signatory" placeholder="Фадеев Антон Павлович" type="text" id="carrier_signatory" >
                 </th>
             </tr>
             <tr>
@@ -113,7 +112,14 @@
     <label for="carrier_requisites">Реквизиты перевозчика</label>
                 </th>
                 <th>
-    <textarea class="long-area-input" name="carrier_requisites" placeholder="" id="carrier_requisites"></textarea>
+    <textarea class="long-area-input" name="carrier_requisites" placeholder='ИП Фадеев Антон Павлович
+Юридический адрес:111344, г. Санкт-Петербург, ул.Крузенштейна, д. 18/1
+ОГРН 1157847181392
+ИНН 7840022011
+КПП 784034001
+Р/С 23101488800340002557
+К/С	10101410500450000871
+БИК	424852237' id="carrier_requisites"></textarea>
                 </th>
             </tr>
         </table>
@@ -125,7 +131,7 @@
                     <span  class="required">Номер заявки </span>
                 </th>
                 <th>
-                <input type="number" name="number" placeholder="Заявка" class="long-input" />
+                <input type="number" name="number" placeholder="80001" class="long-input" />
                 </th>
             </tr>
             <tr>
@@ -133,16 +139,19 @@
             <span class="left-column">Места погрузки - выгрузки</span>
                 </th>
                 <th>
-            <input type="text" name="loading_place"  placeholder="Место погрузки" class="long-input" style="width:90%; margin-top:1%;"/>
-            <input type="text" name="unloading_place" placeholder="Место выгрузки" class="long-input" style="width:90%; margin-top:1%;"/>
+            <input type="text" name="loading_place"  placeholder="г.Москва, ул Саватеева д.14" class="long-input" style="width:90%; margin-top:1%;"/>
+            <input type="text" name="unloading_place" placeholder="г. Санкт-Петребрург, ул Калараша д.3 " class="long-input" style="width:90%; margin-top:1%;"/>
                 </th>
             </tr>
             <tr>
                 <th>
-                    <span class="required">Описание груза</span>
+                    <span class="required" >Описание груза</span>
                 </th>
                 <th>
-                    <textarea class="long-area-input" name="cargo" placeholder="Опишите груз"></textarea>
+                    <textarea class="long-area-input"
+                              name="cargo"
+                              placeholder="10 коробок. Габариты и вес одной коробки: 300*400*200 мм., 10 кг. "
+                              style="height: 6em;"></textarea>
                 </th>
             </tr>
             <tr>
@@ -150,8 +159,8 @@
         <span class="required">Даты перевозки</span>
                 </th>
                 <th>
-            <input type="text" id="pick_up_date" name="pick_up_date" placeholder="Погрузка" style="width:45%;"/>
-            <input type="text" id="pick_down_date" name="pick_down_date"  placeholder="Выгрузка" style="width:45%;" />
+            <input type="text" id="pick_up_date" name="pick_up_date" placeholder="12.12.2021" style="width:45%;"/>
+            <input type="text" id="pick_down_date" name="pick_down_date"  placeholder="13.12.2021" style="width:45%;" />
                 </th>
             </tr>
 
@@ -161,9 +170,9 @@
         <span class="required">Стоимость перевозки</span>
                 </th>
                 <th>
-        <input type="number" name="price" placeholder="Цена" style="width:45%"/>
+        <input type="number" name="price" placeholder="9500" style="width:45%"/> рублей
         <input type="checkbox" name="tax" value="true"/>
-        <input type="hidden" name="tax" value=""/>С НДС
+        <input type="hidden" name="tax" value=""/>с НДС
                 </th>
             </tr>
             <tr>

@@ -118,7 +118,6 @@ public class MainController {
                     tax,
                     number);
 
-            CreatingFile.creating(carriage, TypeContract.CARRIAGE);
 
             return "redirect:/download";
         } else {
@@ -130,12 +129,16 @@ public class MainController {
     @GetMapping("/download")
     public String download(Model model){
         model.addAttribute("carriage",carriage);
+//        Carriage carriagePrint = (Carriage) model.addAttribute("carriage");
+
         return "download";
     }
 
     @RequestMapping("/file")
-    public void downloadPDFResource(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void downloadPDFResource(@ModelAttribute("carriage") Carriage carriage, HttpServletResponse response) throws IOException {
 
+        System.out.println(carriage);
+        CreatingFile.creating(carriage, TypeContract.CARRIAGE);
         File file = new File("src/main/resources/docs/docsGet.docx");
         if (file.exists()) {
 
