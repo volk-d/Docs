@@ -1,5 +1,6 @@
 package com.gettransport.docs.controllers;
 
+import com.gettransport.docs.dao.Date;
 import com.gettransport.docs.file.CreatingFile;
 import com.gettransport.docs.file.TypeContract;
 import com.gettransport.docs.model.Carriage;
@@ -35,9 +36,7 @@ public class MainController {
         model.addAttribute("carriage", new Carriage());
         System.out.println(session);
         System.out.println(session.getId());
-            ModelAndView mav = new ModelAndView("home");
-            String sid = session.getId();
-            mav.addObject("sid", sid);
+
         return "carriage_contract";
     }
 
@@ -83,8 +82,6 @@ public class MainController {
                                         Carriage carriage,
                                         Model model,
                                         HttpSession session) throws Exception{
-        System.out.println(session);
-        System.out.println(session.getId());
 
         if (
                 carriage.getCarrier_name() != null && carriage.getCarrier_name().length() > 0
@@ -101,8 +98,7 @@ public class MainController {
                 && carriage.getPrice() != null && carriage.getPrice().length() > 0
                 && carriage.getNumber() != null && carriage.getNumber().length() > 0
         ){
-
-            model.addAttribute(carriage);
+            Date.add(session.getId(),carriage);
             return "redirect:/download";
         } else {
             model.addAttribute("errorMessage", errorMessage);
@@ -112,24 +108,26 @@ public class MainController {
     }
 
     @GetMapping("/download")
-    public String download(ModelMap model){
-        Carriage carriage = (Carriage) model.get("carriage");
-        System.out.println(carriage);
-
-//        model.addAttribute("carriage",saveCarriage);
-
-
-        return "download";
+    public String download(ModelMap model,
+                           HttpSession session){
+        if(Date.get(session.getId()) != null) {
+            Carriage carriage = Date.get(session.getId()); //надо написать если уже такого нет
+            model.addAttribute("carriage", carriage);
+            return "download";
+        }
+        else {
+            return "redirect:/";
+        }
     }
 
     @RequestMapping("/file")
-    public void downloadPDFResource(@ModelAttribute("carriage")
-                                                Carriage carriage,
+    public void downloadPDFResource(HttpSession session,
                                     HttpServletResponse response) throws IOException {
-
+        Carriage carriage = Date.get(session.getId());
         System.out.println(carriage);
         CreatingFile.creating(carriage, TypeContract.CARRIAGE);
-        File file = new File("src/main/resources/docs/docsGet.docx");
+        String nameFileOut = "src/main/resources/docs/docs_" + carriage.getNumber() + ".docx";
+        File file = new File(nameFileOut);
         if (file.exists()) {
 
             String mimeType = URLConnection.guessContentTypeFromName(file.getName());

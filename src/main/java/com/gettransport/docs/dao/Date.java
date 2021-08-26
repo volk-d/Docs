@@ -13,6 +13,7 @@ public class Date  {
 
 
     public static void add(String id,Carriage carriage){
+        new Cleaner(id);
         mapCarriages.put(id,carriage);
     }
     public static Carriage get(String id) {

@@ -1,5 +1,6 @@
 package com.gettransport.docs.file;
 
+import com.gettransport.docs.model.Carriage;
 import com.gettransport.docs.model.Data;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
@@ -47,8 +48,10 @@ public class CreatingFile {
         findAndWrite(data.getMap(), fileLicense, fileFinish);
     }
     private static void carriageCreating(Data data){
+        Carriage carriage = (Carriage) data;
         if(data.isTax()) fileCarriage = new File("src/main/resources/docs/start/Carriage_contract/Carriage_contract_Enterprise_start.docx");
         else fileCarriage = new File("src/main/resources/docs/start/Carriage_contract/Carriage_contract_Business_start.docx");
+        File fileFinish =  new File("src/main/resources/docs/docs_" + carriage.getNumber() + ".docx");
         findAndWrite(data.getMap(), fileCarriage, fileFinish);
     }
 
@@ -56,7 +59,7 @@ public class CreatingFile {
 
 
         try(FileInputStream fileInputStream = new FileInputStream (fileStart.getCanonicalFile());
-            FileOutputStream fileOutputStream = new FileOutputStream("src/main/resources/docs/docsGet.docx")){
+            FileOutputStream fileOutputStream = new FileOutputStream(fileFinish)){
             XWPFDocument doc = new XWPFDocument(fileInputStream);
             for(Map.Entry<String, String> entry: map.entrySet()) {
                 for (XWPFParagraph p : doc.getParagraphs()) {
