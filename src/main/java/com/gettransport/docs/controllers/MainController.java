@@ -7,25 +7,37 @@ import com.gettransport.docs.model.Signer;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.*;
 import java.net.URLConnection;
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 public class MainController {
 
-    private Carriage saveCarriage;
+
+
+    private Carriage savCarriage;
 
     @Value("${error.message}")
     private String errorMessage;
 
     @GetMapping("/")
-    public String index(Model model) {
+    public String index(Model model, HttpSession session) {
         model.addAttribute("carriage", new Carriage());
+        System.out.println(session);
+        System.out.println(session.getId());
+            ModelAndView mav = new ModelAndView("home");
+            String sid = session.getId();
+            mav.addObject("sid", sid);
         return "carriage_contract";
     }
 
@@ -67,8 +79,12 @@ public class MainController {
 //    }
 
     @PostMapping("/carriage")
-    public String carriage (@ModelAttribute("carriage") Carriage carriage,Model model) throws Exception{
-
+    public String carriage (@ModelAttribute("carriage")
+                                        Carriage carriage,
+                                        Model model,
+                                        HttpSession session) throws Exception{
+        System.out.println(session);
+        System.out.println(session.getId());
 
         if (
                 carriage.getCarrier_name() != null && carriage.getCarrier_name().length() > 0
@@ -85,24 +101,31 @@ public class MainController {
                 && carriage.getPrice() != null && carriage.getPrice().length() > 0
                 && carriage.getNumber() != null && carriage.getNumber().length() > 0
         ){
-            saveCarriage = carriage;
+
+            model.addAttribute(carriage);
             return "redirect:/download";
         } else {
             model.addAttribute("errorMessage", errorMessage);
             return "carriage_contract";
         }
+
     }
 
     @GetMapping("/download")
-    public String downloa( Model model){
-        model.addAttribute("carriage",saveCarriage);
+    public String download(ModelMap model){
+        Carriage carriage = (Carriage) model.get("carriage");
+        System.out.println(carriage);
+
+//        model.addAttribute("carriage",saveCarriage);
 
 
         return "download";
     }
 
     @RequestMapping("/file")
-    public void downloadPDFResource(@ModelAttribute("carriage") Carriage carriage, HttpServletResponse response) throws IOException {
+    public void downloadPDFResource(@ModelAttribute("carriage")
+                                                Carriage carriage,
+                                    HttpServletResponse response) throws IOException {
 
         System.out.println(carriage);
         CreatingFile.creating(carriage, TypeContract.CARRIAGE);
