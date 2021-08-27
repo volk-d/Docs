@@ -56,7 +56,7 @@ public class MainController {
                                     HttpSession session) throws Exception{
         System.out.println(carriage);
         if (
-                carriage.getCarrier_name() != null && carriage.getCarrier_name().length() > 0
+                           carriage.getCarrier_name() != null && carriage.getCarrier_name().length() > 0
                         && carriage.getCarrier_signatory() != null && carriage.getCarrier_signatory().length() > 0
                         && carriage.getCarrier_requisites() != null && carriage.getCarrier_requisites().length() > 0
                         && carriage.getNumber() != null && carriage.getNumber().length() > 0
@@ -64,6 +64,7 @@ public class MainController {
             Date.add(session.getId(),carriage);
             return "redirect:/agency_download";
         } else {
+            System.out.println(carriage);
             model.addAttribute("errorMessage", errorMessage);
             return "forms/agency_contract";
         }
@@ -72,7 +73,7 @@ public class MainController {
     public String agency_download(ModelMap model,
                                     HttpSession session){
         if(Date.get(session.getId()) != null) {
-            Carriage carriage = Date.get(session.getId()); //надо написать если уже такого нет
+            Carriage carriage = Date.get(session.getId());
             model.addAttribute("carriage", carriage);
             return "downloads/agency_download";
         }
@@ -93,8 +94,8 @@ public class MainController {
         return "forms/license_contract";
     }
 
-    @PostMapping("/carrier")
-    public String licensed(@ModelAttribute("carriage")
+    @PostMapping("/license")
+    public String license(@ModelAttribute("carriage")
                                         Carriage carriage,
                                         Model model,
                                         HttpSession session) throws Exception{
@@ -105,10 +106,10 @@ public class MainController {
                         && carriage.getNumber() != null && carriage.getNumber().length() > 0
         ){
             Date.add(session.getId(),carriage);
-            return "redirect:/downloads/license_download";
+            return "redirect:/license_download";
         } else {
             model.addAttribute("errorMessage", errorMessage);
-            return "forms/license_agreement";
+            return "forms/license_contract";
         }
     }
 
@@ -121,7 +122,7 @@ public class MainController {
             return "downloads/license_download";
         }
         else {
-            return "redirect:/carriage";
+            return "redirect:/license_contract";
         }
     }
 
