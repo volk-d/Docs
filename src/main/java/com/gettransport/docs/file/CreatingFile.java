@@ -20,22 +20,22 @@ public class CreatingFile {
 
     public static void creating(Carriage carriage,TypeContract type){
         switch (type) {
-            case AGENCY: agencyCreating(carriage);
-            case LICENSE: licenseCreating(carriage);
-            case CARRIAGE: carriageCreating(carriage);
+            case AGENCY: agencyCreating(carriage); break;
+            case LICENSE: licenseCreating(carriage); break;
+            case CARRIAGE: carriageCreating(carriage); break;
         }
 
     }
     private static void agencyCreating(Carriage carriage){
         File fileFinish = new File("src/main/resources/docs/Agency_contract_" + carriage.getNumber() + ".docx");
-        if(carriage.isTax()){ fileAgency = new File("docs/start/Agency_contract/Agency_contract_Enterprise_start.docx");}
-        else { fileAgency = new File("src/main/resources/docs/start/Agency_contract/Agency_contract_Business_start.docx");}
+        if(carriage.isTax()) fileAgency = new File("src/main/resources/docs/start/Agency_contract/Agency_contract_Enterprise_start.docx");
+        else  fileAgency = new File("src/main/resources/docs/start/Agency_contract/Agency_contract_Business_start.docx");
         findAndWrite(carriage.getMapAgency(), fileAgency, fileFinish);
     }
     
     private static void licenseCreating(Carriage carriage){
-        File fileFinish = new File("src/main/resources/docs/License_contract" + carriage.getNumber() + ".docx");
-        fileLicense = new File ("src/main/java/com/gettransport/docs/file/CreatingFile.java");
+        File fileFinish = new File("src/main/resources/docs/License_contract_" + carriage.getNumber() + ".docx");
+        fileLicense = new File ("src/main/resources/docs/start/License_contract_start.docx");
         findAndWrite(carriage.getMapLicense(), fileLicense, fileFinish);
     }
     private static void carriageCreating(Carriage carriage){

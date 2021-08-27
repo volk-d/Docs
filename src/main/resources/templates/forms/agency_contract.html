@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<header th:insert = "blocks/headerGT :: header"></header>
+<body>
+
+<!--    <form method="POST" th:action="@{/test}" th:object="${post}">-->
+<!--        <label for="shipper_name">Shipper_name</label>-->
+<!--        <input type="text" th:field="*{shipper_name}" id="shipper_name"/>-->
+
+<!--        <input type="submit" value="ADD"/>-->
+<!--    </form>-->
+
+<!--Forms shipper-->
+
+<div id="transportation_request_form" class="container" style="margin-bottom: 2%">
+    <header th:insert = "blocks/level :: level"></header>
+    <style>
+    .left-column{
+        width:37%;
+    }
+    .long-input{
+    width: 90%;
+    text-align:left;
+
+    }
+    .long-area-input{
+        width: 90%;
+        height: 12em;
+    text-align:left;
+    }
+       table {
+    border: 0px solid maroon;
+   }
+   button{
+   margin-top:1%;
+   width:90%;
+   background: #38c829;
+   border-color: #38c829;
+   color: #fff;
+   background-color: #38c829;
+   height:3em;
+   }
+
+
+</style>
+
+    <H3 style="margin-left:35%"> Агентский договор </H3>
+    <div th:if="${errorMessage}" th:utext="${errorMessage}"
+         style="color:red; font-weight:bold; font-size:23px; margin-top:1%; margin-left:34%;">
+        ...
+    </div>
+    <form th:action=@{/carriage} th:object="${carriage}" method="POST" >
+        <div style="width: 93%">
+            <h4 class="details">Перевозчик</h4>
+            <table border="1" width="100%" cellpadding="5" >
+                <tr>
+                    <th class="left-column">
+                        <span  class="required">Номер заявки </span>
+                    </th>
+                    <th>
+                        <input type="number" th:field="*{number}"  name="number" placeholder="80001" class="long-input" />
+                    </th>
+                </tr>
+                <tr>
+                    <th class="left-column">
+                        <label for="carrier_name">Наименование организации перевозчика</label>
+                    </th>
+                    <th>
+                        <input class="long-input" th:field="*{carrier_name}"  name="carrier_name" placeholder="Индивидуальный предприниматель Фадеев Антон Павлович" type="text" id="carrier_name" style=""/>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <label for="carrier_signatory" >Подписант со стороны переевозчика</label>
+                    </th>
+                    <th>
+                        <input class="long-input" th:field="*{carrier_signatory}"  name="carrier_signatory" placeholder="Фадеев Антон Павлович" type="text" id="carrier_signatory" >
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <label for="carrier_requisites">Реквизиты перевозчика</label>
+                    </th>
+                    <th>
+    <textarea class="long-area-input" th:field="*{carrier_requisites}"  name="carrier_requisites" placeholder='ИП Фадеев Антон Павлович
+Юридический адрес:111344, г. Санкт-Петербург, ул.Крузенштейна, д. 18/1
+ОГРН 1157847181392
+ИНН 7840022011
+КПП 784034001
+Р/С 23101488800340002557
+К/С	10101410500450000871
+БИК	424852237' id="carrier_requisites"></textarea>
+                    </th>
+                </tr>
+            </table>
+            <table border="1" width="100%" cellpadding="5" >
+                <tr>
+
+                <tr>
+                    <th class="left-column">
+                    </th>
+                    <th>
+                        <input type="checkbox" th:field="*{tax}"  name="tax" style="margin-left:1%" /> Договор с НДС компанией
+                        <input type="hidden" th:field="*{tax}"  name="tax" value=""/>
+                    </th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th>
+                        <button type="submit" value="Договор перевозки"
+                        >Сформировать договор</button>
+                    </th>
+                </tr>
+            </table>
+            <br>
+
+
+        </div>
+    </form>
+    <br>
+
+</div>
+<footer th:insert = "blocks/footerGT :: footer"></footer>
+
+<!--don't work code
+<div id="Insert"></div>
+
+<script >
+      function isEmail() {
+         let div = document.createElement('div');
+         div.className = "Insert";
+         div.innerHTML = "<a>Рад вас видеть</a>";
+         document.body.append(div);
+      }
+</script>
+
+-->
+
+
+
+
+
+
+</body>
+</html>

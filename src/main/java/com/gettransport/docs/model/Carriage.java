@@ -26,16 +26,14 @@ public class Carriage implements Data {
     private String price;
     private boolean tax;
     private String number;
-    private Carriage monitor1 = new Carriage();
-    private Carriage monitor2 = new Carriage();
-    private Carriage monitor3 = new Carriage();
+
 
     public Carriage() {}
 
     @Override
     public Map<String, String> getMapCarriage() {
 
-        synchronized (monitor1){
+
 
         Map<String,String> variable = new HashMap<>();
         DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
@@ -59,12 +57,12 @@ public class Carriage implements Data {
         variable.put("tdata", dateFormat.format(date));
 
         return variable;
-        }
+
     }
 
     @Override
     public Map<String, String> getMapAgency() {
-        synchronized (monitor2) {
+
             Map<String, String> variable = new HashMap<>();
             DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
             Date date = new Date();
@@ -74,13 +72,12 @@ public class Carriage implements Data {
             variable.put("tdata", dateFormat.format(date));
             variable.put("number", number);
             return variable;
-        }
     }
 
 
     @Override
     public Map<String, String> getMapLicense() {
-        synchronized (monitor3) {
+
             Map<String, String> variable = new HashMap<>();
             DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
             Date date = new Date();
@@ -90,7 +87,7 @@ public class Carriage implements Data {
             variable.put("tdata", dateFormat.format(date));
             variable.put("number", number);
             return variable;
-        }
+
     }
 
 

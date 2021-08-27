@@ -24,58 +24,119 @@ import java.util.Map;
 @Controller
 public class MainController {
 
-
-
     private Carriage savCarriage;
 
     @Value("${error.message}")
     private String errorMessage;
 
     @GetMapping("/")
-    public String index(Model model, HttpSession session) {
-        model.addAttribute("carriage", new Carriage());
-        System.out.println(session);
-        System.out.println(session.getId());
-
-        return "carriage_contract";
+    public String index(){
+        return "redirect:/carriage";
     }
 
-//    @GetMapping("/agency_contract")
-//    public String agency_contract(Model model) {
-//        model.addAttribute("post", new Signer());
-//        return "agency_contract";
-//    }
-//
-//    @GetMapping("/license_agreement")
-//    public String license_agreement(Model model) {
-//
-//        return "license_agreement";
-//    }
-//
-//    @GetMapping("/carriage_contract")
-//    public String carriage_contract(Model model) {
-//
-//        return "carriage_contract";
-//    }
 
-//    @PostMapping("/shipper")
-//    public String agent(@RequestParam("shipper_name") String shipper_name,
-//                        @RequestParam("shipper_signatory") String shipper_signatory,
-//                        @RequestParam("shipper_requisites") String shipper_requisites){
-//        System.out.println(shipper_name);
-//        System.out.println(shipper_signatory);
-//        System.out.println(shipper_requisites);
-//        return "agency_contract";
-//    }
-//    @PostMapping("/carrier")
-//    public String licensed( @RequestParam("carrier_name") String carrier_name,
-//                            @RequestParam("carrier_signatory") String carrier_signatory,
-//                            @RequestParam("carrier_requisites") String carrier_requisites){
-//        System.out.println(carrier_name);
-//        System.out.println(carrier_signatory);
-//        System.out.println(carrier_requisites);
-//        return "license_agreement";
-//    }
+
+    //Агентский договор
+
+    @GetMapping("/agency_contract")
+    public String agency_contract(Model model, HttpSession session) {
+        Carriage carriage = Date.get(session.getId());
+        if (carriage != null){
+            model.addAttribute("carriage", carriage);
+        } else {
+            model.addAttribute("carriage", new Carriage());
+        }
+        return "forms/agency_contract";
+    }
+
+    @PostMapping("/agency")
+    public String agent(@ModelAttribute("carriage")
+                                    Carriage carriage,
+                                    Model model,
+                                    HttpSession session) throws Exception{
+        System.out.println(carriage);
+        if (
+                carriage.getCarrier_name() != null && carriage.getCarrier_name().length() > 0
+                        && carriage.getCarrier_signatory() != null && carriage.getCarrier_signatory().length() > 0
+                        && carriage.getCarrier_requisites() != null && carriage.getCarrier_requisites().length() > 0
+                        && carriage.getNumber() != null && carriage.getNumber().length() > 0
+        ){
+            Date.add(session.getId(),carriage);
+            return "redirect:/agency_download";
+        } else {
+            model.addAttribute("errorMessage", errorMessage);
+            return "forms/agency_contract";
+        }
+    }
+    @GetMapping("/agency_download")
+    public String agency_download(ModelMap model,
+                                    HttpSession session){
+        if(Date.get(session.getId()) != null) {
+            Carriage carriage = Date.get(session.getId()); //надо написать если уже такого нет
+            model.addAttribute("carriage", carriage);
+            return "downloads/agency_download";
+        }
+        else {
+            return "redirect:/agency";
+        }
+    }
+
+    //Лицензионный договор
+    @GetMapping("/license_contract")
+    public String license_contract(Model model, HttpSession session) {
+        Carriage carriage = Date.get(session.getId());
+        if (carriage != null){
+            model.addAttribute("carriage", carriage);
+        } else {
+            model.addAttribute("carriage", new Carriage());
+        }
+        return "forms/license_contract";
+    }
+
+    @PostMapping("/carrier")
+    public String licensed(@ModelAttribute("carriage")
+                                        Carriage carriage,
+                                        Model model,
+                                        HttpSession session) throws Exception{
+        if (
+                           carriage.getShipper_name() != null && carriage.getShipper_name().length() > 0
+                        && carriage.getShipper_signatory() != null && carriage.getShipper_signatory().length() > 0
+                        && carriage.getShipper_requisites() != null && carriage.getShipper_requisites().length() > 0
+                        && carriage.getNumber() != null && carriage.getNumber().length() > 0
+        ){
+            Date.add(session.getId(),carriage);
+            return "redirect:/downloads/license_download";
+        } else {
+            model.addAttribute("errorMessage", errorMessage);
+            return "forms/license_agreement";
+        }
+    }
+
+    @GetMapping("/license_download")
+    public String license_download(ModelMap model,
+                                   HttpSession session){
+        if(Date.get(session.getId()) != null) {
+            Carriage carriage = Date.get(session.getId()); //надо написать если уже такого нет
+            model.addAttribute("carriage", carriage);
+            return "downloads/license_download";
+        }
+        else {
+            return "redirect:/carriage";
+        }
+    }
+
+    //Договор перевозки
+
+    @GetMapping("/carriage")
+    public String index(Model model, HttpSession session) {
+        Carriage carriage = Date.get(session.getId());
+        if (carriage != null){
+            model.addAttribute("carriage", carriage);
+        } else {
+            model.addAttribute("carriage", new Carriage());
+        }
+        return "forms/carriage_contract";
+    }
 
     @PostMapping("/carriage")
     public String carriage (@ModelAttribute("carriage")
@@ -84,9 +145,9 @@ public class MainController {
                                         HttpSession session) throws Exception{
 
         if (
-                carriage.getCarrier_name() != null && carriage.getCarrier_name().length() > 0
+                   carriage.getCarrier_name() != null && carriage.getCarrier_name().length() > 0
                 && carriage.getCarrier_signatory() != null && carriage.getCarrier_signatory().length() > 0
-                && carriage.getCarrier_requisites() != null && carriage.getShipper_requisites().length() > 0
+                && carriage.getCarrier_requisites() != null && carriage.getCarrier_requisites().length() > 0
                 && carriage.getShipper_name() != null && carriage.getShipper_name().length() > 0
                 && carriage.getShipper_signatory() != null && carriage.getCarrier_signatory().length() > 0
                 && carriage.getShipper_requisites() != null && carriage.getShipper_requisites().length() > 0
@@ -99,26 +160,28 @@ public class MainController {
                 && carriage.getNumber() != null && carriage.getNumber().length() > 0
         ){
             Date.add(session.getId(),carriage);
-            return "redirect:/download";
+            return "redirect:/carriage_download";
         } else {
             model.addAttribute("errorMessage", errorMessage);
-            return "carriage_contract";
+            return "forms/carriage_contract";
         }
 
     }
 
-    @GetMapping("/download")
-    public String download(ModelMap model,
+    @GetMapping("/carriage_download")
+    public String carriage_download(ModelMap model,
                            HttpSession session){
         if(Date.get(session.getId()) != null) {
             Carriage carriage = Date.get(session.getId()); //надо написать если уже такого нет
             model.addAttribute("carriage", carriage);
-            return "download";
+            return "downloads/carriage_download";
         }
         else {
-            return "redirect:/";
+            return "redirect:/carrier";
         }
     }
+
+    //Скачка файлв
 
     @RequestMapping("/carriage_file")
     public void downloadContractOfCarriage(HttpSession session,
@@ -148,8 +211,8 @@ public class MainController {
                                     HttpServletResponse response) throws IOException {
         Carriage carriage = Date.get(session.getId());
         System.out.println(carriage);
-        CreatingFile.creating(carriage, TypeContract.CARRIAGE);
-        String nameFileOut = "src/main/resources/docs/Contract_of_carriage_" + carriage.getNumber() + ".docx";
+        CreatingFile.creating(carriage, TypeContract.AGENCY);
+        String nameFileOut = "src/main/resources/docs/Agency_contract_" + carriage.getNumber() + ".docx";
         File file = new File(nameFileOut);
         if (file.exists()) {
 
@@ -170,9 +233,8 @@ public class MainController {
     public void downloadContractLicense(HttpSession session,
                                        HttpServletResponse response) throws IOException {
         Carriage carriage = Date.get(session.getId());
-        System.out.println(carriage);
-        CreatingFile.creating(carriage, TypeContract.CARRIAGE);
-        String nameFileOut = "src/main/resources/docs/Contract_of_carriage_" + carriage.getNumber() + ".docx";
+        CreatingFile.creating(carriage, TypeContract.LICENSE);
+        String nameFileOut = "src/main/resources/docs/License_contract_" + carriage.getNumber() + ".docx";
         File file = new File(nameFileOut);
         if (file.exists()) {
 

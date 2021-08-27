@@ -49,7 +49,7 @@
          style="color:red; font-weight:bold; font-size:23px; margin-top:1%; margin-left:34%;">
         ...
     </div>
-<form th:action=@{/carriage} th:object="${carriage}" method="POST">
+<form th:action=@{/carriage} th:object="${carriage}" method="POST" >
     <div style="width: 93%">
     <h4 class="details">Грузоотправитель</h4>
 
@@ -59,7 +59,7 @@
     <label >Наименование организации грузоотправителя</label>
                 </th>
                 <th>
-    <input type="text" th:field="*{shipper_name}"  placeholder='Общество с ограниченной ответственностью "Сапфит"'  class="long-input" />
+    <input type="text" th:field="*{shipper_name}"  placeholder='Общество с ограниченной ответственностью "Сапфит"'  class="long-input"  />
                 </th>
             </tr>
 
@@ -72,10 +72,10 @@
         </tr>
             <tr>
                 <th>
-    <label class="long-input" th:field="*{shipper_requisites}"  for="shipper_requisites">Реквизиты грузотправителя</label>
+    <label class="long-input"   for="shipper_requisites">Реквизиты грузотправителя</label>
                 </th>
                 <th>
-    <textarea class="long-area-input" name="shipper_requisites" placeholder="ООО «Сапфит»
+    <textarea class="long-area-input" name="shipper_requisites" th:field="*{shipper_requisites}" placeholder="ООО «Сапфит»
 Юридический адрес:112345, г.Москва, ул Саватеева 14, оф.30
 ОГРН 1024735852200
 ИНН 7204000001
