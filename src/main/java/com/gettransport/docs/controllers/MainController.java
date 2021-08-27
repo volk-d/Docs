@@ -120,13 +120,13 @@ public class MainController {
         }
     }
 
-    @RequestMapping("/file")
-    public void downloadPDFResource(HttpSession session,
+    @RequestMapping("/carriage_file")
+    public void downloadContractOfCarriage(HttpSession session,
                                     HttpServletResponse response) throws IOException {
         Carriage carriage = Date.get(session.getId());
         System.out.println(carriage);
         CreatingFile.creating(carriage, TypeContract.CARRIAGE);
-        String nameFileOut = "src/main/resources/docs/docs_" + carriage.getNumber() + ".docx";
+        String nameFileOut = "src/main/resources/docs/Contract_of_carriage_" + carriage.getNumber() + ".docx";
         File file = new File(nameFileOut);
         if (file.exists()) {
 
@@ -141,7 +141,52 @@ public class MainController {
             InputStream inputStream = new BufferedInputStream(new FileInputStream(file));
             FileCopyUtils.copy(inputStream, response.getOutputStream());
             file.delete();
+        }
+    }
+    @RequestMapping("/agent_file")
+    public void downloadContractAgency(HttpSession session,
+                                    HttpServletResponse response) throws IOException {
+        Carriage carriage = Date.get(session.getId());
+        System.out.println(carriage);
+        CreatingFile.creating(carriage, TypeContract.CARRIAGE);
+        String nameFileOut = "src/main/resources/docs/Contract_of_carriage_" + carriage.getNumber() + ".docx";
+        File file = new File(nameFileOut);
+        if (file.exists()) {
 
+            String mimeType = URLConnection.guessContentTypeFromName(file.getName());
+            if (mimeType == null) {
+                mimeType = "application/octet-stream";
+            }
+
+            response.setContentType(mimeType);
+            response.setHeader("Content-Disposition", String.format("inline; filename=\"" + file.getName() + "\""));
+            response.setContentLength((int) file.length());
+            InputStream inputStream = new BufferedInputStream(new FileInputStream(file));
+            FileCopyUtils.copy(inputStream, response.getOutputStream());
+            file.delete();
+        }
+    }
+    @RequestMapping("/license_file")
+    public void downloadContractLicense(HttpSession session,
+                                       HttpServletResponse response) throws IOException {
+        Carriage carriage = Date.get(session.getId());
+        System.out.println(carriage);
+        CreatingFile.creating(carriage, TypeContract.CARRIAGE);
+        String nameFileOut = "src/main/resources/docs/Contract_of_carriage_" + carriage.getNumber() + ".docx";
+        File file = new File(nameFileOut);
+        if (file.exists()) {
+
+            String mimeType = URLConnection.guessContentTypeFromName(file.getName());
+            if (mimeType == null) {
+                mimeType = "application/octet-stream";
+            }
+
+            response.setContentType(mimeType);
+            response.setHeader("Content-Disposition", String.format("inline; filename=\"" + file.getName() + "\""));
+            response.setContentLength((int) file.length());
+            InputStream inputStream = new BufferedInputStream(new FileInputStream(file));
+            FileCopyUtils.copy(inputStream, response.getOutputStream());
+            file.delete();
         }
     }
 }

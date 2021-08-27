@@ -1,7 +1,7 @@
 package com.gettransport.docs.file;
 
 import com.gettransport.docs.model.Carriage;
-import com.gettransport.docs.model.Data;
+
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
@@ -14,45 +14,35 @@ import java.lang.String;
 public class CreatingFile {
 
     private static File fileAgency;
-    private static File fileLicense = new File("docs.docx"); ;
-    private static File fileCarriage = new File("docs.docx"); ;
-    private static File fileFinish;
+    private static File fileLicense;
+    private static File fileCarriage;
 
-    public static void creating(Data data,TypeContract type){
+
+    public static void creating(Carriage carriage,TypeContract type){
         switch (type) {
-            case AGENCY: agencyCreating(data);
-            case LICENSE: licenseCreating(data);
-            case CARRIAGE: carriageCreating(data);
+            case AGENCY: agencyCreating(carriage);
+            case LICENSE: licenseCreating(carriage);
+            case CARRIAGE: carriageCreating(carriage);
         }
 
     }
-    private static void agencyCreating(Data data){
-
-        if(data.isTax()){ fileAgency = new File("docs/start/Agency_contract/Agency_contract_Enterprise_start.docx");
-                          fileFinish = new File("docs/finish/Agency_contract/Agency_contract_Enterprise.docx");
-        }
-        else{ fileAgency = new File("docs/start/Agency_contract/Agency_contract_Business_start.docx");
-              fileFinish = new File("docs/finish/Agency_contract/Agency_contract_Business.docx");
-        }
-
-        findAndWrite(data.getMap(), fileAgency, fileFinish);
-
+    private static void agencyCreating(Carriage carriage){
+        File fileFinish = new File("src/main/resources/docs/Agency_contract_" + carriage.getNumber() + ".docx");
+        if(carriage.isTax()){ fileAgency = new File("docs/start/Agency_contract/Agency_contract_Enterprise_start.docx");}
+        else { fileAgency = new File("src/main/resources/docs/start/Agency_contract/Agency_contract_Business_start.docx");}
+        findAndWrite(carriage.getMapAgency(), fileAgency, fileFinish);
     }
-    private static void licenseCreating(Data data){
-        fileFinish = new File("C:\\Users\\Huawei\\project\\gtt\\docs\\src\\main\\resources\\docs\\Carriage_contract_Business.docx");
-        try {
-            fileFinish.createNewFile();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        findAndWrite(data.getMap(), fileLicense, fileFinish);
+    
+    private static void licenseCreating(Carriage carriage){
+        File fileFinish = new File("src/main/resources/docs/License_contract" + carriage.getNumber() + ".docx");
+        fileLicense = new File ("src/main/java/com/gettransport/docs/file/CreatingFile.java");
+        findAndWrite(carriage.getMapLicense(), fileLicense, fileFinish);
     }
-    private static void carriageCreating(Data data){
-        Carriage carriage = (Carriage) data;
-        if(data.isTax()) fileCarriage = new File("src/main/resources/docs/start/Carriage_contract/Carriage_contract_Enterprise_start.docx");
+    private static void carriageCreating(Carriage carriage){
+        File fileFinish =  new File("src/main/resources/docs/Contract_of_carriage_" + carriage.getNumber() + ".docx");
+        if(carriage.isTax()) fileCarriage = new File("src/main/resources/docs/start/Carriage_contract/Carriage_contract_Enterprise_start.docx");
         else fileCarriage = new File("src/main/resources/docs/start/Carriage_contract/Carriage_contract_Business_start.docx");
-        File fileFinish =  new File("src/main/resources/docs/docs_" + carriage.getNumber() + ".docx");
-        findAndWrite(data.getMap(), fileCarriage, fileFinish);
+        findAndWrite(carriage.getMapCarriage(), fileCarriage, fileFinish);
     }
 
     private static void findAndWrite (Map<String,String> map, File fileStart, File fileFinish){
