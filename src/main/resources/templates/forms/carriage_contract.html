@@ -145,7 +145,7 @@
             </tr>
             <tr>
                 <th>
-                    <span class="required" >Описание груза</span>
+                    <span  >Описание груза</span>
                 </th>
                 <th>
                     <textarea class="long-area-input"
@@ -157,7 +157,7 @@
             </tr>
             <tr>
                 <th>
-        <span class="required">Даты перевозки</span>
+        <span >Даты перевозки</span>
                 </th>
                 <th>
             <input type="text" th:field="*{pick_up_date}"  id="pick_up_date" name="pick_up_date" placeholder="12.12.2021" style="width:45%;"/>
@@ -168,12 +168,12 @@
 
             <tr>
                 <th class="left-column">
-        <span class="required">Стоимость перевозки</span>
+        <span >Стоимость перевозки</span>
                 </th>
                 <th>
         <input type="number" th:field="*{price}"  name="price" placeholder="9500" style="width:45%"/> рублей
         <input type="checkbox" th:field="*{tax}"  name="tax" /> с НДС
-        <input type="hidden" th:field="*{tax}"  name="tax" value=""/>
+
                 </th>
             </tr>
             <tr>
