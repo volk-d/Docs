@@ -4,28 +4,36 @@
 <body>
 <style>
     table {
+
     margin-left:20%;
+    word-wrap:break-word;
+    }
+    p {
+    font-weight: normal;
+    }
+    th{
+    margin:49%;
     }
 </style>
 
 
 <div id="transportation_request_form" class="container"  style="margin-bottom: 2%">
-    <a href="carriage">Изменить договор</a>
+
     <div th:each="carriage:${carriage}">
-        <table>
 
-            <th>
-                <span  class="required">Номер заявки </span>
-            </th>
-            <th>
-                <p th:utext="${carriage.number}">...</p>
-            </th>
+        <table>
+            <tr>
+                <th>
+                    <span  style="float:left;margin:0 10px;">Номер заявки </span>
+                    <p th:utext="${carriage.number}">...</p>
+                </th>
+                <th>
+                </th>
             </tr>
-        </table>
-        <table>
-
-            <th>
-                <span class="required">Грузоотправитель</span>
+            <tr>
+                <th >
+                <h3 style="    align:top;">Грузоотправитель</h3>
+                <br>
                 <label>Наименование организации грузоотправителя</label>
                 <p th:utext="${carriage.shipper_name}">...</p>
                 <label>Подписант со стороны грузоотправителя</label>
@@ -35,7 +43,8 @@
                 <p th:utext="${carriage.shipper_requisites}">...</p>
             </th>
             <th>
-                <span class="required">Перевозчик</span>
+                <h3 >Перевозчик</h3>
+                <br>
                 <label>Наименование организации перевозчика</label>
                 <p th:utext="${carriage.carrier_name}">...</p>
                 <label >Подписант со стороны переевозчика</label>
@@ -48,41 +57,42 @@
         <table >
 
             <th>
-                <span class="required">Детали перевозки</span>
+                <h3 >Детали перевозки</h3>
             </th>
             </tr>
         </table>
         <table >
 
 
-            <th style="margin-top:0%">
+            <th style="width:49%">
 
-                <span class="required">Места погрузки - выгрузки</span>
+                <span >Места погрузки - выгрузки</span>
                 <p th:utext="${carriage.loading_place} ">...</p>
                 <p th:utext="${carriage.unloading_place}">...</p>
 
-                <span class="required">Описание груза</span>
+                <span >Описание груза</span>
                 <p th:utext="${carriage.cargo}">...</p>
             </th>
             <th>
 
-                <span class="required">Даты перевозки</span>
-
-                <p th:utext="${carriage.pick_up_date}">...</p>
+                <span >Даты перевозки</span>
+                <label style="display: inline">
+                <p th:utext="${carriage.pick_up_date}" style="float:left;margin:0 10px;">...</p>
                 <p th:utext="${carriage.pick_down_date}">...</p>
-
-                <span class="required">Стоимость перевозки</span>
-                <p th:utext="${carriage.price}">...</p>
+                </label>
+                <span >Стоимость перевозки</span>
+                <p th:utext="${carriage.price}" style="float:left;margin:0 10px;">...</p>
                 <p th:utext="${carriage.tax}">...</p>
             </th>
+            </tr>
+            <tr>
+                <th>
+                    <a href="carriage" style="float:left;margin:0 10px;">Изменить договор</a>
+                    <a href="carriage_file" > Скачать договор перевозки </a>
+                </th>
+                <th>
 
-            <th>
-                <a href="carriage_file" > Скачать договор перевозки </a>
-            </th>
-            <th>
-                <a href="agent_file">Скачать агентский договор </a>
-                <a href="license_file">Скачать лицензионный договор </a>
-            </th>
+                </th>
             </tr>
         </table>
     </div>
