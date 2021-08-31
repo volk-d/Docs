@@ -6,13 +6,15 @@
     table {
 
     margin-left:20%;
+        margin-top: 2%;
     word-wrap:break-word;
     }
     p {
     font-weight: normal;
     }
     th{
-    margin:49%;
+        width: 50%;
+        vertical-align: top;
     }
 </style>
 
@@ -20,19 +22,18 @@
 <div id="transportation_request_form" class="container"  style="margin-bottom: 2%">
 
     <div th:each="carriage:${carriage}">
-
         <table>
             <tr>
-                <th>
-                    <span  style="float:left;margin:0 10px;">Номер заявки </span>
-                    <p th:utext="${carriage.number}">...</p>
+                <th  style="text-align:right; margin-right: 0%">
+                    <h3>Договор перевозки №</h3>
                 </th>
-                <th>
+                <th  style="text-align:left;" >
+                    <h3 th:utext="${carriage.number}">...</h3>
                 </th>
             </tr>
             <tr>
-                <th >
-                <h3 style="    align:top;">Грузоотправитель</h3>
+                <th style="width: 10%">
+                <h4 style="align:top;">Грузоотправитель</h4>
                 <br>
                 <label>Наименование организации грузоотправителя</label>
                 <p th:utext="${carriage.shipper_name}">...</p>
@@ -42,8 +43,8 @@
                 <label>Реквизиты грузотправителя</label>
                 <p th:utext="${carriage.shipper_requisites}">...</p>
             </th>
-            <th>
-                <h3 >Перевозчик</h3>
+            <th style="align:top;">
+                <h4 style="align:top;">Перевозчик</h4>
                 <br>
                 <label>Наименование организации перевозчика</label>
                 <p th:utext="${carriage.carrier_name}">...</p>
@@ -53,45 +54,43 @@
                 <p th:utext="${carriage.carrier_requisites}">...</p>
             </th>
             </tr>
-        </table>
-        <table >
 
+
+            <th style="text-align:right;">
+                <h4 >Детали перевозки</h4>
+            </th>
             <th>
-                <h3 >Детали перевозки</h3>
             </th>
             </tr>
-        </table>
-        <table >
-
-
-            <th style="width:49%">
-
-                <span >Места погрузки - выгрузки</span>
+            <br>
+            <tr>
+            <th >
+                <span >Места погрузки</span>
                 <p th:utext="${carriage.loading_place} ">...</p>
+                <span >Места выгрузки</span>
                 <p th:utext="${carriage.unloading_place}">...</p>
 
                 <span >Описание груза</span>
                 <p th:utext="${carriage.cargo}">...</p>
             </th>
             <th>
-
-                <span >Даты перевозки</span>
-                <label style="display: inline">
-                <p th:utext="${carriage.pick_up_date}" style="float:left;margin:0 10px;">...</p>
+                <span >Даты погрузки</span>
+                <p th:utext="${carriage.pick_up_date}">...</p>
+                <span >Даты выгрузки</span>
                 <p th:utext="${carriage.pick_down_date}">...</p>
                 </label>
                 <span >Стоимость перевозки</span>
-                <p th:utext="${carriage.price}" style="float:left;margin:0 10px;">...</p>
-                <p th:utext="${carriage.tax}">...</p>
+
+                <p th:utext="${carriage.price}" > рублей </p>
+                <p th:utext="${carriage.tax}"  style="float:left;margin:0 10px;" >...</p>
             </th>
             </tr>
             <tr>
-                <th>
-                    <a href="carriage" style="float:left;margin:0 10px;">Изменить договор</a>
-                    <a href="carriage_file" > Скачать договор перевозки </a>
+                <th style="text-align:right">
+                    <a href="carriage" style="margin-right: 5%">Изменить договор</a>
                 </th>
-                <th>
-
+                <th style="text-align:left">
+                    <a href="carriage_file" > Скачать договор перевозки </a>
                 </th>
             </tr>
         </table>
