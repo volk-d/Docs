@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<header th:insert = "blocks/headerGT :: header"></header>
+
+<head th:insert = "~{blocks/head :: head}"></head>
 <body>
-
-
+<header th:insert = "~{blocks/header :: header}"></header>
 <div id="transportation_request_form" class="container" style="margin-bottom: 2%">
     <header th:insert = "blocks/level :: level"></header>
 <style>

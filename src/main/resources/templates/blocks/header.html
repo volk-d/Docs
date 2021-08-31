@@ -1,0 +1,717 @@
+<header class="container" th:fragment="header">
+    <a href="https://gettransport.com/" class="logo_container">
+        <img class="logo" src="https://gettransport.com/images/logo_dark.png">
+    </a>
+    <div class="links">
+        <hr>
+        <form class="currency_switcher cccombo" action="/ru-RU/currency">
+            <input type="hidden" name="_csrf" value="M7tA7JR8lav9TSjgBazDZm_9QqrIkwxs5NhLznnasaU">
+
+            <button type="button" name="currency[id]" value="3">
+                ₽<span>RUB</span>
+            </button>
+            <input type="hidden" name="currency[id]" value="3">
+            <div class="dropdown">
+                <h4>Основные валюты</h4>
+
+                <ul>
+
+                    <li data-value="1" class="">
+	<span data-label="">
+		$<span>USD</span>
+	</span>
+
+                        <span>Доллар США</span>
+                    </li>
+
+
+                    <li data-value="2" class="">
+	<span data-label="">
+		€<span>EUR</span>
+	</span>
+
+                        <span>Евро</span>
+                    </li>
+
+
+                    <li data-value="3" class="selected">
+	<span data-label="">
+		₽<span>RUB</span>
+	</span>
+
+                        <span>Российский рубль</span>
+                    </li>
+
+
+                    <li data-value="39" class="">
+	<span data-label="">
+		£<span>GBP</span>
+	</span>
+
+                        <span>Фунт стерлингов</span>
+                    </li>
+
+
+                    <li data-value="12" class="">
+	<span data-label="">
+		¥<span>CNY</span>
+	</span>
+
+                        <span>Юань</span>
+                    </li>
+
+                </ul>
+
+                <h4>Все валюты</h4>
+
+                <ul data-main="true">
+
+                    <li data-value="5" data-code="AUD"
+                        data-rates="{&quot;CNY&quot;:0.21144566378256227,&quot;EUR&quot;:1.61373381960356,&quot;GBP&quot;:1.879456890911126,&quot;RUB&quot;:0.01865250386407205,&quot;USD&quot;:1.366087,&quot;AED&quot;:0.37190651203310465,&quot;ARS&quot;:0.01397584358691838,&quot;AUD&quot;:1.0,&quot;AZN&quot;:0.8032002492937168,&quot;BGN&quot;:0.8246578732908756,&quot;BHD&quot;:3.623447998019497,&quot;BRL&quot;:0.26431014801199576,&quot;CHF&quot;:1.493177292110972,&quot;CLP&quot;:0.00176121575452846,&quot;COP&quot;:0.0003572904367742497,&quot;CZK&quot;:0.06351928357043055,&quot;DKK&quot;:0.2169980282393987,&quot;EGP&quot;:0.08703075825337972,&quot;FJD&quot;:0.6521479890201695,&quot;GEL&quot;:0.4389058510520379,&quot;HKD&quot;:0.17564189746483624,&quot;HUF&quot;:0.004633119949805411,&quot;IDR&quot;:9.601904795375073e-05,&quot;ILS&quot;:0.4263492657959209,&quot;INR&quot;:0.018714313983586018,&quot;JOD&quot;:1.926779972415532,&quot;JPY&quot;:0.012419335630421123,&quot;KRW&quot;:0.0011793903446324391,&quot;KWD&quot;:4.542917191575489,&quot;KZT&quot;:0.0032055074337694234,&quot;MDL&quot;:0.07749090887019834,&quot;MXN&quot;:0.06803659538070898,&quot;MYR&quot;:0.3286232860235747,&quot;NAD&quot;:0.0915607908847185,&quot;NOK&quot;:0.157281859003836,&quot;NZD&quot;:0.9639365338315942,&quot;OMR&quot;:3.5480383139664,&quot;PLN&quot;:0.3568453121844987,&quot;QAR&quot;:0.3703489733907925,&quot;RON&quot;:0.3269558661624623,&quot;SAR&quot;:0.36421721747235486,&quot;SGD&quot;:1.0165283229467026,&quot;THB&quot;:0.04237373988026924,&quot;TRY&quot;:0.16425237465432246,&quot;TWD&quot;:0.04939282690446123,&quot;UAH&quot;:0.050778381904569854,&quot;XOF&quot;:0.002460122637118953,&quot;ZAR&quot;:0.09413347386763471}"
+                        class="">
+	<span data-label="">
+		$<span>AUD</span>
+	</span>
+
+                        <span>Австралийский доллар</span>
+                    </li>
+
+
+                    <li data-value="6" data-code="AZN"
+                        data-rates="{&quot;CNY&quot;:0.26325398176668163,&quot;EUR&quot;:2.0091301279134,&quot;GBP&quot;:2.33996054229789,&quot;RUB&quot;:0.02322273166682141,&quot;USD&quot;:1.700805,&quot;AED&quot;:0.463030872263966,&quot;ARS&quot;:0.017400198268374353,&quot;AUD&quot;:1.245019533894986,&quot;AZN&quot;:1.0,&quot;BGN&quot;:1.0267151610274365,&quot;BHD&quot;:4.511263537586955,&quot;BRL&quot;:0.3290712972816098,&quot;CHF&quot;:1.85903489624658,&quot;CLP&quot;:0.0021927480177915295,&quot;COP&quot;:0.00044483357305781236,&quot;CZK&quot;:0.07908274882420088,&quot;DKK&quot;:0.27016678397474725,&quot;EGP&quot;:0.10835499407515004,&quot;FJD&quot;:0.811936985320444,&quot;GEL&quot;:0.5464463581005904,&quot;HKD&quot;:0.2186775933141014,&quot;HUF&quot;:0.005768324840386294,&quot;IDR&quot;:0.00011954559032841905,&quot;ILS&quot;:0.5308131641777071,&quot;INR&quot;:0.023299686473008684,&quot;JOD&quot;:2.39887870317498,&quot;JPY&quot;:0.015462315457872302,&quot;KRW&quot;:0.0014683640171545265,&quot;KWD&quot;:5.656020644378835,&quot;KZT&quot;:0.003990919371088521,&quot;MDL&quot;:0.09647769524267319,&quot;MXN&quot;:0.08470689026869208,&quot;MYR&quot;:0.4091424103921097,&quot;NAD&quot;:0.11399497319034853,&quot;NOK&quot;:0.19581898678709284,&quot;NZD&quot;:1.20011981405536,&quot;OMR&quot;:4.417377007896,&quot;PLN&quot;:0.4442793842485554,&quot;QAR&quot;:0.46109170622949114,&quot;RON&quot;:0.4070664400938203,&quot;SAR&quot;:0.45345755033396007,&quot;SGD&quot;:1.2655976188261557,&quot;THB&quot;:0.052756133875120195,&quot;TRY&quot;:0.2044974149332692,&quot;TWD&quot;:0.06149503433034805,&quot;UAH&quot;:0.06322007737076916,&quot;XOF&quot;:0.0030629007389903432,&quot;ZAR&quot;:0.11719801375859844}"
+                        class="">
+	<span data-label="">
+		₼<span>AZN</span>
+	</span>
+
+                        <span>Азербайджанский манат</span>
+                    </li>
+
+
+                    <li data-value="4" data-code="ARS"
+                        data-rates="{&quot;CNY&quot;:15.129366786880679,&quot;EUR&quot;:115.465933027044,&quot;GBP&quot;:134.4789585846774,&quot;RUB&quot;:1.3346245432748762,&quot;USD&quot;:97.7463,&quot;AED&quot;:26.610666448872916,&quot;ARS&quot;:1.0,&quot;AUD&quot;:71.55203145919697,&quot;AZN&quot;:57.470609505498864,&quot;BGN&quot;:59.00594609278319,&quot;BHD&quot;:259.2650651450553,&quot;BRL&quot;:18.911928025539325,&quot;CHF&quot;:106.8398685792828,&quot;CLP&quot;:0.1260185650744537,&quot;COP&quot;:0.025564856572141338,&quot;CZK&quot;:4.544933776297099,&quot;DKK&quot;:15.526649743169168,&quot;EGP&quot;:6.2272275524635905,&quot;FJD&quot;:46.6625134264232,&quot;GEL&quot;:31.40460526210103,&quot;HKD&quot;:12.56753457295701,&quot;HUF&quot;:0.33150914440270984,&quot;IDR&quot;:0.006870357939868913,&quot;ILS&quot;:30.50615607883526,&quot;INR&quot;:1.3390471828908364,&quot;JOD&quot;:137.8650212012268,&quot;JPY&quot;:0.8886286937302179,&quot;KRW&quot;:0.08438777504181344,&quot;KWD&quot;:325.0549538081361,&quot;KZT&quot;:0.2293605687437595,&quot;MDL&quot;:5.544631949282197,&quot;MXN&quot;:4.8681566130571445,&quot;MYR&quot;:23.513663699783496,&quot;NAD&quot;:6.551360589812332,&quot;NOK&quot;:11.253836523403455,&quot;NZD&quot;:68.9716171933875,&quot;OMR&quot;:253.86934905936,&quot;PLN&quot;:25.533007003492212,&quot;QAR&quot;:26.499221394939283,&quot;RON&quot;:23.394356421425496,&quot;SAR&quot;:26.060481802563114,&quot;SGD&quot;:72.73466654264719,&quot;THB&quot;:3.0319271689568534,&quot;TRY&quot;:11.752591078513888,&quot;TWD&quot;:3.53415710452668,&quot;UAH&quot;:3.6332963794829003,&quot;XOF&quot;:0.17602677232461791,&quot;ZAR&quot;:6.735441283540494}"
+                        class="">
+	<span data-label="">
+		$<span>ARS</span>
+	</span>
+
+                        <span>Аргентинское песо</span>
+                    </li>
+
+
+                    <li data-value="7" data-code="BHD"
+                        data-rates="{&quot;CNY&quot;:0.05835482223288498,&quot;EUR&quot;:0.44535862542444,&quot;GBP&quot;:0.518692938892674,&quot;RUB&quot;:0.005147722245585673,&quot;USD&quot;:0.377013,&quot;AED&quot;:0.10263884351519112,&quot;ARS&quot;:0.0038570564817150105,&quot;AUD&quot;:0.275980226719572,&quot;AZN&quot;:0.2216673869012967,&quot;BGN&quot;:0.22758926684977815,&quot;BHD&quot;:1.000000000056603,&quot;BRL&quot;:0.07294437457676309,&quot;CHF&quot;:0.412087407632628,&quot;CLP&quot;:0.0004860607232643589,&quot;COP&quot;:9.860509575127367e-05,&quot;CZK&quot;:0.01753006628182446,&quot;DKK&quot;:0.059887165034599135,&quot;EGP&quot;:0.02401876839570353,&quot;FJD&quot;:0.1799799498746867,&quot;GEL&quot;:0.1211293362887444,&quot;HKD&quot;:0.04847369068654508,&quot;HUF&quot;:0.0012786494942386448,&quot;IDR&quot;:2.649935862517352e-05,&quot;ILS&quot;:0.11766396704274144,&quot;INR&quot;:0.005164780616383667,&quot;JOD&quot;:0.531753173656068,&quot;JPY&quot;:0.0034274910631840864,&quot;KRW&quot;:0.00032548841472095834,&quot;KWD&quot;:1.253755316570211,&quot;KZT&quot;:0.0008846566683730331,&quot;MDL&quot;:0.02138595859991354,&quot;MXN&quot;:0.01877675501945867,&quot;MYR&quot;:0.09069352898725042,&quot;NAD&quot;:0.02526896782841823,&quot;NOK&quot;:0.043406683109211364,&quot;NZD&quot;:0.2660274231651797,&quot;OMR&quot;:0.9791884183536,&quot;PLN&quot;:0.09848225016606879,&quot;QAR&quot;:0.10220899364753698,&quot;RON&quot;:0.09023335407591786,&quot;SAR&quot;:0.1005167502588817,&quot;SGD&quot;:0.2805417170495768,&quot;THB&quot;:0.011694314339774806,&quot;TRY&quot;:0.045330407598893833,&quot;TWD&quot;:0.013631443568185365,&quot;UAH&quot;:0.014013829351269425,&quot;XOF&quot;:0.0006789452031884703,&quot;ZAR&quot;:0.02597897746136122}"
+                        class="">
+	<span data-label="">
+		ب.د<span>BHD</span>
+	</span>
+
+                        <span>Бахрейнский динар</span>
+                    </li>
+
+
+                    <li data-value="9" data-code="BGN"
+                        data-rates="{&quot;CNY&quot;:0.25640410481836334,&quot;EUR&quot;:1.956852498314,&quot;GBP&quot;:2.2790746948319,&quot;RUB&quot;:0.022618475452902014,&quot;USD&quot;:1.65655,&quot;AED&quot;:0.4509827942938038,&quot;ARS&quot;:0.01694744455800373,&quot;AUD&quot;:1.2126240861672792,&quot;AZN&quot;:0.9739799683091243,&quot;BGN&quot;:1.0,&quot;BHD&quot;:4.393880317124343,&quot;BRL&quot;:0.32050885169778465,&quot;CHF&quot;:1.8106627493318,&quot;CLP&quot;:0.002135692644878489,&quot;COP&quot;:0.0004332589893896826,&quot;CZK&quot;:0.0770250131935936,&quot;DKK&quot;:0.2631370356939023,&quot;EGP&quot;:0.10553559369544997,&quot;FJD&quot;:0.7908103592314119,&quot;GEL&quot;:0.5322278065454494,&quot;HKD&quot;:0.21298759540598403,&quot;HUF&quot;:0.005618232845236178,&quot;IDR&quot;:0.00011643501027956914,&quot;ILS&quot;:0.517001388823869,&quot;INR&quot;:0.02269342789259353,&quot;JOD&quot;:2.3364598032958,&quot;JPY&quot;:0.015059985519644145,&quot;KRW&quot;:0.0014301571388944242,&quot;KWD&quot;:5.50885080796785,&quot;KZT&quot;:0.003887075522577068,&quot;MDL&quot;:0.09396734255499618,&quot;MXN&quot;:0.08250281429946517,&quot;MYR&quot;:0.3984965119076257,&quot;NAD&quot;:0.11102882037533512,&quot;NOK&quot;:0.1907237705452175,&quot;NZD&quot;:1.1688926584607915,&quot;OMR&quot;:4.30243671816,&quot;PLN&quot;:0.4327192205908052,&quot;QAR&quot;:0.44909408542099977,&quot;RON&quot;:0.3964745584222871,&quot;SAR&quot;:0.4416585705038035,&quot;SGD&quot;:1.2326667286764021,&quot;THB&quot;:0.05138341759980148,&quot;TRY&quot;:0.19917638571600338,&quot;TWD&quot;:0.059894931588240906,&quot;UAH&quot;:0.06157508895408213,&quot;XOF&quot;:0.0029832039646958074,&quot;ZAR&quot;:0.11414851772649201}"
+                        class="">
+	<span data-label="">
+		лв.<span>BGN</span>
+	</span>
+
+                        <span>Болгарский лев</span>
+                    </li>
+
+
+                    <li data-value="8" data-code="BRL"
+                        data-rates="{&quot;CNY&quot;:0.799990713080626,&quot;EUR&quot;:6.10545539678,&quot;GBP&quot;:7.110801098813,&quot;RUB&quot;:0.07057051726680394,&quot;USD&quot;:5.1685,&quot;AED&quot;:1.4070837416966133,&quot;ARS&quot;:0.05287668177721305,&quot;AUD&quot;:3.7834339979810947,&quot;AZN&quot;:3.038855130364739,&quot;BGN&quot;:3.1200386345114848,&quot;BHD&quot;:13.709076344847524,&quot;BRL&quot;:1.0,&quot;CHF&quot;:5.649337731986,&quot;CLP&quot;:0.006663443563462902,&quot;COP&quot;:0.0013517847856452112,&quot;CZK&quot;:0.2403210169877689,&quot;DKK&quot;:0.8209977175358028,&quot;EGP&quot;:0.3292751296459106,&quot;FJD&quot;:2.467358873373911,&quot;GEL&quot;:1.6605713187831066,&quot;HKD&quot;:0.6645295263383709,&quot;HUF&quot;:0.017529103534818256,&quot;IDR&quot;:0.00036328173048199756,&quot;ILS&quot;:1.6130643072265656,&quot;INR&quot;:0.07080437177439235,&quot;JOD&quot;:7.289844854266,&quot;JPY&quot;:0.04698773665647325,&quot;KRW&quot;:0.0044621455267730105,&quot;KWD&quot;:17.1878273526195,&quot;KZT&quot;:0.01212782580570437,&quot;MDL&quot;:0.29318173915396323,&quot;MXN&quot;:0.2574119680702579,&quot;MYR&quot;:1.243324512869858,&quot;NAD&quot;:0.3464142091152815,&quot;NOK&quot;:0.5950655326207821,&quot;NZD&quot;:3.6469902539945074,&quot;OMR&quot;:13.4237687832,&quot;PLN&quot;:1.35010068613901,&quot;QAR&quot;:1.4011908970441203,&quot;RON&quot;:1.2370159398784166,&quot;SAR&quot;:1.3779918032349814,&quot;SGD&quot;:3.845967816947261,&quot;THB&quot;:0.160318248084618,&quot;TRY&quot;:0.6214380185162919,&quot;TWD&quot;:0.18687450056673394,&quot;UAH&quot;:0.1921166564602176,&quot;XOF&quot;:0.009307711624478755,&quot;ZAR&quot;:0.35614778537887415}"
+                        class="">
+	<span data-label="">
+		R$<span>BRL</span>
+	</span>
+
+                        <span>Бразильский реал</span>
+                    </li>
+
+
+                    <li data-value="20" data-code="HKD"
+                        data-rates="{&quot;CNY&quot;:1.2038452489668303,&quot;EUR&quot;:9.18763599628404,&quot;GBP&quot;:10.700504367344333,&quot;RUB&quot;:0.10619621020551948,&quot;USD&quot;:7.777683,&quot;AED&quot;:2.1174134269846454,&quot;ARS&quot;:0.07957010137468119,&quot;AUD&quot;:5.69340239677268,&quot;AZN&quot;:4.572942224417261,&quot;BGN&quot;:4.695109112311732,&quot;BHD&quot;:20.629747515337666,&quot;BRL&quot;:1.5048240301828384,&quot;CHF&quot;:8.501259173711148,&quot;CLP&quot;:0.010027309998066138,&quot;COP&quot;:0.002034198229074471,&quot;CZK&quot;:0.36164084132117275,&quot;DKK&quot;:1.2354570940731382,&quot;EGP&quot;:0.49550112763273574,&quot;FJD&quot;:3.712940923737916,&quot;GEL&quot;:2.498867624337225,&quot;HKD&quot;:1.0,&quot;HUF&quot;:0.026378216226757446,&quot;IDR&quot;:0.0005466750777557152,&quot;ILS&quot;:2.4273779317447683,&quot;INR&quot;:0.1065481200881051,&quot;JOD&quot;:10.969933713004188,&quot;JPY&quot;:0.07070827524456397,&quot;KRW&quot;:0.006714743814860887,&quot;KWD&quot;:25.8646556268557,&quot;KZT&quot;:0.01825024370629548,&quot;MDL&quot;:0.4411869262896806,&quot;MXN&quot;:0.3873597152087816,&quot;MYR&quot;:1.870984604281934,&quot;NAD&quot;:0.5212924262734584,&quot;NOK&quot;:0.8954689130213026,&quot;NZD&quot;:5.488078572053548,&quot;OMR&quot;:20.2004098405776,&quot;PLN&quot;:2.03166395566832,&quot;QAR&quot;:2.1085457327454393,&quot;RON&quot;:1.8614913120482504,&quot;SAR&quot;:2.0736351789029817,&quot;SGD&quot;:5.787504790252069,&quot;THB&quot;:0.24125075219454697,&quot;TRY&quot;:0.9351548635325238,&quot;TWD&quot;:0.2812132390812377,&quot;UAH&quot;:0.2891017612397165,&quot;XOF&quot;:0.014006468118527772,&quot;ZAR&quot;:0.53593974573453}"
+                        class="">
+	<span data-label="">
+		$<span>HKD</span>
+	</span>
+
+                        <span>Гонконгский доллар</span>
+                    </li>
+
+
+                    <li data-value="19" data-code="GEL"
+                        data-rates="{&quot;CNY&quot;:0.4817563112356246,&quot;EUR&quot;:3.67671976970804,&quot;GBP&quot;:4.282141343994734,&quot;RUB&quot;:0.04249773344183684,&quot;USD&quot;:3.112483,&quot;AED&quot;:0.8473491778285963,&quot;ARS&quot;:0.031842463602202845,&quot;AUD&quot;:2.278392957403152,&quot;AZN&quot;:1.8300057913752605,&quot;BGN&quot;:1.878894690772992,&quot;BHD&quot;:8.25563839973688,&quot;BRL&quot;:0.6022023798007159,&quot;CHF&quot;:3.402044626499948,&quot;CLP&quot;:0.004012741571585122,&quot;COP&quot;:0.0008140480148939467,&quot;CZK&quot;:0.1447218883461627,&quot;DKK&quot;:0.49440677931101634,&quot;EGP&quot;:0.1982902666819566,&quot;FJD&quot;:1.4858493853681825,&quot;GEL&quot;:1.0,&quot;HKD&quot;:0.4001812622088095,&quot;HUF&quot;:0.010556067864440695,&quot;IDR&quot;:0.0002187691226343812,&quot;ILS&quot;:0.9713911645834309,&quot;INR&quot;:0.04263856118283371,&quot;JOD&quot;:4.389961919616988,&quot;JPY&quot;:0.028296126835977525,&quot;KRW&quot;:0.002687114655239826,&quot;KWD&quot;:10.350550535351301,&quot;KZT&quot;:0.0073034055620037055,&quot;MDL&quot;:0.17655474103262936,&quot;MXN&quot;:0.1550140997610952,&quot;MYR&quot;:0.7487329805147943,&quot;NAD&quot;:0.20861146112600537,&quot;NOK&quot;:0.35834987988161554,&quot;NZD&quot;:2.1962262100655097,&quot;OMR&quot;:8.0838255071376,&quot;PLN&quot;:0.8130338461634911,&quot;QAR&quot;:0.8438004927550691,&quot;RON&quot;:0.7449339428462017,&quot;SAR&quot;:0.8298299432539856,&quot;SGD&quot;:2.3160509720026043,&quot;THB&quot;:0.09654403052203853,&quot;TRY&quot;:0.37423145364915233,&quot;TWD&quot;:0.1125362689653574,&quot;UAH&quot;:0.11569310771969962,&quot;XOF&quot;:0.005605126090759893,&quot;ZAR&quot;:0.2144730439159126}"
+                        class="">
+	<span data-label="">
+		ლ<span>GEL</span>
+	</span>
+
+                        <span>Грузинский лари</span>
+                    </li>
+
+
+                    <li data-value="15" data-code="DKK"
+                        data-rates="{&quot;CNY&quot;:0.974412834522575,&quot;EUR&quot;:7.43662895325132,&quot;GBP&quot;:8.661170362514323,&quot;RUB&quot;:0.08595702004948197,&quot;USD&quot;:6.295389,&quot;AED&quot;:1.7138704671675924,&quot;ARS&quot;:0.06440539437298394,&quot;AUD&quot;:4.608336804317734,&quot;AZN&quot;:3.701417270057414,&quot;BGN&quot;:3.8003012284567323,&quot;BHD&quot;:16.6980687668595,&quot;BRL&quot;:1.2180301828383477,&quot;CHF&quot;:6.881063870606484,&quot;CLP&quot;:0.008116275381937729,&quot;COP&quot;:0.001646514669617533,&quot;CZK&quot;:0.2927182522615098,&quot;DKK&quot;:1.0,&quot;EGP&quot;:0.4010670463667291,&quot;FJD&quot;:3.005317579663444,&quot;GEL&quot;:2.0226259870335035,&quot;HKD&quot;:0.8094170204674066,&quot;HUF&quot;:0.02135097718350701,&quot;IDR&quot;:0.00044248811260081886,&quot;ILS&quot;:1.9647610130611863,&quot;INR&quot;:0.08624186189811746,&quot;JOD&quot;:8.879251060704805,&quot;JPY&quot;:0.05723248147084425,&quot;KRW&quot;:0.005435027931826646,&quot;KWD&quot;:20.935292492905084,&quot;KZT&quot;:0.014772057883553725,&quot;MDL&quot;:0.35710420734656656,&quot;MXN&quot;:0.31353554653339516,&quot;MYR&quot;:1.5144067837382729,&quot;NAD&quot;:0.42194296246648794,&quot;NOK&quot;:0.72480777949889,&quot;NZD&quot;:4.442144205882602,&quot;OMR&quot;:16.3505555453808,&quot;PLN&quot;:1.6444633855880768,&quot;QAR&quot;:1.7066928045180783,&quot;RON&quot;:1.5067227514240582,&quot;SAR&quot;:1.6784356080440488,&quot;SGD&quot;:4.684504883266673,&quot;THB&quot;:0.19527246502683085,&quot;TRY&quot;:0.7569302633160996,&quot;TWD&quot;:0.22761878209312383,&quot;UAH&quot;:0.23400388619453089,&quot;XOF&quot;:0.011337073691770472,&quot;ZAR&quot;:0.4337987521425027}"
+                        class="">
+	<span data-label="">
+		kr.<span>DKK</span>
+	</span>
+
+                        <span>Датская крона</span>
+                    </li>
+
+
+                    <li data-value="49" data-code="AED"
+                        data-rates="{&quot;CNY&quot;:0.5685452040800533,&quot;EUR&quot;:4.339084601616,&quot;GBP&quot;:5.0535734925336,&quot;RUB&quot;:0.05015374364407937,&quot;USD&quot;:3.6732,&quot;AED&quot;:1.0,&quot;ARS&quot;:0.03757891603058121,&quot;AUD&quot;:2.6888477820226675,&quot;AZN&quot;:2.159683208833464,&quot;BGN&quot;:2.217379493525701,&quot;BHD&quot;:9.742900112197722,&quot;BRL&quot;:0.7106897552481377,&quot;CHF&quot;:4.0149264500592,&quot;CLP&quot;:0.004735641075227229,&quot;COP&quot;:0.0009606995984583514,&quot;CZK&quot;:0.17079368474402104,&quot;DKK&quot;:0.5834746669347994,&quot;EGP&quot;:0.234012461297351,&quot;FJD&quot;:1.7535266738274258,&quot;GEL&quot;:1.1801510241180433,&quot;HKD&quot;:0.47227432642857775,&quot;HUF&quot;:0.012457754300879254,&quot;IDR&quot;:0.0002581806041223708,&quot;ILS&quot;:1.1463882777023549,&quot;INR&quot;:0.05031994164684105,&quot;JOD&quot;:5.1808180552752,&quot;JPY&quot;:0.033393703064052926,&quot;KRW&quot;:0.003171201112303884,&quot;KWD&quot;:12.2152128144804,&quot;KZT&quot;:0.008619121553548088,&quot;MDL&quot;:0.2083612584425535,&quot;MXN&quot;:0.18294004858579305,&quot;MYR&quot;:0.8836179937454895,&quot;NAD&quot;:0.2461930294906166,&quot;NOK&quot;:0.4229069777348664,&quot;NZD&quot;:2.5918786110037004,&quot;OMR&quot;:9.54013495104,&quot;PLN&quot;:0.9595027261924758,&quot;QAR&quot;:0.9958120156762044,&quot;RON&quot;:0.8791345555502369,&quot;SAR&quot;:0.979324657375009,&quot;SGD&quot;:2.7332899265184634,&quot;THB&quot;:0.1139365364930674,&quot;TRY&quot;:0.4416496332812312,&quot;TWD&quot;:0.13280979306989013,&quot;UAH&quot;:0.13653533955880262,&quot;XOF&quot;:0.006614895296321053,&quot;ZAR&quot;:0.2531105824230783}"
+                        class="">
+	<span data-label="">
+		د.إ<span>AED</span>
+	</span>
+
+                        <span>Дирхам ОАЭ</span>
+                    </li>
+
+
+                    <li data-value="32" data-code="NAD"
+                        data-rates="{&quot;CNY&quot;:2.309347284349993,&quot;EUR&quot;:17.6247256496,&quot;GBP&quot;:20.52687479816,&quot;RUB&quot;:0.20371715538758145,&quot;USD&quot;:14.92,&quot;AED&quot;:4.061853424806708,&quot;ARS&quot;:0.15264004877933998,&quot;AUD&quot;:10.921705572192693,&quot;AZN&quot;:8.772316638297747,&quot;BGN&quot;:9.006670489873532,&quot;BHD&quot;:39.57423218827998,&quot;BRL&quot;:2.8867176163296895,&quot;CHF&quot;:16.30804275152,&quot;CLP&quot;:0.01923547992006704,&quot;COP&quot;:0.003902220954208484,&quot;CZK&quot;:0.6937389133128591,&quot;DKK&quot;:2.3699885741770683,&quot;EGP&quot;:0.9505243173680925,&quot;FJD&quot;:7.122568325575845,&quot;GEL&quot;:4.793600479103018,&quot;HKD&quot;:1.9183090902521998,&quot;HUF&quot;:0.050601571972426894,&quot;IDR&quot;:0.0010486917710731166,&quot;ILS&quot;:4.6564611519435735,&quot;INR&quot;:0.20439222731429504,&quot;JOD&quot;:21.04372356112,&quot;JPY&quot;:0.13564032715770163,&quot;KRW&quot;:0.012880954098762373,&quot;KWD&quot;:49.61640400524,&quot;KZT&quot;:0.03500960840110461,&quot;MDL&quot;:0.8463328912019215,&quot;MXN&quot;:0.743075662882509,&quot;MYR&quot;:3.589126774115949,&quot;NAD&quot;:1.0,&quot;NOK&quot;:1.7177861558870213,&quot;NZD&quot;:10.527831012788633,&quot;OMR&quot;:38.750629824,&quot;PLN&quot;:3.8973594344962805,&quot;QAR&quot;:4.044842446338062,&quot;RON&quot;:3.570915705327653,&quot;SAR&quot;:3.977873213556336,&quot;SGD&quot;:11.102223049018695,&quot;THB&quot;:0.4627935109649803,&quot;TRY&quot;:1.7939160755079957,&quot;TWD&quot;:0.5394539128288034,&quot;UAH&quot;:0.5545865365940692,&quot;XOF&quot;:0.026868735114099453,&quot;ZAR&quot;:1.0280980860700013}"
+                        class="">
+	<span data-label="">
+		$<span>NAD</span>
+	</span>
+
+                        <span>Доллар Намибии</span>
+                    </li>
+
+
+                    <li data-value="1" data-code="USD"
+                        data-rates="{&quot;CNY&quot;:0.1547819895676939,&quot;EUR&quot;:1.18128188,&quot;GBP&quot;:1.375795898,&quot;RUB&quot;:0.013653964838309749,&quot;USD&quot;:1.0,&quot;AED&quot;:0.27224218664924316,&quot;ARS&quot;:0.010230566272073726,&quot;AUD&quot;:0.7320177997448186,&quot;AZN&quot;:0.5879568792424763,&quot;BGN&quot;:0.6036642419486282,&quot;BHD&quot;:2.652428431,&quot;BRL&quot;:0.19347973299796847,&quot;CHF&quot;:1.093032356,&quot;CLP&quot;:0.0012892412815058338,&quot;COP&quot;:0.00026154295939735146,&quot;CZK&quot;:0.04649724620059377,&quot;DKK&quot;:0.15884641918076867,&quot;EGP&quot;:0.06370806416676222,&quot;FJD&quot;:0.47738393603055257,&quot;GEL&quot;:0.3212868953822398,&quot;HKD&quot;:0.12857299532521446,&quot;HUF&quot;:0.0033915262716103815,&quot;IDR&quot;:7.028765221669683e-05,&quot;ILS&quot;:0.31209525147074885,&quot;INR&quot;:0.013699210945998326,&quot;JOD&quot;:1.410437236,&quot;JPY&quot;:0.0090911747424733,&quot;KRW&quot;:0.0008633347251181215,&quot;KWD&quot;:3.325496247,&quot;KZT&quot;:0.002346488498733553,&quot;MDL&quot;:0.05672472461138884,&quot;MXN&quot;:0.04980399885271508,&quot;MYR&quot;:0.24055809477988935,&quot;NAD&quot;:0.06702412868632708,&quot;NOK&quot;:0.11513312036776281,&quot;NZD&quot;:0.7056187005890505,&quot;OMR&quot;:2.5972272,&quot;PLN&quot;:0.26121712027454963,&quot;QAR&quot;:0.2711020406392803,&quot;RON&quot;:0.23933751376190704,&quot;SAR&quot;:0.2666134861632933,&quot;SGD&quot;:0.7441168263417357,&quot;THB&quot;:0.03101833183411396,&quot;TRY&quot;:0.12023566189731874,&quot;TWD&quot;:0.03615642847378039,&quot;UAH&quot;:0.03717067939638534,&quot;XOF&quot;:0.0018008535599262367,&quot;ZAR&quot;:0.06890737842292234}"
+                        class="">
+	<span data-label="">
+		$<span>USD</span>
+	</span>
+
+                        <span>Доллар США</span>
+                    </li>
+
+
+                    <li data-value="18" data-code="FJD"
+                        data-rates="{&quot;CNY&quot;:0.3242295726469268,&quot;EUR&quot;:2.47449021813,&quot;GBP&quot;:2.8819484573355,&quot;RUB&quot;:0.028601642845049347,&quot;USD&quot;:2.09475,&quot;AED&quot;:0.5702793204835022,&quot;ARS&quot;:0.021430478698426438,&quot;AUD&quot;:1.5333942860154588,&quot;AZN&quot;:1.2316226727931774,&quot;BGN&quot;:1.2645256708218888,&quot;BHD&quot;:5.556174455522754,&quot;BRL&quot;:0.40529167069749444,&quot;CHF&quot;:2.289629527731,&quot;CLP&quot;:0.0027006381744343454,&quot;COP&quot;:0.0005478671141976021,&quot;CZK&quot;:0.0974001064786938,&quot;DKK&quot;:0.33274353657891514,&quot;EGP&quot;:0.13345246741332517,&quot;FJD&quot;:1.0,&quot;GEL&quot;:0.6730157241019469,&quot;HKD&quot;:0.269328281957493,&quot;HUF&quot;:0.007104399657455847,&quot;IDR&quot;:0.0001472350594809257,&quot;ILS&quot;:0.6537615280183512,&quot;INR&quot;:0.028696422129129994,&quot;JOD&quot;:2.954513400111,&quot;JPY&quot;:0.019043738291795946,&quot;KRW&quot;:0.0018084704154411849,&quot;KWD&quot;:6.96608326340325,&quot;KZT&quot;:0.004915306782722111,&quot;MDL&quot;:0.11882411687970677,&quot;MXN&quot;:0.10432692659672492,&quot;MYR&quot;:0.5039090690401732,&quot;NAD&quot;:0.14039879356568363,&quot;NOK&quot;:0.24117510389037117,&quot;NZD&quot;:1.4780947730589136,&quot;OMR&quot;:5.4405416772,&quot;PLN&quot;:0.5471845626951128,&quot;QAR&quot;:0.5678909996291324,&quot;RON&quot;:0.5013522569527548,&quot;SAR&quot;:0.5584886001405587,&quot;SGD&quot;:1.5587387219793507,&quot;THB&quot;:0.06497565060951022,&quot;TRY&quot;:0.2518636527594084,&quot;TWD&quot;:0.07573867854545147,&quot;UAH&quot;:0.07786328066557818,&quot;XOF&quot;:0.0037723379946554845,&quot;ZAR&quot;:0.1443437309514166}"
+                        class="">
+	<span data-label="">
+		$<span>FJD</span>
+	</span>
+
+                        <span>Доллар Фиджи</span>
+                    </li>
+
+
+                    <li data-value="2" data-code="EUR"
+                        data-rates="{&quot;CNY&quot;:0.13102883588465647,&quot;EUR&quot;:1.00000000013144,&quot;GBP&quot;:1.164663507901124,&quot;RUB&quot;:0.011558600086293058,&quot;USD&quot;:0.846538,&quot;AED&quot;:0.23046335617138491,&quot;ARS&quot;:0.008660563109690404,&quot;AUD&quot;:0.6196808840789284,&quot;AZN&quot;:0.4977278405747461,&quot;BGN&quot;:0.5110247199835387,&quot;BHD&quot;:2.245381459,&quot;BRL&quot;:0.16378794619110593,&quot;CHF&quot;:0.925293424583528,&quot;CLP&quot;:0.0010913917359633857,&quot;COP&quot;:0.00022140605376231513,&quot;CZK&quot;:0.03936168580415825,&quot;DKK&quot;:0.13446952998277487,&quot;EGP&quot;:0.05393129722360256,&quot;FJD&quot;:0.4041236423863139,&quot;GEL&quot;:0.2719815658073413,&quot;HKD&quot;:0.10884192630231022,&quot;HUF&quot;:0.002871055866916509,&quot;IDR&quot;:5.95011685322181e-05,&quot;ILS&quot;:0.2642004899895448,&quot;INR&quot;:0.011596902635803532,&quot;JOD&quot;:1.193988716888968,&quot;JPY&quot;:0.007696024884143862,&quot;KRW&quot;:0.0007308456515320443,&quot;KWD&quot;:2.815158941942886,&quot;KZT&quot;:0.0019863916807409047,&quot;MDL&quot;:0.048019634923075885,&quot;MXN&quot;:0.04216097758077972,&quot;MYR&quot;:0.20364156843877795,&quot;NAD&quot;:0.056738471842408246,&quot;NOK&quot;:0.0974645614498852,&quot;NZD&quot;:0.5973330435592537,&quot;OMR&quot;:2.1986515194336,&quot;PLN&quot;:0.2211302185629767,&quot;QAR&quot;:0.22949817927869506,&quot;RON&quot;:0.20260830022497725,&quot;SAR&quot;:0.22569844734970199,&quot;SGD&quot;:0.6299231699376802,&quot;THB&quot;:0.026258196594187166,&quot;TRY&quot;:0.10178405675123242,&quot;TWD&quot;:0.030607790647337103,&quot;UAH&quot;:0.03146639259485725,&quot;XOF&quot;:0.0015244909709128365,&quot;ZAR&quot;:0.05833271431538383}"
+                        class="">
+	<span data-label="">
+		€<span>EUR</span>
+	</span>
+
+                        <span>Евро</span>
+                    </li>
+
+
+                    <li data-value="16" data-code="EGP"
+                        data-rates="{&quot;CNY&quot;:2.429550977448264,&quot;EUR&quot;:18.542109155170824,&quot;GBP&quot;:21.5953178925468,&quot;RUB&quot;:0.2143208244810128,&quot;USD&quot;:15.6966,&quot;AED&quot;:4.2732767069585105,&quot;ARS&quot;:0.16058510654623245,&quot;AUD&quot;:11.49019059547452,&quot;AZN&quot;:9.228923950717455,&quot;BGN&quot;:9.475476140170837,&quot;BHD&quot;:41.63410810767798,&quot;BRL&quot;:3.036973976975912,&quot;CHF&quot;:17.1568916791896,&quot;CLP&quot;:0.020236704699284472,&quot;COP&quot;:0.004105335216476467,&quot;CZK&quot;:0.7298486747122401,&quot;DKK&quot;:2.4933487033128534,&quot;EGP&quot;:1.0,&quot;FJD&quot;:7.493304690297172,&quot;GEL&quot;:5.0431118820568654,&quot;HKD&quot;:2.0181588784217612,&quot;HUF&quot;:0.05323543127495951,&quot;IDR&quot;:0.0011032771617846035,&quot;ILS&quot;:4.898834324235756,&quot;INR&quot;:0.21503103453495734,&quot;JOD&quot;:22.1390691185976,&quot;JPY&quot;:0.1427005334627064,&quot;KRW&quot;:0.013551419846289105,&quot;KWD&quot;:52.1989843906602,&quot;KZT&quot;:0.03683189136922109,&quot;MDL&quot;:0.8903853123351261,&quot;MXN&quot;:0.7817534483915276,&quot;MYR&quot;:3.775944190522011,&quot;NAD&quot;:1.0520509383378016,&quot;NOK&quot;:1.8071985371646258,&quot;NZD&quot;:11.07581449566609,&quot;OMR&quot;:40.76763646752,&quot;PLN&quot;:4.1002206501014955,&quot;QAR&quot;:4.255380291098527,&quot;RON&quot;:3.7567852185151502,&quot;SAR&quot;:4.184925246910749,&quot;SGD&quot;:11.680104176355687,&quot;THB&quot;:0.4868823474673532,&quot;TRY&quot;:1.8872910905374534,&quot;TWD&quot;:0.5675329951815412,&quot;UAH&quot;:0.5834532862133021,&quot;XOF&quot;:0.028267277988738168,&quot;ZAR&quot;:1.081611556153243}"
+                        class="">
+	<span data-label="">
+		ج.م<span>EGP</span>
+	</span>
+
+                        <span>Египетский фунт</span>
+                    </li>
+
+
+                    <li data-value="24" data-code="JPY"
+                        data-rates="{&quot;CNY&quot;:17.02552133824508,&quot;EUR&quot;:129.937209800387,&quot;GBP&quot;:151.33312657300303,&quot;RUB&quot;:1.5018922444114322,&quot;USD&quot;:109.99678571,&quot;AED&quot;:29.945765466078623,&quot;ARS&quot;:1.125329405921247,&quot;AUD&quot;:80.51960505443651,&quot;AZN&quot;:64.67336685275502,&quot;BGN&quot;:66.40112626241284,&quot;BHD&quot;:291.7586017193041,&quot;BRL&quot;:21.282148729805552,&quot;CHF&quot;:120.23004583702843,&quot;CLP&quot;:0.141812396970283,&quot;COP&quot;:0.0287688848587897,&quot;CZK&quot;:5.114547626431825,&quot;DKK&quot;:17.472595531427842,&quot;EGP&quot;:7.007682282150275,&quot;FJD&quot;:52.51069851294904,&quot;GEL&quot;:35.340525782791424,&quot;HKD&quot;:14.142616214880446,&quot;HUF&quot;:0.3730569885281624,&quot;IDR&quot;:0.007731415818939008,&quot;ILS&quot;:34.32947449713652,&quot;INR&quot;:1.5068691708230644,&quot;JOD&quot;:155.14356240569668,&quot;JPY&quot;:1.0,&quot;KRW&quot;:0.09496404475481976,&quot;KWD&quot;:365.79389806066825,&quot;KZT&quot;:0.2581061925661743,&quot;MDL&quot;:6.239537377537701,&quot;MXN&quot;:5.478279789303187,&quot;MYR&quot;:26.460617202309358,&quot;NAD&quot;:7.3724387205093835,&quot;NOK&quot;:12.664273169216443,&quot;NZD&quot;:77.61578900166243,&quot;OMR&quot;:285.68664375858333,&quot;PLN&quot;:28.733043602622935,&quot;QAR&quot;:29.820353069742627,&quot;RON&quot;:26.326357213632665,&quot;SAR&quot;:29.326626504899824,&quot;SGD&quot;:81.85045909031717,&quot;THB&quot;:3.4119167998387048,&quot;TRY&quot;:13.225536336419381,&quot;TWD&quot;:3.977090914869364,&quot;UAH&quot;:4.08865525625931,&quot;XOF&quot;:0.1980881031262969,&quot;ZAR&quot;:7.5795901382240665}"
+                        class="">
+	<span data-label="">
+		¥<span>JPY</span>
+	</span>
+
+                        <span>Иена</span>
+                    </li>
+
+
+                    <li data-value="22" data-code="INR"
+                        data-rates="{&quot;CNY&quot;:11.298606188183943,&quot;EUR&quot;:86.22992116124733,&quot;GBP&quot;:100.4288424656957,&quot;RUB&quot;:0.996697174175437,&quot;USD&quot;:72.996905,&quot;AED&quot;:19.87283703582707,&quot;ARS&quot;:0.7467996742587699,&quot;AUD&quot;:53.43503378628155,&quot;AZN&quot;:42.91903245815952,&quot;BGN&quot;:44.06562132142103,&quot;BHD&quot;:193.61906618604664,&quot;BRL&quot;:14.12342168907807,&quot;CHF&quot;:79.78797905285818,&quot;CLP&quot;:0.0941106233481596,&quot;COP&quot;:0.019091826560547323,&quot;CZK&quot;:3.3941550636663544,&quot;DKK&quot;:11.595296970528747,&quot;EGP&quot;:4.650491507715047,&quot;FJD&quot;:34.847549826948324,&quot;GEL&quot;:23.4529489799623,&quot;HKD&quot;:9.385430725320123,&quot;HUF&quot;:0.2475709210537472,&quot;IDR&quot;:0.005130781071535258,&quot;ILS&quot;:22.781987422561365,&quot;INR&quot;:1.0,&quot;JOD&quot;:102.95755292475458,&quot;JPY&quot;:0.6636276190147229,&quot;KRW&quot;:0.06302076291264863,&quot;KWD&quot;:242.75093362011555,&quot;KZT&quot;:0.1712863980256458,&quot;MDL&quot;:4.1407293336087125,&quot;MXN&quot;:3.6355377728717517,&quot;MYR&quot;:17.559996391628577,&quot;NAD&quot;:4.892553954423592,&quot;NOK&quot;:8.404361449839147,&quot;NZD&quot;:51.50798125312236,&quot;OMR&quot;:189.589547181816,&quot;PLN&quot;:19.068041313054874,&quot;QAR&quot;:19.789609905851684,&quot;RON&quot;:17.47089775501412,&quot;SAR&quot;:19.461959321180736,&quot;SGD&quot;:54.31822528136917,&quot;THB&quot;:2.2642422221532925,&quot;TRY&quot;:8.776831189130696,&quot;TWD&quot;:2.639307374439842,&quot;UAH&quot;:2.713344552683398,&quot;XOF&quot;:0.13145673623284732,&quot;ZAR&quot;:5.030025356537112}"
+                        class="">
+	<span data-label="">
+		₹<span>INR</span>
+	</span>
+
+                        <span>Индийская рупия</span>
+                    </li>
+
+
+                    <li data-value="23" data-code="IDR"
+                        data-rates="{&quot;CNY&quot;:2202.1220610769733,&quot;EUR&quot;:16806.392625020966,&quot;GBP&quot;:19573.7921898205,&quot;RUB&quot;:194.25837124584237,&quot;USD&quot;:14227.25,&quot;AED&quot;:3873.2576500054447,&quot;ARS&quot;:145.55282399436092,&quot;AUD&quot;:10414.60024141947,&quot;AZN&quot;:8365.009510202523,&quot;BGN&quot;:8588.48208626362,&quot;BHD&quot;:37736.762392808734,&quot;BRL&quot;:2752.684531295347,&quot;CHF&quot;:15550.844586901,&quot;CLP&quot;:18.342358022303873,&quot;COP&quot;:3.721037069085969,&quot;CZK&quot;:661.5279460073978,&quot;DKK&quot;:2259.947717289591,&quot;EGP&quot;:906.3905559165679,&quot;FJD&quot;:6791.860603890679,&quot;GEL&quot;:4571.028982326971,&quot;HKD&quot;:1829.2401477406574,&quot;HUF&quot;:48.2520921477688,&quot;IDR&quot;:1.0,&quot;ILS&quot;:4440.257166487212,&quot;INR&quot;:194.9020989314547,&quot;JOD&quot;:20066.643165881,&quot;JPY&quot;:129.34241585485324,&quot;KRW&quot;:12.282878967936794,&quot;KWD&quot;:47312.66648013075,&quot;KZT&quot;:33.38407849360694,&quot;MDL&quot;:807.0368382273818,&quot;MXN&quot;:708.5739426772907,&quot;MYR&quot;:3422.480153957181,&quot;NAD&quot;:953.5690348525469,&quot;NOK&quot;:1638.0276867522537,&quot;NZD&quot;:10039.01365795557,&quot;OMR&quot;:36951.4006812,&quot;PLN&quot;:3716.4012744260863,&quot;QAR&quot;:3857.036507685201,&quot;RON&quot;:3405.114642669092,&quot;SAR&quot;:3793.1767210167145,&quot;SGD&quot;:10586.73611757046,&quot;THB&quot;:441.30556158689785,&quot;TRY&quot;:1710.622820728628,&quot;TWD&quot;:514.406547003592,&quot;UAH&quot;:528.8365484422233,&quot;XOF&quot;:25.62119381046055,&quot;ZAR&quot;:980.3624996675219}"
+                        class="">
+	<span data-label="">
+		Rp<span>IDR</span>
+	</span>
+
+                        <span>Индонезийская рупия</span>
+                    </li>
+
+
+                    <li data-value="25" data-code="JOD"
+                        data-rates="{&quot;CNY&quot;:0.10974043060349498,&quot;EUR&quot;:0.8375288525385559,&quot;GBP&quot;:0.975439291682,&quot;RUB&quot;:0.00968066107036161,&quot;USD&quot;:0.709,&quot;AED&quot;:0.19301971027177503,&quot;ARS&quot;:0.007253471484550147,&quot;AUD&quot;:0.5190006198509202,&quot;AZN&quot;:0.41686142724785263,&quot;BGN&quot;:0.42799794740290603,&quot;BHD&quot;:1.880571757,&quot;BRL&quot;:0.13717713065111425,&quot;CHF&quot;:0.774959940404,&quot;CLP&quot;:0.0009140720685876362,&quot;COP&quot;:0.0001854339582127222,&quot;CZK&quot;:0.032966547556220985,&quot;DKK&quot;:0.11262211116267541,&quot;EGP&quot;:0.04516901747959966,&quot;FJD&quot;:0.33846521053599904,&quot;GEL&quot;:0.2277924087522033,&quot;HKD&quot;:0.09115825365604178,&quot;HUF&quot;:0.0024045921265717606,&quot;IDR&quot;:4.983394540549186e-05,&quot;ILS&quot;:0.22127553329276095,&quot;INR&quot;:0.009712740557565885,&quot;JOD&quot;:1.000000000324,&quot;JPY&quot;:0.006445642890325181,&quot;KRW&quot;:0.0006121043201087481,&quot;KWD&quot;:2.357776839123,&quot;KZT&quot;:0.0016636603456020892,&quot;MDL&quot;:0.04021782974947469,&quot;MXN&quot;:0.035311035186574996,&quot;MYR&quot;:0.17055568919894154,&quot;NAD&quot;:0.04752010722320938,&quot;NOK&quot;:0.08162938234074384,&quot;NZD&quot;:0.5002836587176368,&quot;OMR&quot;:1.8414340848,&quot;PLN&quot;:0.1852029382746557,&quot;QAR&quot;:0.19221134681324972,&quot;RON&quot;:0.1696902972571921,&quot;SAR&quot;:0.18902896168977495,&quot;SGD&quot;:0.5275788298762906,&quot;THB&quot;:0.0219919972703868,&quot;TRY&quot;:0.08524708428519899,&quot;TWD&quot;:0.025634907787910294,&quot;UAH&quot;:0.026354011692037205,&quot;XOF&quot;:0.0012768051739877018,&quot;ZAR&quot;:0.04885533130185194}"
+                        class="">
+	<span data-label="">
+		د.ا<span>JOD</span>
+	</span>
+
+                        <span>Иорданский динар</span>
+                    </li>
+
+
+                    <li data-value="26" data-code="KZT"
+                        data-rates="{&quot;CNY&quot;:65.96324237311747,&quot;EUR&quot;:503.42538669262336,&quot;GBP&quot;:586.3211768319105,&quot;RUB&quot;:5.818892718067472,&quot;USD&quot;:426.16872,&quot;AED&quot;:116.02110421430905,&quot;ARS&quot;:4.359947333044832,&quot;AUD&quot;:311.96308873446566,&quot;AZN&quot;:250.56883064196072,&quot;BGN&quot;:257.26281730101715,&quot;BHD&quot;:1130.3820292668954,&quot;BRL&quot;:82.45501015768598,&quot;CHF&quot;:465.81620007510435,&quot;CLP&quot;:0.5494343067105009,&quot;COP&quot;:0.11146142823138125,&quot;CZK&quot;:19.815671896831912,&quot;DKK&quot;:67.69537513885163,&quot;EGP&quot;:27.150384159626924,&quot;FJD&quot;:203.44610096670246,&quot;GEL&quot;:136.92242495782307,&quot;HKD&quot;:54.79378884431263,&quot;HUF&quot;:1.4453624100185687,&quot;IDR&quot;:0.02995439877699485,&quot;ILS&quot;:133.00523383736717,&quot;INR&quot;:5.838175193866096,&quot;JOD&quot;:601.0842313117066,&quot;JPY&quot;:3.8743743032961757,&quot;KRW&quot;:0.3679262547351417,&quot;KWD&quot;:1417.2224789487939,&quot;KZT&quot;:1.0,&quot;MDL&quot;:24.174303279988077,&quot;MXN&quot;:21.224906441943055,&quot;MYR&quot;:102.51833533798413,&quot;NAD&quot;:28.563587131367292,&quot;NOK&quot;:49.06613453673541,&quot;NZD&quot;:300.7126184380989,&quot;OMR&quot;:1106.856991373184,&quot;PLN&quot;:111.32256578949087,&quot;QAR&quot;:115.53520964863007,&quot;RON&quot;:101.99816188789431,&quot;SAR&quot;:113.62232813294841,&quot;SGD&quot;:317.11931541251977,&quot;THB&quot;:13.219042774279599,&quot;TRY&quot;:51.2406781291331,&quot;TWD&quot;:15.408738842442542,&quot;UAH&quot;:15.840980859887912,&quot;XOF&quot;:0.7674674565412076,&quot;ZAR&quot;:29.366169261052434}"
+                        class="">
+	<span data-label="">
+		₸<span>KZT</span>
+	</span>
+
+                        <span>Казахстанский тенге</span>
+                    </li>
+
+
+                    <li data-value="40" data-code="QAR"
+                        data-rates="{&quot;CNY&quot;:0.570936276254895,&quot;EUR&quot;:4.357333043525512,&quot;GBP&quot;:5.074826787565904,&quot;RUB&quot;:0.050364670092901576,&quot;USD&quot;:3.688648,&quot;AED&quot;:1.0042055972993575,&quot;ARS&quot;:0.03773695781835221,&quot;AUD&quot;:2.7001559929931256,&quot;AZN&quot;:2.168765966704002,&quot;BGN&quot;:2.2267048987353233,&quot;BHD&quot;:9.783874826597492,&quot;BRL&quot;:0.7136786301634904,&quot;CHF&quot;:4.031811613894688,&quot;CLP&quot;:0.004755557274543931,&quot;COP&quot;:0.0009647399140951217,&quot;CZK&quot;:0.1715119742033278,&quot;DKK&quot;:0.585928526418304,&quot;EGP&quot;:0.23499662347259917,&quot;FJD&quot;:1.7609013008712258,&quot;GEL&quot;:1.1851142640779082,&quot;HKD&quot;:0.4742605220603617,&quot;HUF&quot;:0.01251014659872309,&quot;IDR&quot;:0.00025926640777381436,&quot;ILS&quot;:1.1512095251470749,&quot;INR&quot;:0.05053156705753484,&quot;JOD&quot;:5.202606488011283,&quot;JPY&quot;:0.03353414353147465,&quot;KRW&quot;:0.0031845379071375086,&quot;KWD&quot;:12.266585080504056,&quot;KZT&quot;:0.008655370107876524,&quot;MDL&quot;:0.2092375419883502,&quot;MXN&quot;:0.1837094207600698,&quot;MYR&quot;:0.8873341351936492,&quot;NAD&quot;:0.247228418230563,&quot;NOK&quot;:0.4246855541783076,&quot;NZD&quot;:2.6027790086904,&quot;OMR&quot;:9.5802569168256,&quot;PLN&quot;:0.963538008266477,&quot;QAR&quot;:1.0,&quot;RON&quot;:0.8828318414628309,&quot;SAR&quot;:0.9834433025092595,&quot;SGD&quot;:2.7447850432517904,&quot;THB&quot;:0.11441570768324079,&quot;TRY&quot;:0.44350703378622097,&quot;TWD&quot;:0.13336833757695307,&quot;UAH&quot;:0.13710955221411797,&quot;XOF&quot;:0.006642714882114794,&quot;ZAR&quot;:0.2541750636049557}"
+                        class="">
+	<span data-label="">
+		ر.ق<span>QAR</span>
+	</span>
+
+                        <span>Катарский риал</span>
+                    </li>
+
+
+                    <li data-value="13" data-code="COP"
+                        data-rates="{&quot;CNY&quot;:591.8033118702308,&quot;EUR&quot;:4516.588336258975,&quot;GBP&quot;:5260.305615452679,&quot;RUB&quot;:52.205438333233204,&quot;USD&quot;:3823.463657,&quot;AED&quot;:1040.9081065555918,&quot;ARS&quot;:39.116198331803865,&quot;AUD&quot;:2798.843453601418,&quot;AZN&quot;:2248.031759666746,&quot;BGN&quot;:2308.088290121035,&quot;BHD&quot;:10141.463708147994,&quot;BRL&quot;:739.7627274837961,&quot;CHF&quot;:4179.169489091086,&quot;CLP&quot;:4.929367184941662,&quot;COP&quot;:1.0,&quot;CZK&quot;:177.7805309985516,&quot;DKK&quot;:607.3435107822567,&quot;EGP&quot;:243.58546799943937,&quot;FJD&quot;:1825.2601298484306,&quot;GEL&quot;:1228.428767964355,&quot;HKD&quot;:491.5941748975884,&quot;HUF&quot;:12.967377441263004,&quot;IDR&quot;:0.2687422837863958,&quot;ILS&quot;:1193.284851520684,&quot;INR&quot;:52.37843518160119,&quot;JOD&quot;:5392.755510578279,&quot;JPY&quot;:34.759776227283,&quot;KRW&quot;:3.3009289453152224,&quot;KWD&quot;:12714.914041894395,&quot;KZT&quot;:8.971713496476232,&quot;MDL&quot;:216.88492300497867,&quot;MXN&quot;:190.4237795866258,&quot;MYR&quot;:919.7651327880683,&quot;NAD&quot;:256.2643201742627,&quot;NOK&quot;:440.2073014431476,&quot;NZD&quot;:2697.907457401799,&quot;OMR&quot;:9930.40380817187,&quot;PLN&quot;:998.7541659559384,&quot;QAR&quot;:1036.5487997228254,&quot;RON&quot;:915.0982856253889,&quot;SAR&quot;:1019.3869748114242,&quot;SGD&quot;:2845.1036420798064,&quot;THB&quot;:118.59746446850089,&quot;TRY&quot;:459.7166835397379,&quot;TWD&quot;:138.2427902364193,&quot;UAH&quot;:142.12074177807804,&quot;XOF&quot;:6.885498137957038,&quot;ZAR&quot;:263.46485709918954}"
+                        class="">
+	<span data-label="">
+		$<span>COP</span>
+	</span>
+
+                        <span>Колумбийское песо</span>
+                    </li>
+
+
+                    <li data-value="28" data-code="KWD"
+                        data-rates="{&quot;CNY&quot;:0.04654402773693253,&quot;EUR&quot;:0.35521973026142833,&quot;GBP&quot;:0.413711457099886,&quot;RUB&quot;:0.00410584280463361,&quot;USD&quot;:0.300707,&quot;AED&quot;:0.0818651312251032,&quot;ARS&quot;:0.0030764028921406645,&quot;AUD&quot;:0.22012287651961335,&quot;AZN&quot;:0.17680274929580347,&quot;BGN&quot;:0.18152606321333437,&quot;BHD&quot;:0.7976037961981391,&quot;BRL&quot;:0.058180710073725266,&quot;CHF&quot;:0.328682480675692,&quot;CLP&quot;:0.00038768387803777475,&quot;COP&quot;:7.864779869569688e-05,&quot;CZK&quot;:0.01398204741324195,&quot;DKK&quot;:0.04776623017514073,&quot;EGP&quot;:0.019157460852417024,&quot;FJD&quot;:0.14355269125960093,&quot;GEL&quot;:0.09661321845486354,&quot;HKD&quot;:0.03866279970732274,&quot;HUF&quot;:0.001019855690557143,&quot;IDR&quot;:2.1135989036254303e-05,&quot;ILS&quot;:0.09384922678401449,&quot;INR&quot;:0.004119448626158178,&quot;JOD&quot;:0.42412834981107056,&quot;JPY&quot;:0.0027337798834308233,&quot;KRW&quot;:0.00025961079518609494,&quot;KWD&quot;:0.999999999946629,&quot;KZT&quot;:0.0007056055170263295,&quot;MDL&quot;:0.017057521763716905,&quot;MXN&quot;:0.014976411083003394,&quot;MYR&quot;:0.07233750300697618,&quot;NAD&quot;:0.02015462466595503,&quot;NOK&quot;:0.03462133522642885,&quot;NZD&quot;:0.2121844825980316,&quot;OMR&quot;:0.7810043996304,&quot;PLN&quot;:0.078549816586399,&quot;QAR&quot;:0.08152228133886699,&quot;RON&quot;:0.07197046575080178,&quot;SAR&quot;:0.08017254158370543,&quot;SGD&quot;:0.2237611384987443,&quot;THB&quot;:0.009327429510840908,&quot;TRY&quot;:0.03615570518215703,&quot;TWD&quot;:0.01087249113706508,&quot;UAH&quot;:0.011177483489248845,&quot;XOF&quot;:0.0005415292714447389,&quot;ZAR&quot;:0.02072093104342171}"
+                        class="">
+	<span data-label="">
+		د.ك<span>KWD</span>
+	</span>
+
+                        <span>Кувейтский динар</span>
+                    </li>
+
+
+                    <li data-value="29" data-code="MYR"
+                        data-rates="{&quot;CNY&quot;:0.6434287306329035,&quot;EUR&quot;:4.910588774514552,&quot;GBP&quot;:5.719183547986,&quot;RUB&quot;:0.05675953183285362,&quot;USD&quot;:4.157,&quot;AED&quot;:1.131710769900904,&quot;ARS&quot;:0.042528463993010475,&quot;AUD&quot;:3.042997993539211,&quot;AZN&quot;:2.4441367470109743,&quot;BGN&quot;:2.509432253780447,&quot;BHD&quot;:11.026144987042887,&quot;BRL&quot;:0.8042952500725549,&quot;CHF&quot;:4.543735503892,&quot;CLP&quot;:0.005359376007219752,&quot;COP&quot;:0.0010872340822147902,&quot;CZK&quot;:0.1932890524558683,&quot;DKK&quot;:0.6603245645344553,&quot;EGP&quot;:0.2648344227412306,&quot;FJD&quot;:1.9844850220790071,&quot;GEL&quot;:1.335589624103971,&quot;HKD&quot;:0.5344779415669165,&quot;HUF&quot;:0.014098574711084355,&quot;IDR&quot;:0.00029218577026480873,&quot;ILS&quot;:1.2973799603639031,&quot;INR&quot;:0.05694761990251505,&quot;JOD&quot;:5.863187588152328,&quot;JPY&quot;:0.037792013404461505,&quot;KRW&quot;:0.003588882452316031,&quot;KWD&quot;:13.824087899516805,&quot;KZT&quot;:0.009754352689235381,&quot;MDL&quot;:0.2358046802095434,&quot;MXN&quot;:0.2070352232307366,&quot;MYR&quot;:1.0,&quot;NAD&quot;:0.2786193029490617,&quot;NOK&quot;:0.47860838136879,&quot;NZD&quot;:2.933256938348683,&quot;OMR&quot;:10.7966734704,&quot;PLN&quot;:1.0858795689813028,&quot;QAR&quot;:1.1269711829374882,&quot;RON&quot;:0.9949260447082475,&quot;SAR&quot;:1.1083122619808101,&quot;SGD&quot;:3.093293647102595,&quot;THB&quot;:0.12894320543441173,&quot;TRY&quot;:0.49981964650715405,&quot;TWD&quot;:0.15030227316550507,&quot;UAH&quot;:0.15451851425077384,&quot;XOF&quot;:0.007486148248613366,&quot;ZAR&quot;:0.2864479721040882}"
+                        class="">
+	<span data-label="">
+		RM<span>MYR</span>
+	</span>
+
+                        <span>Малайзийский ринггит</span>
+                    </li>
+
+
+                    <li data-value="30" data-code="MXN"
+                        data-rates="{&quot;CNY&quot;:3.107822526970762,&quot;EUR&quot;:23.718615112375346,&quot;GBP&quot;:27.624205479335682,&quot;RUB&quot;:0.2741539866846535,&quot;USD&quot;:20.078709,&quot;AED&quot;:5.4662716432538385,&quot;ARS&quot;:0.20541656308218317,&quot;AUD&quot;:14.697972383896486,&quot;AZN&quot;:11.805415082857824,&quot;BGN&quot;:12.120798647792098,&quot;BHD&quot;:53.25733860636105,&quot;BRL&quot;:3.8848232562639065,&quot;CHF&quot;:21.946678603708403,&quot;CLP&quot;:0.02588630052214272,&quot;COP&quot;:0.0052514449727382355,&quot;CZK&quot;:0.9336046757630779,&quot;DKK&quot;:3.1894310264226724,&quot;EGP&quot;:1.2791756813577462,&quot;FJD&quot;:9.58525313283208,&quot;GEL&quot;:6.451026077893437,&quot;HKD&quot;:2.5815797583933415,&quot;HUF&quot;:0.06809746907351981,&quot;IDR&quot;:0.0014112853151522606,&quot;ILS&quot;:6.266469734562989,&quot;INR&quot;:0.2750624701143151,&quot;JOD&quot;:28.31975881523272,&quot;JPY&quot;:0.18253905212227134,&quot;KRW&quot;:0.017334646715241753,&quot;KWD&quot;:66.77167142766879,&quot;KZT&quot;:0.047114459737917884,&quot;MDL&quot;:1.1389592385772145,&quot;MXN&quot;:1.0,&quot;MYR&quot;:4.8300959826798175,&quot;NAD&quot;:1.3457579758713136,&quot;NOK&quot;:2.3117244201262825,&quot;NZD&quot;:14.167912554085673,&quot;OMR&quot;:52.1489691556848,&quot;PLN&quot;:5.244902543810682,&quot;QAR&quot;:5.443378983302283,&quot;RON&quot;:4.805588291608827,&quot;SAR&quot;:5.353254604148293,&quot;SGD&quot;:14.940905218119244,&quot;THB&quot;:0.6228080585626105,&quot;TRY&quot;:2.414176866658651,&quot;TWD&quot;:0.7259744058043506,&quot;UAH&quot;:0.7463392549323168,&quot;XOF&quot;:0.03615881458137297,&quot;ZAR&quot;:1.3835711993067366}"
+                        class="">
+	<span data-label="">
+		$<span>MXN</span>
+	</span>
+
+                        <span>Мексиканское песо</span>
+                    </li>
+
+
+                    <li data-value="31" data-code="MDL"
+                        data-rates="{&quot;CNY&quot;:2.728651229742907,&quot;EUR&quot;:20.824814715937148,&quot;GBP&quot;:24.253901758454305,&quot;RUB&quot;:0.24070570517266804,&quot;USD&quot;:17.628997,&quot;AED&quot;:4.799356691712948,&quot;ARS&quot;:0.18035462211868888,&quot;AUD&quot;:12.904739595648008,&quot;AZN&quot;:10.365090060294978,&quot;BGN&quot;:10.641995110319641,&quot;BHD&quot;:46.75965285016697,&quot;BRL&quot;:3.410853632581987,&quot;CHF&quot;:19.269064124826933,&quot;CLP&quot;:0.0227280306839425,&quot;COP&quot;:0.004610740046587031,&quot;CZK&quot;:0.819699813778529,&quot;DKK&quot;:2.800303047198513,&quot;EGP&quot;:1.123109272071659,&quot;FJD&quot;:8.415799976130803,&quot;GEL&quot;:5.66396571483282,&quot;HKD&quot;:2.26661294886922,&quot;HUF&quot;:0.0597892064676406,&quot;IDR&quot;:0.0012391008100651917,&quot;ILS&quot;:5.501926251892077,&quot;INR&quot;:0.24150334866937168,&quot;JOD&quot;:24.864593794076164,&quot;JPY&quot;:0.16026829226153758,&quot;KRW&quot;:0.015219725279103188,&quot;KWD&quot;:58.62516336500314,&quot;KZT&quot;:0.04136623870470831,&quot;MDL&quot;:1.0,&quot;MXN&quot;:0.8779945463625176,&quot;MYR&quot;:4.240797931200385,&quot;NAD&quot;:1.181568163538874,&quot;NOK&quot;:2.0296814335639297,&quot;NZD&quot;:12.43934995582827,&quot;OMR&quot;:45.7865105171184,&quot;PLN&quot;:4.604995829668675,&quot;QAR&quot;:4.779257061123751,&quot;RON&quot;:4.219280312096118,&quot;SAR&quot;:4.700128347732239,&quot;SGD&quot;:13.118033299227978,&quot;THB&quot;:0.5468220788485996,&quot;TRY&quot;:2.1196341228808464,&quot;TWD&quot;:0.637401569094989,&quot;UAH&quot;:0.655281795566839,&quot;XOF&quot;:0.03174724200537895,&quot;ZAR&quot;:1.2147679674955627}"
+                        class="">
+	<span data-label="">
+		L<span>MDL</span>
+	</span>
+
+                        <span>Молдавский лей</span>
+                    </li>
+
+
+                    <li data-value="35" data-code="NZD"
+                        data-rates="{&quot;CNY&quot;:0.21935641648737753,&quot;EUR&quot;:1.6741079549884352,&quot;GBP&quot;:1.949772443462008,&quot;RUB&quot;:0.019350344352993223,&quot;USD&quot;:1.417196,&quot;AED&quot;:0.3858205379505608,&quot;ARS&quot;:0.014498717598517796,&quot;AUD&quot;:1.0374126977271578,&quot;AZN&quot;:0.8332501374349205,&quot;BGN&quot;:0.855510549032628,&quot;BHD&quot;:3.7590109624867045,&quot;BRL&quot;:0.2741987036857889,&quot;CHF&quot;:1.549041082793776,&quot;CLP&quot;:0.0018271075871849416,&quot;COP&quot;:0.00037065763588608894,&quot;CZK&quot;:0.06589571132649669,&quot;DKK&quot;:0.2251165098773086,&quot;EGP&quot;:0.09028681370487876,&quot;FJD&quot;:0.676546604606755,&quot;GEL&quot;:0.45532650298812877,&quot;HKD&quot;:0.18221313468291264,&quot;HUF&quot;:0.004806457466021146,&quot;IDR&quot;:9.961137957089389e-05,&quot;ILS&quot;:0.4423001420033394,&quot;INR&quot;:0.019414466955825046,&quot;JOD&quot;:1.9988660084626235,&quot;JPY&quot;:0.012883976480334191,&quot;KRW&quot;:0.0012235145190985014,&quot;KWD&quot;:4.712879979514943,&quot;KZT&quot;:0.0033254341144511967,&quot;MDL&quot;:0.08039005282036181,&quot;MXN&quot;:0.0705820279580724,&quot;MYR&quot;:0.3409179696896801,&quot;NAD&quot;:0.09498632707774798,&quot;NOK&quot;:0.163166197652712,&quot;NZD&quot;:1.0,&quot;OMR&quot;:3.6807799989312,&quot;PLN&quot;:0.37019585798461063,&quot;QAR&quot;:0.38420472758582547,&quot;RON&quot;:0.3391881671533196,&quot;SAR&quot;:0.3778435661366746,&quot;SGD&quot;:1.0545593898242025,&quot;THB&quot;:0.043959055801978966,&quot;TRY&quot;:0.17039749909823254,&quot;TWD&quot;:0.051240745807327674,&quot;UAH&quot;:0.05267813815783971,&quot;XOF&quot;:0.002552162461713223,&quot;ZAR&quot;:0.09765526107145185}"
+                        class="">
+	<span data-label="">
+		$<span>NZD</span>
+	</span>
+
+                        <span>Новозеландский доллар</span>
+                    </li>
+
+
+                    <li data-value="33" data-code="ILS"
+                        data-rates="{&quot;CNY&quot;:0.4959447118733264,&quot;EUR&quot;:3.785004335304499,&quot;GBP&quot;:4.4082564265767,&quot;RUB&quot;:0.04374935143667018,&quot;USD&quot;:3.20415,&quot;AED&quot;:0.8723048023521724,&quot;ARS&quot;:0.032780268920665025,&quot;AUD&quot;:2.3454948330523604,&quot;AZN&quot;:1.8839020346247806,&quot;BGN&quot;:1.934230780839697,&quot;BHD&quot;:8.498778556707594,&quot;BRL&quot;:0.6199380864854407,&quot;CHF&quot;:3.5022396234774,&quot;CLP&quot;:0.004130922452136918,&quot;COP&quot;:0.0008380228733530237,&quot;CZK&quot;:0.14898415141363253,&quot;DKK&quot;:0.5089677540180599,&quot;EGP&quot;:0.2041301937999312,&quot;FJD&quot;:1.529609738632295,&quot;GEL&quot;:1.0294514058390039,&quot;HKD&quot;:0.41196716297128594,&quot;HUF&quot;:0.010866958903180403,&quot;IDR&quot;:0.00022521218085012914,&quot;ILS&quot;:1.0,&quot;INR&quot;:0.04389432675262054,&quot;JOD&quot;:4.5192524682651625,&quot;JPY&quot;:0.029129487551095824,&quot;KRW&quot;:0.002766253959487229,&quot;KWD&quot;:10.65538880039374,&quot;KZT&quot;:0.007518501123217115,&quot;MDL&quot;:0.18175452636358155,&quot;MXN&quot;:0.15957948292392704,&quot;MYR&quot;:0.7707842193889825,&quot;NAD&quot;:0.2147553619302949,&quot;NOK&quot;:0.3689037876263672,&quot;NZD&quot;:2.260908159492406,&quot;OMR&quot;:8.32190553288,&quot;PLN&quot;:0.8369788359276983,&quot;QAR&quot;:0.86865160351435,&quot;RON&quot;:0.7668732947202145,&quot;SAR&quot;:0.8542696016901162,&quot;SGD&quot;:2.3842619291228724,&quot;THB&quot;:0.09938738794627625,&quot;TRY&quot;:0.38525309606829383,&quot;TWD&quot;:0.11585062029426343,&quot;UAH&quot;:0.11910043238792808,&quot;XOF&quot;:0.005770204934037651,&quot;ZAR&quot;:0.22078957657380663}"
+                        class="">
+	<span data-label="">
+		₪<span>ILS</span>
+	</span>
+
+                        <span>Новый израильский шекель</span>
+                    </li>
+
+
+                    <li data-value="34" data-code="TWD"
+                        data-rates="{&quot;CNY&quot;:4.280898199885462,&quot;EUR&quot;:32.671420538711786,&quot;GBP&quot;:38.051211252728905,&quot;RUB&quot;:0.3776358842580709,&quot;USD&quot;:27.657599,&quot;AED&quot;:7.529565229227921,&quot;ARS&quot;:0.28295289949594,&quot;AUD&quot;:20.245854766204495,&quot;AZN&quot;:16.261475595379835,&quot;BGN&quot;:16.695903534454136,&quot;BHD&quot;:73.35980191664478,&quot;BRL&quot;:5.35118486988488,&quot;CHF&quot;:30.230650596273243,&quot;CLP&quot;:0.03565731837813447,&quot;COP&quot;:0.0072336502922852285,&quot;CZK&quot;:1.286002190020296,&quot;DKK&quot;:4.393310564287608,&quot;EGP&quot;:1.7620120917905788,&quot;FJD&quot;:13.203293471774675,&quot;GEL&quot;:8.886024116436941,&quot;HKD&quot;:3.556020346933656,&quot;HUF&quot;:0.09380147361816502,&quot;IDR&quot;:0.0019439876996608621,&quot;ILS&quot;:8.631805314982133,&quot;INR&quot;:0.3788872829608324,&quot;JOD&quot;:39.00930747531735,&quot;JPY&quot;:0.2514400654662548,&quot;KRW&quot;:0.02387776563009223,&quot;KWD&quot;:91.97524168043977,&quot;KZT&quot;:0.06489823795608463,&quot;MDL&quot;:1.5688696866872234,&quot;MXN&quot;:1.3774590288648538,&quot;MYR&quot;:6.653259321626173,&quot;NAD&quot;:1.853726474530831,&quot;NOK&quot;:3.1843056747503167,&quot;NZD&quot;:19.51571906779302,&quot;OMR&quot;:71.8330684094928,&quot;PLN&quot;:7.224638364488264,&quot;QAR&quot;:7.498031528082918,&quot;RON&quot;:6.619500981283807,&quot;SAR&quot;:7.373888888296414,&quot;SGD&quot;:20.58048479211236,&quot;THB&quot;:0.8578925835168585,&quot;TRY&quot;:3.325429722255621,&quot;TWD&quot;:1.0,&quot;UAH&quot;:1.0280517453027878,&quot;XOF&quot;:0.04980728561816233,&quot;ZAR&quot;:1.9058126405624385}"
+                        class="">
+	<span data-label="">
+		$<span>TWD</span>
+	</span>
+
+                        <span>Новый тайваньский доллар</span>
+                    </li>
+
+
+                    <li data-value="36" data-code="NOK"
+                        data-rates="{&quot;CNY&quot;:1.344374139025183,&quot;EUR&quot;:10.260139533015646,&quot;GBP&quot;:11.949610100077004,&quot;RUB&quot;:0.11859284969169348,&quot;USD&quot;:8.685598,&quot;AED&quot;:2.364586191876293,&quot;ARS&quot;:0.088858585951591,&quot;AUD&quot;:6.358012337427997,&quot;AZN&quot;:5.106757094434694,&quot;BGN&quot;:5.243184932540521,&quot;BHD&quot;:23.03792707413272,&quot;BRL&quot;:1.680487181967689,&quot;CHF&quot;:9.493639645208887,&quot;CLP&quot;:0.011197831496164507,&quot;COP&quot;:0.0022716570050557174,&quot;CZK&quot;:0.40385638860538486,&quot;DKK&quot;:1.379676140743646,&quot;EGP&quot;:0.5533426347107017,&quot;FJD&quot;:4.1463649600190955,&quot;GEL&quot;:2.7905688159581916,&quot;HKD&quot;:1.116733351050692,&quot;HUF&quot;:0.029457433801646588,&quot;IDR&quot;:0.0006104902915180376,&quot;ILS&quot;:2.7107338919838333,&quot;INR&quot;:0.11898583919414117,&quot;JOD&quot;:12.250490832157968,&quot;JPY&quot;:0.07896228916087661,&quot;KRW&quot;:0.007498578361816506,&quot;KWD&quot;:28.88392355349227,&quot;KZT&quot;:0.02038065581162315,&quot;MDL&quot;:0.4926881546352297,&quot;MXN&quot;:0.4325775128271444,&quot;MYR&quot;:2.0893909069040175,&quot;NAD&quot;:0.5821446380697051,&quot;NOK&quot;:1.0,&quot;NZD&quot;:6.128720374598855,&quot;OMR&quot;:22.5584713738656,&quot;PLN&quot;:2.2688268974223877,&quot;QAR&quot;:2.3546833419724518,&quot;RON&quot;:2.0787894308553923,&quot;SAR&quot;:2.315697562192928,&quot;SGD&quot;:6.463099618640126,&quot;THB&quot;:0.26941276094171657,&quot;TRY&quot;:1.044318624504028,&quot;TWD&quot;:0.31404020283901,&quot;UAH&quot;:0.3228495786238857,&quot;XOF&quot;:0.015641490078388203,&quot;ZAR&quot;:0.5985017882153775}"
+                        class="">
+	<span data-label="">
+		kr<span>NOK</span>
+	</span>
+
+                        <span>Норвежская крона</span>
+                    </li>
+
+
+                    <li data-value="37" data-code="OMR"
+                        data-rates="{&quot;CNY&quot;:0.059595090315290915,&quot;EUR&quot;:0.4548242371113056,&quot;GBP&quot;:0.529717191423348,&quot;RUB&quot;:0.005257131465835049,&quot;USD&quot;:0.385026,&quot;AED&quot;:0.10482032016653882,&quot;ARS&quot;:0.003939034009837,&quot;AUD&quot;:0.2818458853907038,&quot;AZN&quot;:0.22637868540822165,&quot;BGN&quot;:0.2324264284420817,&quot;BHD&quot;:1.021253909,&quot;BRL&quot;:0.07449472768418891,&quot;CHF&quot;:0.420845875901256,&quot;CLP&quot;:0.0004963914136530651,&quot;COP&quot;:0.0001007008394942697,&quot;CZK&quot;:0.017902648715629816,&quot;DKK&quot;:0.06116000139717028,&quot;EGP&quot;:0.02452926111614811,&quot;FJD&quot;:0.18380522737115665,&quot;GEL&quot;:0.123703808192922,&quot;HKD&quot;:0.04950394610267999,&quot;HUF&quot;:0.0013058257942530588,&quot;IDR&quot;:2.706257358489732e-05,&quot;ILS&quot;:0.12016478630392785,&quot;INR&quot;:0.00527455239418343,&quot;JOD&quot;:0.5430550071025817,&quot;JPY&quot;:0.003500338646720356,&quot;KRW&quot;:0.0003324063158733298,&quot;KWD&quot;:1.280402518,&quot;KZT&quot;:0.000903459080797226,&quot;MDL&quot;:0.021840493820251397,&quot;MXN&quot;:0.019175834464044996,&quot;MYR&quot;:0.09262112100931691,&quot;NAD&quot;:0.02580603217397657,&quot;NOK&quot;:0.044329244806832,&quot;NZD&quot;:0.2716815458382118,&quot;OMR&quot;:0.9999999999072,&quot;PLN&quot;:0.10057538295082875,&quot;QAR&quot;:0.10438133430886612,&quot;RON&quot;:0.09215116557369202,&quot;SAR&quot;:0.10265312412350816,&quot;SGD&quot;:0.2865043251790531,&quot;THB&quot;:0.011942864232761563,&quot;TRY&quot;:0.046293855957677044,&quot;TWD&quot;:0.013921165030837653,&quot;UAH&quot;:0.01431167800527266,&quot;XOF&quot;:0.0006933754427641592,&quot;ZAR&quot;:0.026531132284664097}"
+                        class="">
+	<span data-label="">
+		ر.ع.<span>OMR</span>
+	</span>
+
+                        <span>Оманский риал</span>
+                    </li>
+
+
+                    <li data-value="38" data-code="PLN"
+                        data-rates="{&quot;CNY&quot;:0.5925415202687015,&quot;EUR&quot;:4.522222274723639,&quot;GBP&quot;:5.266867257988234,&quot;RUB&quot;:0.05227055877485704,&quot;USD&quot;:3.828233,&quot;AED&quot;:1.0422065229227921,&quot;ARS&quot;:0.039164991411439615,&quot;AUD&quot;:2.802334697570506,&quot;AZN&quot;:2.250835927693063,&quot;BGN&quot;:2.3109673719477226,&quot;BHD&quot;:10.15411404911767,&quot;BRL&quot;:0.7406854986940118,&quot;CHF&quot;:4.184382535306948,&quot;CLP&quot;:0.004935516018822922,&quot;COP&quot;:0.001001247388082601,&quot;CZK&quot;:0.1780022923142377,&quot;DKK&quot;:0.6081011038396515,&quot;EGP&quot;:0.24388931360931668,&quot;FJD&quot;:1.8275369375820503,&quot;GEL&quot;:1.229961095369838,&quot;HKD&quot;:0.49220738361283173,&quot;HUF&quot;:0.012983552793345825,&quot;IDR&quot;:0.00026907750970848196,&quot;ILS&quot;:1.1947733408236194,&quot;INR&quot;:0.05244377141743201,&quot;JOD&quot;:5.399482369534556,&quot;JPY&quot;:0.03480313515790279,&quot;KRW&quot;:0.0033050464847431214,&quot;KWD&quot;:12.730774474821006,&quot;KZT&quot;:0.008982904704972247,&quot;MDL&quot;:0.21715546267323094,&quot;MXN&quot;:0.19066131193992603,&quot;MYR&quot;:0.9209124368535001,&quot;NAD&quot;:0.25658398123324394,&quot;NOK&quot;:0.44075641078484173,&quot;NZD&quot;:2.7012727950121227,&quot;OMR&quot;:9.942790876460291,&quot;PLN&quot;:1.0,&quot;QAR&quot;:1.037841778342634,&quot;RON&quot;:0.9162397683212867,&quot;SAR&quot;:1.0206585459753628,&quot;SGD&quot;:2.8486525904567017,&quot;THB&quot;:0.11874540153230559,&quot;TRY&quot;:0.46029012865215824,&quot;TWD&quot;:0.1384152326454657,&quot;UAH&quot;:0.14229802149766244,&quot;XOF&quot;:0.006894087026277097,&quot;ZAR&quot;:0.26379350002211926}"
+                        class="">
+	<span data-label="">
+		zł<span>PLN</span>
+	</span>
+
+                        <span>Польский злотый</span>
+                    </li>
+
+
+                    <li data-value="3" data-code="RUB"
+                        data-rates="{&quot;CNY&quot;:11.33604717755042,&quot;EUR&quot;:86.51566734157238,&quot;GBP&quot;:100.7616406144424,&quot;RUB&quot;:1.0,&quot;USD&quot;:73.2388,&quot;AED&quot;:19.93869105956659,&quot;ARS&quot;:0.7492743970871532,&quot;AUD&quot;:53.61210523195082,&quot;AZN&quot;:43.06125628746388,&quot;BGN&quot;:44.21164468322719,&quot;BHD&quot;:194.26067536132706,&quot;BRL&quot;:14.170223469091612,&quot;CHF&quot;:80.0523781146128,&quot;CLP&quot;:0.09442248436794946,&quot;COP&quot;:0.019155092494710747,&quot;CZK&quot;:3.405402515036047,&quot;DKK&quot;:11.633721125096478,&quot;EGP&quot;:4.665902169896666,&quot;FJD&quot;:34.96302661415444,&quot;GEL&quot;:23.530666673520788,&quot;HKD&quot;:9.416531890024316,&quot;HUF&quot;:0.2483913143012184,&quot;IDR&quot;:0.005147783303168216,&quot;ILS&quot;:22.857481703415882,&quot;INR&quot;:1.0033137706317823,&quot;JOD&quot;:103.29873060648801,&quot;JPY&quot;:0.6658267287290535,&quot;KRW&quot;:0.06322959926598108,&quot;KWD&quot;:243.5553545477824,&quot;KZT&quot;:0.17185400186104696,&quot;MDL&quot;:4.154450760868585,&quot;MXN&quot;:3.6475851111742292,&quot;MYR&quot;:17.61818619196536,&quot;NAD&quot;:4.908766756032172,&quot;NOK&quot;:8.432211575990507,&quot;NZD&quot;:51.67866688870135,&quot;OMR&quot;:190.21780347301222,&quot;PLN&quot;:19.131228428363688,&quot;QAR&quot;:19.85518813397212,&quot;RON&quot;:17.528792302905558,&quot;SAR&quot;:19.526451790416203,&quot;SGD&quot;:54.49822342107711,&quot;THB&quot;:2.2717454015323058,&quot;TRY&quot;:8.805915594565349,&quot;TWD&quot;:2.648053433705507,&quot;UAH&quot;:2.7223359541759864,&quot;XOF&quot;:0.13189235370472566,&quot;ZAR&quot;:5.046693706840725}"
+                        class="selected">
+	<span data-label="">
+		₽<span>RUB</span>
+	</span>
+
+                        <span>Российский рубль</span>
+                    </li>
+
+
+                    <li data-value="41" data-code="RON"
+                        data-rates="{&quot;CNY&quot;:0.6467101088117386,&quot;EUR&quot;:4.93563195036726,&quot;GBP&quot;:5.7483504210236,&quot;RUB&quot;:0.05704899588742579,&quot;USD&quot;:4.1782,&quot;AED&quot;:1.137482304257868,&quot;ARS&quot;:0.04274535199797844,&quot;AUD&quot;:3.0585167708938013,&quot;AZN&quot;:2.4566014328509147,&quot;BGN&quot;:2.5222299357097584,&quot;BHD&quot;:11.082376469776904,&quot;BRL&quot;:0.8083970204121118,&quot;CHF&quot;:4.5669077898392,&quot;CLP&quot;:0.005386707922387675,&quot;COP&quot;:0.0010927787929540138,&quot;CZK&quot;:0.1942747940753209,&quot;DKK&quot;:0.6636921086210876,&quot;EGP&quot;:0.26618503370156593,&quot;FJD&quot;:1.9946055615228548,&quot;GEL&quot;:1.3424009062860744,&quot;HKD&quot;:0.537203689067811,&quot;HUF&quot;:0.014170475068042495,&quot;IDR&quot;:0.0002936758684918027,&quot;ILS&quot;:1.3039963796950829,&quot;INR&quot;:0.05723804317457021,&quot;JOD&quot;:5.893088857545839,&quot;JPY&quot;:0.03798474630900194,&quot;KRW&quot;:0.003607185148488535,&quot;KWD&quot;:13.894588419956968,&quot;KZT&quot;:0.009804098245408533,&quot;MDL&quot;:0.23700724437130485,&quot;MXN&quot;:0.20809106800641416,&quot;MYR&quot;:1.0050998316093336,&quot;NAD&quot;:0.2800402144772118,&quot;NOK&quot;:0.4810492035205866,&quot;NZD&quot;:2.9482160548011707,&quot;OMR&quot;:10.85173468804704,&quot;PLN&quot;:1.0914173719311233,&quot;QAR&quot;:1.132718546199041,&quot;RON&quot;:1.0,&quot;SAR&quot;:1.113964467887472,&quot;SGD&quot;:3.10906892382104,&quot;THB&quot;:0.12960079406929495,&quot;TRY&quot;:0.5023686425393772,&quot;TWD&quot;:0.15106878944914923,&quot;UAH&quot;:0.1553065326539772,&quot;XOF&quot;:0.007524326344083803,&quot;ZAR&quot;:0.2879088085266541}"
+                        class="">
+	<span data-label="">
+		Lei<span>RON</span>
+	</span>
+
+                        <span>Румынский лей</span>
+                    </li>
+
+
+                    <li data-value="43" data-code="SAR"
+                        data-rates="{&quot;CNY&quot;:0.5805482378070488,&quot;EUR&quot;:4.43069064826387,&quot;GBP&quot;:5.160263712831704,&quot;RUB&quot;:0.051212581309360614,&quot;USD&quot;:3.750748,&quot;AED&quot;:1.0211118370902754,&quot;ARS&quot;:0.03837227598384798,&quot;AUD&quot;:2.7456142983572787,&quot;AZN&quot;:2.2052780889049597,&quot;BGN&quot;:2.2641924481603333,&quot;BHD&quot;:9.948590632153268,&quot;BRL&quot;:0.7256937215826642,&quot;CHF&quot;:4.099688923202288,&quot;CLP&quot;:0.0048356191581254435,&quot;COP&quot;:0.0009809817318736972,&quot;CZK&quot;:0.17439945319238467,&quot;DKK&quot;:0.5957928890494296,&quot;EGP&quot;:0.2389528942573551,&quot;FJD&quot;:1.790546843298723,&quot;GEL&quot;:1.2050661802811453,&quot;HKD&quot;:0.4822449050700575,&quot;HUF&quot;:0.012720760380190096,&quot;IDR&quot;:0.0002636312709764712,&quot;ILS&quot;:1.1705906402634083,&quot;INR&quot;:0.05138228805728133,&quot;JOD&quot;:5.2901946403385045,&quot;JPY&quot;:0.034098705482982244,&quot;KRW&quot;:0.003238150993567344,&quot;KWD&quot;:12.473098398108458,&quot;KZT&quot;:0.008801087043647878,&quot;MDL&quot;:0.21276014738671747,&quot;MXN&quot;:0.1868022490888234,&quot;MYR&quot;:0.9022727928794804,&quot;NAD&quot;:0.2513906166219839,&quot;NOK&quot;:0.43183532095314564,&quot;NZD&quot;:2.6465979299969797,&quot;OMR&quot;:9.741544726849614,&quot;PLN&quot;:0.9797595914355265,&quot;QAR&quot;:1.0168354367236994,&quot;RON&quot;:0.8976947010674453,&quot;SAR&quot;:1.0,&quot;SGD&quot;:2.790994698167612,&quot;THB&quot;:0.11634194609013927,&quot;TRY&quot;:0.4509736683900445,&quot;TWD&quot;:0.13561365178517484,&quot;UAH&quot;:0.1394178514046335,&quot;XOF&quot;:0.006754547888186213,&quot;ZAR&quot;:0.25845421180501915}"
+                        class="">
+	<span data-label="">
+		ر.س<span>SAR</span>
+	</span>
+
+                        <span>Саудовский риял</span>
+                    </li>
+
+
+                    <li data-value="44" data-code="SGD"
+                        data-rates="{&quot;CNY&quot;:0.20800764623028464,&quot;EUR&quot;:1.5874951862763396,&quot;GBP&quot;:1.84889771242475,&quot;RUB&quot;:0.018349221997083512,&quot;USD&quot;:1.343875,&quot;AED&quot;:0.36585946858325163,&quot;ARS&quot;:0.013748602248883078,&quot;AUD&quot;:0.9837404206320681,&quot;AZN&quot;:0.7901405510919829,&quot;BGN&quot;:0.8112492831487127,&quot;BHD&quot;:3.564532257508362,&quot;BRL&quot;:0.2600125761826449,&quot;CHF&quot;:1.4688988574195,&quot;CLP&quot;:0.0017325791271836524,&quot;COP&quot;:0.0003514810445601157,&quot;CZK&quot;:0.06248648673782295,&quot;DKK&quot;:0.21346973157655547,&quot;EGP&quot;:0.08561567473210759,&quot;FJD&quot;:0.6415443370330588,&quot;GEL&quot;:0.43176942653180755,&quot;HKD&quot;:0.1727860340926726,&quot;HUF&quot;:0.004557787368260401,&quot;IDR&quot;:9.445781862271346e-05,&quot;ILS&quot;:0.4194170060702526,&quot;INR&quot;:0.0184100271100535,&quot;JOD&quot;:1.8954513399153738,&quot;JPY&quot;:0.012217402457041306,&quot;KRW&quot;:0.0011602139537181155,&quot;KWD&quot;:4.469051269175643,&quot;KZT&quot;:0.003153387231235554,&quot;MDL&quot;:0.07623093928713018,&quot;MXN&quot;:0.06693034895819248,&quot;MYR&quot;:0.3232800096223238,&quot;NAD&quot;:0.0900720509383378,&quot;NOK&quot;:0.15472452213422727,&quot;NZD&quot;:0.9482633312541102,&quot;OMR&quot;:3.4903487037239045,&quot;PLN&quot;:0.3510431575089604,&quot;QAR&quot;:0.3643272548641128,&quot;RON&quot;:0.3216397013067828,&quot;SAR&quot;:0.3582951987176958,&quot;SGD&quot;:1.0,&quot;THB&quot;:0.0416847606935699,&quot;TRY&quot;:0.16158170013225923,&quot;TWD&quot;:0.04858972031520162,&quot;UAH&quot;:0.04995274677381734,&quot;XOF&quot;:0.0024201220778458715,&quot;ZAR&quot;:0.09260290317810477}"
+                        class="">
+	<span data-label="">
+		$<span>SGD</span>
+	</span>
+
+                        <span>Сингапурский доллар</span>
+                    </li>
+
+
+                    <li data-value="47" data-code="THB"
+                        data-rates="{&quot;CNY&quot;:4.990016561672884,&quot;EUR&quot;:38.08334652431432,&quot;GBP&quot;:44.354283955622,&quot;RUB&quot;:0.440190172422268,&quot;USD&quot;:32.239,&quot;AED&quot;:8.77681585538495,&quot;ARS&quot;:0.32982322604538483,&quot;AUD&quot;:23.599521845973207,&quot;AZN&quot;:18.955141829898196,&quot;BGN&quot;:19.461531496181824,&quot;BHD&quot;:85.51164018216879,&quot;BRL&quot;:6.237593112121505,&quot;CHF&quot;:35.238270125084,&quot;CLP&quot;:0.04156384967446658,&quot;COP&quot;:0.008431883468011214,&quot;CZK&quot;:1.4990247202609426,&quot;DKK&quot;:5.1210497079688,&quot;EGP&quot;:2.0538842806722477,&quot;FJD&quot;:15.390380713688984,&quot;GEL&quot;:10.357968220228031,&quot;HKD&quot;:4.1450647962895895,&quot;HUF&quot;:0.1093394154704471,&quot;IDR&quot;:0.0022660036198140893,&quot;ILS&quot;:10.061638812165473,&quot;INR&quot;:0.4416488616880401,&quot;JOD&quot;:45.471086036671366,&quot;JPY&quot;:0.2930903825225967,&quot;KRW&quot;:0.02783304820308312,&quot;KWD&quot;:107.21067351275494,&quot;KZT&quot;:0.07564844271067102,&quot;MDL&quot;:1.8287483967465648,&quot;MXN&quot;:1.6056311190126815,&quot;MYR&quot;:7.755352417608853,&quot;NAD&quot;:2.1607908847184985,&quot;NOK&quot;:3.7117766675363053,&quot;NZD&quot;:22.748441288290397,&quot;OMR&quot;:83.73200770857034,&quot;PLN&quot;:8.421378740531205,&quot;QAR&quot;:8.740058688169757,&quot;RON&quot;:7.716002106170121,&quot;SAR&quot;:8.595352180418413,&quot;SGD&quot;:23.989582364431215,&quot;THB&quot;:1.0,&quot;TRY&quot;:3.876277503907659,&quot;TWD&quot;:1.1656470975662059,&quot;UAH&quot;:1.198345533060067,&quot;XOF&quot;:0.05805771791846195,&quot;ZAR&quot;:2.2215049729765934}"
+                        class="">
+	<span data-label="">
+		฿<span>THB</span>
+	</span>
+
+                        <span>Тайский бат</span>
+                    </li>
+
+
+                    <li data-value="48" data-code="TRY"
+                        data-rates="{&quot;CNY&quot;:1.2873218072345103,&quot;EUR&quot;:9.82472139466864,&quot;GBP&quot;:11.442494483666,&quot;RUB&quot;:0.11356002556022218,&quot;USD&quot;:8.317,&quot;AED&quot;:2.2642382663617555,&quot;ARS&quot;:0.08508761968483718,&quot;AUD&quot;:6.088192040477656,&quot;AZN&quot;:4.890037364659676,&quot;BGN&quot;:5.020675500286741,&quot;BHD&quot;:22.060247259378325,&quot;BRL&quot;:1.6091709393441036,&quot;CHF&quot;:9.090750104852,&quot;CLP&quot;:0.01072261973828402,&quot;COP&quot;:0.0021752527933077723,&quot;CZK&quot;:0.3867175966503384,&quot;DKK&quot;:1.321125668326453,&quot;EGP&quot;:0.5298599696749614,&quot;FJD&quot;:3.9704021959661056,&quot;GEL&quot;:2.6721431088940886,&quot;HKD&quot;:1.0693416021198088,&quot;HUF&quot;:0.028207324000983542,&quot;IDR&quot;:0.0005845824034862676,&quot;ILS&quot;:2.595696206482218,&quot;INR&quot;:0.11393633743786809,&quot;JOD&quot;:11.730606488011283,&quot;JPY&quot;:0.07561130033315043,&quot;KRW&quot;:0.007180354908807416,&quot;KWD&quot;:27.658152287775142,&quot;KZT&quot;:0.019515744843966964,&quot;MDL&quot;:0.471779534592921,&quot;MXN&quot;:0.41421985845803133,&quot;MYR&quot;:2.0007216742843394,&quot;NAD&quot;:0.5574396782841823,&quot;NOK&quot;:0.9575621620986834,&quot;NZD&quot;:5.868630732799133,&quot;OMR&quot;:21.601138624404587,&quot;PLN&quot;:2.1725427893234293,&quot;QAR&quot;:2.2547556719968944,&quot;RON&quot;:1.9905701019577808,&quot;SAR&quot;:2.2174243644201104,&quot;SGD&quot;:6.188819644684216,&quot;THB&quot;:0.2579794658643258,&quot;TRY&quot;:1.0,&quot;TWD&quot;:0.3007130156164315,&quot;UAH&quot;:0.30914854053973684,&quot;XOF&quot;:0.014977699057906512,&quot;ZAR&quot;:0.5731026663434451}"
+                        class="">
+	<span data-label="">
+		₺<span>TRY</span>
+	</span>
+
+                        <span>Турецкая лира</span>
+                    </li>
+
+
+                    <li data-value="51" data-code="UAH"
+                        data-rates="{&quot;CNY&quot;:4.164088256690452,&quot;EUR&quot;:31.779937817321844,&quot;GBP&quot;:37.01293385920165,&quot;RUB&quot;:0.3673315919976843,&quot;USD&quot;:26.902925,&quot;AED&quot;:7.32411112926059,&quot;ARS&quot;:0.27523215712512905,&quot;AUD&quot;:19.693419965199872,&quot;AZN&quot;:15.817759825494399,&quot;BGN&quot;:16.2403338263258,&quot;BHD&quot;:71.35808314302159,&quot;BRL&quot;:5.205170745864371,&quot;CHF&quot;:29.4057674960413,&quot;CLP&quot;:0.03468436150325534,&quot;COP&quot;:0.007036270620944992,&quot;CZK&quot;:1.2509119272411091,&quot;DKK&quot;:4.27343330173878,&quot;EGP&quot;:1.7139332721735918,&quot;FJD&quot;:12.843024227234753,&quot;GEL&quot;:8.643557249951245,&quot;HKD&quot;:3.4589896502595954,&quot;HUF&quot;:0.09124197692066373,&quot;IDR&quot;:0.0018909434360118787,&quot;ILS&quot;:8.396275143173696,&quot;INR&quot;:0.36854884463937204,&quot;JOD&quot;:37.94488716502116,&quot;JPY&quot;:0.2445791922586535,&quot;KRW&quot;:0.023226229359748437,&quot;KWD&quot;:89.46557612559734,&quot;KZT&quot;:0.06312740409479138,&quot;MDL&quot;:1.526061011865848,&quot;MXN&quot;:1.3398732458346798,&quot;MYR&quot;:6.471716382006255,&quot;NAD&quot;:1.803145107238606,&quot;NOK&quot;:3.0974177022698957,&quot;NZD&quot;:18.983206980544683,&quot;OMR&quot;:69.87300857604421,&quot;PLN&quot;:7.027504595462188,&quot;QAR&quot;:7.29343786666551,&quot;RON&quot;:6.438879182423053,&quot;SAR&quot;:7.172682622239617,&quot;SGD&quot;:20.01891917030974,&quot;THB&quot;:0.8344838549582804,&quot;TRY&quot;:3.2346909943489237,&quot;TWD&quot;:0.9727136834979783,&quot;UAH&quot;:1.0,&quot;XOF&quot;:0.048448228258678554,&quot;ZAR&quot;:1.8538100336584982}"
+                        class="">
+	<span data-label="">
+		₴<span>UAH</span>
+	</span>
+
+                        <span>Украинская гривна</span>
+                    </li>
+
+
+                    <li data-value="21" data-code="HUF"
+                        data-rates="{&quot;CNY&quot;:45.637856579008464,&quot;EUR&quot;:348.3039154769189,&quot;GBP&quot;:405.656860015045,&quot;RUB&quot;:4.025905667487725,&quot;USD&quot;:294.8525,&quot;AED&quot;:80.27128933899597,&quot;ARS&quot;:3.016508041736618,&quot;AUD&quot;:215.8372782992591,&quot;AZN&quot;:173.36055573684226,&quot;BGN&quot;:177.9919108991579,&quot;BHD&quot;:782.0751539071597,&quot;BRL&quot;:57.0479829737835,&quot;CHF&quot;:322.28332274749,&quot;CLP&quot;:0.3801360149551989,&quot;COP&quot;:0.07711659543570758,&quot;CZK&quot;:13.709829285360575,&quot;DKK&quot;:46.83626381149759,&quot;EGP&quot;:18.78448198973026,&quot;FJD&quot;:140.7578469984485,&quot;GEL&quot;:94.73224432069188,&quot;HKD&quot;:37.9100691041278,&quot;HUF&quot;:1.0,&quot;IDR&quot;:0.020724489975223602,&quot;ILS&quot;:92.02206513427898,&quot;INR&quot;:4.039246595454972,&quot;JOD&quot;:415.87094499294784,&quot;JPY&quot;:2.680555600755109,&quot;KRW&quot;:0.2545564020378909,&quot;KWD&quot;:980.5308822208995,&quot;KZT&quot;:0.691868000072835,&quot;MDL&quot;:16.725426863479527,&quot;MXN&quot;:14.684833571720175,&quot;MYR&quot;:70.92915564108732,&quot;NAD&quot;:19.762231903485254,&quot;NOK&quot;:33.947288373235786,&quot;NZD&quot;:208.05343791543302,&quot;OMR&quot;:765.7989330590661,&quot;PLN&quot;:77.02052095575165,&quot;QAR&quot;:79.9351144375934,&quot;RON&quot;:70.5692642764827,&quot;SAR&quot;:78.61165292896244,&quot;SGD&quot;:219.4047065389266,&quot;THB&quot;:9.145832687118087,&quot;TRY&quot;:35.451785499579174,&quot;TWD&quot;:10.660813326565332,&quot;UAH&quot;:10.959867746722708,&quot;XOF&quot;:0.5309861742781508,&quot;ZAR&quot;:20.31751279644471}"
+                        class="">
+	<span data-label="">
+		Ft<span>HUF</span>
+	</span>
+
+                        <span>Форинт</span>
+                    </li>
+
+
+                    <li data-value="10" data-code="XOF"
+                        data-rates="{&quot;CNY&quot;:85.94923707957342,&quot;EUR&quot;:655.9566564052648,&quot;GBP&quot;:763.9687804800479,&quot;RUB&quot;:7.581940665330398,&quot;USD&quot;:555.292236,&quot;AED&quot;:151.17397255798758,&quot;ARS&quot;:5.680954020766003,&quot;AUD&quot;:406.4838008121005,&quot;AZN&quot;:326.4878901461367,&quot;BGN&quot;:335.21006670489874,&quot;BHD&quot;:1472.8729141965928,&quot;BRL&quot;:107.43779355712489,&quot;CHF&quot;:606.952380983588,&quot;CLP&quot;:0.7159056739508799,&quot;COP&quot;:0.14523277473381252,&quot;CZK&quot;:25.81955981057022,&quot;DKK&quot;:88.20618328748232,&quot;EGP&quot;:35.37659340239288,&quot;FJD&quot;:265.0875932688865,&quot;GEL&quot;:178.40811853430205,&quot;HKD&quot;:71.39558606335589,&quot;HUF&quot;:1.883288206815272,&quot;IDR&quot;:0.03903018756259994,&quot;ILS&quot;:173.30407003417443,&quot;INR&quot;:7.607065477639086,&quot;JOD&quot;:783.2048462623413,&quot;JPY&quot;:5.048258750614723,&quot;KRW&quot;:0.47940306992728704,&quot;KWD&quot;:1846.6222469047943,&quot;KZT&quot;:1.302986845210038,&quot;MDL&quot;:31.49879916594234,&quot;MXN&quot;:27.655773884665592,&quot;MYR&quot;:133.58004233822467,&quot;NAD&quot;:37.21797828418231,&quot;NOK&quot;:63.93252784667216,&quot;NZD&quot;:391.82458601350834,&quot;OMR&quot;:1442.2200994218572,&quot;PLN&quot;:145.05183879873562,&quot;QAR&quot;:150.54085833074882,&quot;RON&quot;:132.90226317553012,&quot;SAR&quot;:148.04839887937018,&quot;SGD&quot;:413.2022963445261,&quot;THB&quot;:17.224238841155124,&quot;TRY&quot;:66.76592954190212,&quot;TWD&quot;:20.07738401297958,&quot;UAH&quot;:20.640589675657946,&quot;XOF&quot;:1.0,&quot;ZAR&quot;:38.2637322413627}"
+                        class="">
+	<span data-label="">
+		Fr<span>XOF</span>
+	</span>
+
+                        <span>Франк КФА BCEAO</span>
+                    </li>
+
+
+                    <li data-value="39" data-code="GBP"
+                        data-rates="{&quot;CNY&quot;:0.11250359868125745,&quot;EUR&quot;:0.8586170968833142,&quot;GBP&quot;:1.000000000053096,&quot;RUB&quot;:0.009924411650128171,&quot;USD&quot;:0.726852,&quot;AED&quot;:0.19787977783986907,&quot;ARS&quot;:0.007436107555594504,&quot;AUD&quot;:0.5320686017518702,&quot;AZN&quot;:0.42735763356846146,&quot;BGN&quot;:0.4387745615655471,&quot;BHD&quot;:1.92792291,&quot;BRL&quot;:0.14063113088157242,&quot;CHF&quot;:0.794472754023312,&quot;CLP&quot;:0.0009370876039450783,&quot;COP&quot;:0.00019010302311379,&quot;CZK&quot;:0.03379661639539398,&quot;DKK&quot;:0.11545783746824971,&quot;EGP&quot;:0.04630633385328078,&quot;FJD&quot;:0.3469874686532555,&quot;GEL&quot;:0.2335280224699724,&quot;HKD&quot;:0.09345353879316078,&quot;HUF&quot;:0.00246513765344166,&quot;IDR&quot;:5.1088720586297916e-05,&quot;ILS&quot;:0.2268470577099721,&quot;INR&quot;:0.009957298873992083,&quot;JOD&quot;:1.025179125,&quot;JPY&quot;:0.006607938543565348,&quot;KRW&quot;:0.0006275165716215568,&quot;KWD&quot;:2.417143598,&quot;KZT&quot;:0.0017055498581909228,&quot;MDL&quot;:0.041230479531048025,&quot;MXN&quot;:0.03620013617217158,&quot;MYR&quot;:0.1748501322976683,&quot;NAD&quot;:0.04871662198132755,&quot;NOK&quot;:0.08368473880110582,&quot;NZD&quot;:0.5128803637333206,&quot;OMR&quot;:1.887799785,&quot;PLN&quot;:0.18986618629571583,&quot;QAR&quot;:0.19705106043227955,&quot;RON&quot;:0.17396295054363292,&quot;SAR&quot;:0.19378854563447268,&quot;SGD&quot;:0.5408628034314256,&quot;THB&quot;:0.022545736529092312,&quot;TRY&quot;:0.08739353131674968,&quot;TWD&quot;:0.02628037234762884,&quot;UAH&quot;:0.02701758265918695,&quot;XOF&quot;:0.0013089540116700048,&quot;ZAR&quot;:0.05008546582145795}"
+                        class="">
+	<span data-label="">
+		£<span>GBP</span>
+	</span>
+
+                        <span>Фунт стерлингов</span>
+                    </li>
+
+
+                    <li data-value="14" data-code="CZK"
+                        data-rates="{&quot;CNY&quot;:3.328842075936044,&quot;EUR&quot;:25.405415941162712,&quot;GBP&quot;:29.588760848150656,&quot;RUB&quot;:0.29365104288983435,&quot;USD&quot;:21.50665,&quot;AED&quot;:5.8550174234999455,&quot;ARS&quot;:0.22002520811529439,&quot;AUD&quot;:15.743250612881903,&quot;AZN&quot;:12.644982816960205,&quot;BGN&quot;:12.982795569104464,&quot;BHD&quot;:57.04484991233724,&quot;BRL&quot;:4.161100899680759,&quot;CHF&quot;:23.5074643191674,&quot;CLP&quot;:0.02772726100689744,&quot;COP&quot;:0.005624912887723049,&quot;CZK&quot;:1.0,&quot;DKK&quot;:3.416254341074078,&quot;EGP&quot;:1.3701470382120968,&quot;FJD&quot;:10.266929227831483,&quot;GEL&quot;:6.909804808572448,&quot;HKD&quot;:2.765174409911024,&quot;HUF&quot;:0.07294036848932942,&quot;IDR&quot;:0.0015116519355462229,&quot;ILS&quot;:6.712123340043381,&quot;INR&quot;:0.2946241350917549,&quot;JOD&quot;:30.333779971791255,&quot;JPY&quot;:0.1955207132752134,&quot;KRW&quot;:0.018567437765961647,&quot;KWD&quot;:71.52028386435966,&quot;KZT&quot;:0.050465106871287975,&quot;MDL&quot;:1.2199587985635258,&quot;MXN&quot;:1.0711171719257448,&quot;MYR&quot;:5.173598749097907,&quot;NAD&quot;:1.4414644772117962,&quot;NOK&quot;:2.4761277231573464,&quot;NZD&quot;:15.175494427023503,&quot;OMR&quot;:55.85765636606359,&quot;PLN&quot;:5.617905179752643,&quot;QAR&quot;:5.830496702314778,&quot;RON&quot;:5.147348140347518,&quot;SAR&quot;:5.7339629321937915,&quot;SGD&quot;:16.00346014324249,&quot;THB&quot;:0.667100406340147,&quot;TRY&quot;:2.58586629794397,&quot;TWD&quot;:0.777603652435629,&quot;UAH&quot;:0.7994167920402707,&quot;XOF&quot;:0.0387303272145876,&quot;ZAR&quot;:1.4819668701593427}"
+                        class="">
+	<span data-label="">
+		Kč<span>CZK</span>
+	</span>
+
+                        <span>Чешская крона</span>
+                    </li>
+
+
+                    <li data-value="11" data-code="CLP"
+                        data-rates="{&quot;CNY&quot;:120.05665020818178,&quot;EUR&quot;:916.2612901015666,&quot;GBP&quot;:1067.1360882270394,&quot;RUB&quot;:10.590697826834957,&quot;USD&quot;:775.65,&quot;AED&quot;:211.16465207448547,&quot;ARS&quot;:7.935338728933985,&quot;AUD&quot;:567.7896063720685,&quot;AZN&quot;:456.0487533844268,&quot;BGN&quot;:468.23216926745346,&quot;BHD&quot;:2057.3561123886975,&quot;BRL&quot;:150.07255489987423,&quot;CHF&quot;:847.8105469314,&quot;CLP&quot;:1.0,&quot;COP&quot;:0.20286579645655567,&quot;CZK&quot;:36.06558901549056,&quot;DKK&quot;:123.2092250375632,&quot;EGP&quot;:49.41515997094912,&quot;FJD&quot;:370.2828499820981,&quot;GEL&quot;:249.20618040323433,&quot;HKD&quot;:99.7276438240026,&quot;HUF&quot;:2.6306373525745923,&quot;IDR&quot;:0.0545186174418809,&quot;ILS&quot;:242.07668180328636,&quot;INR&quot;:10.625792970263602,&quot;JOD&quot;:1094.0056417489423,&quot;JPY&quot;:7.051569688999415,&quot;KRW&quot;:0.669645579537871,&quot;KWD&quot;:2579.4211641232164,&quot;KZT&quot;:1.8200538040426806,&quot;MDL&quot;:43.998532644823754,&quot;MXN&quot;:38.63047171010845,&quot;MYR&quot;:186.58888621602117,&quot;NAD&quot;:51.9872654155496,&quot;NOK&quot;:89.30300481325523,&quot;NZD&quot;:547.313145111897,&quot;OMR&quot;:2014.5392778669493,&quot;PLN&quot;:202.61305934095444,&quot;QAR&quot;:210.28029782185777,&quot;RON&quot;:185.6421425494232,&quot;SAR&quot;:206.79875054255845,&quot;SGD&quot;:577.1742163519673,&quot;THB&quot;:24.059369087130495,&quot;TRY&quot;:93.26079115065528,&quot;TWD&quot;:28.044733745687758,&quot;UAH&quot;:28.831437473806286,&quot;XOF&quot;:1.3968320637567855,&quot;ZAR&quot;:53.448008073739715}"
+                        class="">
+	<span data-label="">
+		$<span>CLP</span>
+	</span>
+
+                        <span>Чилийское песо</span>
+                    </li>
+
+
+                    <li data-value="46" data-code="CHF"
+                        data-rates="{&quot;CNY&quot;:0.1416078753076292,&quot;EUR&quot;:1.080738254,&quot;GBP&quot;:1.258696406,&quot;RUB&quot;:0.012491821274419572,&quot;USD&quot;:0.914886,&quot;AED&quot;:0.24907056516197326,&quot;ARS&quot;:0.0093598018539112,&quot;AUD&quot;:0.6697128367029042,&quot;AZN&quot;:0.5379135173949748,&quot;BGN&quot;:0.5522839636310164,&quot;BHD&quot;:2.426669637,&quot;BRL&quot;:0.17701189899447814,&quot;CHF&quot;:1.000000000051416,&quot;CLP&quot;:0.0011795087990111007,&quot;COP&quot;:0.00023928199193890237,&quot;CZK&quot;:0.04253967958528921,&quot;DKK&quot;:0.1453263650511446,&quot;EGP&quot;:0.05828561599027562,&quot;FJD&quot;:0.4367518796767921,&quot;GEL&quot;:0.2939408825535626,&quot;HKD&quot;:0.11762963339505611,&quot;HUF&quot;:0.003102859904368999,&quot;IDR&quot;:6.430518898261858e-05,&quot;ILS&quot;:0.2855315762223867,&quot;INR&quot;:0.012533216304896217,&quot;JOD&quot;:1.290389281,&quot;JPY&quot;:0.008317388495014781,&quot;KRW&quot;:0.0007898528533244177,&quot;KWD&quot;:3.042449959,&quot;KZT&quot;:0.002146769476541967,&quot;MDL&quot;:0.05189665639814677,&quot;MXN&quot;:0.04556498129202232,&quot;MYR&quot;:0.22008323308947805,&quot;NAD&quot;:0.06131943699416623,&quot;NOK&quot;:0.10533367995536522,&quot;NZD&quot;:0.6455606704739218,&quot;OMR&quot;:2.376166804,&quot;PLN&quot;:0.23898388628721404,&quot;QAR&quot;:0.24802746153955602,&quot;RON&quot;:0.2189665406043177,&quot;SAR&quot;:0.24392094588944932,&quot;SGD&quot;:0.680782066749482,&quot;THB&quot;:0.02837823753692609,&quot;TRY&quot;:0.11000192376493449,&quot;TWD&quot;:0.03307901021896226,&quot;UAH&quot;:0.0340069341884929,&quot;XOF&quot;:0.0016475757099419634,&quot;ZAR&quot;:0.06304239581583373}"
+                        class="">
+	<span data-label="">
+		CHF<span>CHF</span>
+	</span>
+
+                        <span>Швейцарский франк</span>
+                    </li>
+
+
+                    <li data-value="12" data-code="CNY"
+                        data-rates="{&quot;CNY&quot;:1.0,&quot;EUR&quot;:7.631907841112862,&quot;GBP&quot;:8.88860455773665,&quot;RUB&quot;:0.0882141706308678,&quot;USD&quot;:6.4607,&quot;AED&quot;:1.7588750952847654,&quot;ARS&quot;:0.06609661951398672,&quot;AUD&quot;:4.72934739881135,&quot;AZN&quot;:3.798613009721867,&quot;BGN&quot;:3.900093567957502,&quot;BHD&quot;:17.13654436319172,&quot;BRL&quot;:1.250014510979975,&quot;CHF&quot;:7.061754142046113,&quot;CLP&quot;:0.008329401147424741,&quot;COP&quot;:0.0016897505977784687,&quot;CZK&quot;:0.30040475852817616,&quot;DKK&quot;:1.026259060401192,&quot;EGP&quot;:0.41159869016220074,&quot;FJD&quot;:3.084234395512591,&quot;GEL&quot;:2.075738244996037,&quot;HKD&quot;:0.8306715508976131,&quot;HUF&quot;:0.02191163378299319,&quot;IDR&quot;:0.0004541074346764132,&quot;ILS&quot;:2.016353791177067,&quot;INR&quot;:0.08850649215881139,&quot;JOD&quot;:9.112411847672778,&quot;JPY&quot;:0.05873535265869725,&quot;KRW&quot;:0.005577746658570647,&quot;KWD&quot;:21.485033604139577,&quot;KZT&quot;:0.015159958243767868,&quot;MDL&quot;:0.36648142829679986,&quot;MXN&quot;:0.32176869538773634,&quot;MYR&quot;:1.554173682944431,&quot;NAD&quot;:0.43302278820375334,&quot;NOK&quot;:0.7438405507600052,&quot;NZD&quot;:4.558790738895678,&quot;OMR&quot;:16.779905772597175,&quot;PLN&quot;:1.6876454489577828,&quot;QAR&quot;:1.7515089539581983,&quot;RON&quot;:1.5462878751615527,&quot;SAR&quot;:1.722509750055189,&quot;SGD&quot;:4.807515579946052,&quot;THB&quot;:0.20040013648066007,&quot;TRY&quot;:0.7768065408200072,&quot;TWD&quot;:0.23359583744055296,&quot;UAH&quot;:0.24014860837622676,&quot;XOF&quot;:0.011634774594615437,&quot;ZAR&quot;:0.4451898997769744}"
+                        class="">
+	<span data-label="">
+		¥<span>CNY</span>
+	</span>
+
+                        <span>Юань</span>
+                    </li>
+
+
+                    <li data-value="45" data-code="ZAR"
+                        data-rates="{&quot;CNY&quot;:2.2462324515919327,&quot;EUR&quot;:17.143039060266638,&quot;GBP&quot;:19.965872006956022,&quot;RUB&quot;:0.19814953276132324,&quot;USD&quot;:14.512234,&quot;AED&quot;:3.9508423173254927,&quot;ARS&quot;:0.14846837169284158,&quot;AUD&quot;:10.623213602061949,&quot;AZN&quot;:8.53256781347656,&quot;BGN&quot;:8.760516736591107,&quot;BHD&quot;:38.492662056746056,&quot;BRL&quot;:2.8078231595240397,&quot;CHF&quot;:15.862341319027726,&quot;CLP&quot;:0.018709771159672532,&quot;COP&quot;:0.0037955726278268635,&quot;CZK&quot;:0.6747789172186277,&quot;DKK&quot;:2.305216405213403,&quot;EGP&quot;:0.9245463348750684,&quot;FJD&quot;:6.92790738751641,&quot;GEL&quot;:4.662590606920584,&quot;HKD&quot;:1.8658813942404184,&quot;HUF&quot;:0.049218622870757414,&quot;IDR&quot;:0.0010200308562793232,&quot;ILS&quot;:4.529199319632352,&quot;INR&quot;:0.19880615486368908,&quot;JOD&quot;:20.4685952045134,&quot;JPY&quot;:0.13193325519766227,&quot;KRW&quot;:0.012528915551239856,&quot;KWD&quot;:48.260379705161505,&quot;KZT&quot;:0.034052790171930025,&quot;MDL&quot;:0.8232024771460339,&quot;MXN&quot;:0.7227672854863328,&quot;MYR&quot;:3.491035362039933,&quot;NAD&quot;:0.9726698391420912,&quot;NOK&quot;:1.6708387839271401,&quot;NZD&quot;:10.240103697724239,&quot;OMR&quot;:37.69156888106258,&quot;PLN&quot;:3.7908439742304085,&quot;QAR&quot;:3.9342962516347453,&quot;RON&quot;:3.473322004691015,&quot;SAR&quot;:3.8691572987574747,&quot;SGD&quot;:10.798797507208631,&quot;THB&quot;:0.45014528986631097,&quot;TRY&quot;:1.7448880605987735,&quot;TWD&quot;:0.5247105506157639,&quot;UAH&quot;:0.5394295973393227,&quot;XOF&quot;:0.02613440826138257,&quot;ZAR&quot;:1.0}"
+                        class="">
+	<span data-label="">
+		R<span>ZAR</span>
+	</span>
+
+                        <span>Южноафриканский рэнд</span>
+                    </li>
+
+
+                    <li data-value="27" data-code="KRW"
+                        data-rates="{&quot;CNY&quot;:179.28386877582923,&quot;EUR&quot;:1368.2779638953007,&quot;GBP&quot;:1593.5834131294955,&quot;RUB&quot;:15.81537779155311,&quot;USD&quot;:1158.299291,&quot;AED&quot;:315.337931776108,&quot;ARS&quot;:11.85005765947151,&quot;AUD&quot;:847.8956984438033,&quot;AZN&quot;:681.030036365133,&quot;BGN&quot;:699.2238634511484,&quot;BHD&quot;:3072.305970881641,&quot;BRL&quot;:224.10743755441618,&quot;CHF&quot;:1266.058602929764,&quot;CLP&quot;:1.4933272622961387,&quot;COP&quot;:0.302945024435994,&quot;CZK&quot;:53.85772730760021,&quot;DKK&quot;:183.99169471497314,&quot;EGP&quot;:73.7930055553432,&quot;FJD&quot;:552.9534746389784,&quot;GEL&quot;:372.1463831288396,&quot;HKD&quot;:148.92600932694222,&quot;HUF&quot;:3.9284024758141785,&quot;IDR&quot;:0.08141413772865452,&quot;ILS&quot;:361.49970850303515,&quot;INR&quot;:15.867786326009302,&quot;JOD&quot;:1633.708449929478,&quot;JPY&quot;:10.53030125856393,&quot;KRW&quot;:1.0,&quot;KWD&quot;:3851.9199453288415,&quot;KZT&quot;:2.717935964422729,&quot;MDL&quot;:65.70420829954195,&quot;MXN&quot;:57.68793656006469,&quot;MYR&quot;:278.6382706278566,&quot;NAD&quot;:77.63400073726541,&quot;NOK&quot;:133.35861169259732,&quot;NZD&quot;:817.3176406086385,&quot;OMR&quot;:3008.3664246050917,&quot;PLN&quot;:302.5676052110726,&quot;QAR&quot;:314.0173014611316,&quot;RON&quot;:277.22447250011965,&quot;SAR&quot;:308.8182119939809,&quot;SGD&quot;:861.9099923728025,&quot;THB&quot;:35.92851177145693,&quot;TRY&quot;:139.26888192858002,&quot;TWD&quot;:41.87996546627203,&quot;UAH&quot;:43.054771590821446,&quot;XOF&quot;:2.085927401657386,&quot;ZAR&quot;:79.81536757193965}"
+                        class="">
+	<span data-label="">
+		₩<span>KRW</span>
+	</span>
+
+                        <span>Южнокорейская вона</span>
+                    </li>
+
+                </ul>
+            </div>
+        </form>
+
+        <div id="locale_switcher" class="cccombo">
+            <button type="button">
+                <span class="flag-icon flag-icon-ru"></span>
+            </button>
+            <input type="hidden">
+            <ul>
+                <li>
+                    <a href="https://gettransport.com/ru-RU">
+                        <span data-label=""><span class="flag-icon flag-icon-ru"></span></span>Русский
+                    </a>
+                </li>
+                <li>
+                    <a href="https://gettransport.com/en-US">
+                        <span data-label=""><span class="flag-icon flag-icon-us"></span></span>English (US)
+                    </a>
+                </li>
+                <li>
+                    <a href="https://gettransport.com/en-GB">
+                        <span data-label=""><span class="flag-icon flag-icon-gb"></span></span>English (UK)
+                    </a>
+                </li>
+                <li>
+                    <a href="https://gettransport.com/de-DE">
+                        <span data-label=""><span class="flag-icon flag-icon-de"></span></span>Deutsch
+                    </a>
+                </li>
+                <li>
+                    <a href="https://gettransport.com/fr-FR">
+                        <span data-label=""><span class="flag-icon flag-icon-fr"></span></span>Français
+                    </a>
+                </li>
+                <li>
+                    <a href="https://gettransport.com/it-IT">
+                        <span data-label=""><span class="flag-icon flag-icon-it"></span></span>Italiano
+                    </a>
+                </li>
+                <li>
+                    <a href="https://gettransport.com/es-ES">
+                        <span data-label=""><span class="flag-icon flag-icon-es"></span></span>Español
+                    </a>
+                </li>
+                <li>
+                    <a href="https://gettransport.com/pt-PT">
+                        <span data-label=""><span class="flag-icon flag-icon-pt"></span></span>Português
+                    </a>
+                </li>
+                <li>
+                    <a href="https://gettransport.com/nl-NL">
+                        <span data-label=""><span class="flag-icon flag-icon-nl"></span></span>Nederlands
+                    </a>
+                </li>
+                <li>
+                    <a href="https://gettransport.com/zh-CN">
+                        <span data-label=""><span class="flag-icon flag-icon-cn"></span></span>中文
+                    </a>
+                </li>
+                <li>
+                    <a href="https://gettransport.com/el-GR">
+                        <span data-label=""><span class="flag-icon flag-icon-gr"></span></span>Ελληνικά
+                    </a>
+                </li>
+                <li>
+                    <a href="https://gettransport.com/hi-IN">
+                        <span data-label=""><span class="flag-icon flag-icon-in"></span></span>हिन्दी
+                    </a>
+                </li>
+                <li>
+                    <a href="https://gettransport.com/tr-TR">
+                        <span data-label=""><span class="flag-icon flag-icon-tr"></span></span>Türkçe
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <a class="cabinet_link" href="https://gettransport.com/ru-RU/log_in">
+            <span class="text">Вход</span>
+            <img src="https://gettransport.com/images/icons/log_in.svg ">
+        </a>
+
+        <button type="button" class="menu">
+            <img src="https://gettransport.com/images/icons/hamburger.svg">
+            <!-- <hr><hr><hr> -->
+        </button>
+        <nav>
+            <div class="header">
+                <img class="logo" src="https://gettransport.com/images/logo_dark.png">
+                <button type="button" class="close_menu">
+                    <img src="https://gettransport.com/images/icons/close.svg">
+                </button>
+            </div>
+
+            <a class="" href="https://gettransport.com/ru-RU/carrier">
+                Стать перевозчиком
+            </a>
+
+
+            <a class="" href="https://gettransport.com/ru-RU/about">
+                О нас
+            </a>
+
+
+            <a class="" href="https://gettransport.com/ru-RU/faq/shipper">
+                Вопросы и ответы
+            </a>
+
+
+            <a class="" href="https://gettransport.com/ru-RU/landing_b2b">
+                Для бизнеса
+            </a>
+
+
+            <a class="" href="https://gettransport.com/ru-RU/partner_request">
+                Интеграция
+            </a>
+
+        </nav>
+    </div>
+</header>

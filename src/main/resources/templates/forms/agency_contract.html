@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<header th:insert = "blocks/headerGT :: header"></header>
+<head th:insert = "~{blocks/head :: head}"></head>
 <body>
-
+<header th:insert = "~{blocks/header :: header}"></header>
 <!--    <form method="POST" th:action="@{/test}" th:object="${post}">-->
 <!--        <label for="shipper_name">Shipper_name</label>-->
 <!--        <input type="text" th:field="*{shipper_name}" id="shipper_name"/>-->

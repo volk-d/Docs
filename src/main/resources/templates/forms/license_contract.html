@@ -1,17 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<header th:insert = "blocks/headerGT :: header"></header>
+<head th:insert = "~{blocks/head :: head}"></head>
 <body>
-
-<!--    <form method="POST" th:action="@{/test}" th:object="${post}">-->
-<!--        <label for="shipper_name">Shipper_name</label>-->
-<!--        <input type="text" th:field="*{shipper_name}" id="shipper_name"/>-->
-
-<!--        <input type="submit" value="ADD"/>-->
-<!--    </form>-->
-
-<!--Forms shipper-->
-
+<header th:insert = "~{blocks/header :: header}"></header>
 <div id="transportation_request_form" class="container" style="margin-bottom: 2%">
     <header th:insert = "blocks/level :: level"></header>
     <style>

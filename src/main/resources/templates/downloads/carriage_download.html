@@ -1,130 +1,100 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:tn="http://www.w3.org/1999/xhtml">
-<header th:insert = "blocks/headerGT :: header"></header>
+<head th:insert="~{blocks/head :: head}"></head>
 <body>
-
+<header th:insert="~{blocks/header :: header}"></header>
 <style>
     table {
-    margin-top: 2%;
-    word-wrap:break-word;
+        margin-top: 2%;
+        word-wrap: break-word;
+        width: 100%;
     }
+
     p {
-    font-weight: normal;
+        font-weight: normal;
     }
-    th{
+
+    th {
         width: 50%;
         vertical-align: top;
     }
 </style>
-<header>
 
-    <nav class="tabs">
-        <div class="level">
-            <a href="/ru-RU/cabinet/manager/transport_types/transportation_requests" class="
-										selected
-									">
-                Заявки на грузоперевозки
-            </a>
-            <a href="/ru-RU/cabinet/manager/carriers" class="
-
-									">
-                Перевозчики
-            </a>
-            <a href="/ru-RU/cabinet/manager/b2b/shippers" class="
-
-									">
-                B2B Грузоотправители
-            </a>
-            <a href="/ru-RU/cabinet/manager/configuration" class="
-
-									">
-                Конфигурация
-            </a>
-            <a href="/ru-RU/cabinet/manager/accounts" class="
-
-									">
-                Аккаунты
-            </a>
-
-        </div>
-    </nav>
-</header>
-
-<div id="transportation_request_form" class="container"  style="margin-bottom: 2%">
+<div id="transportation_request_form" class="container" style="margin-bottom: 2%">
 
     <div th:each="carriage:${carriage}">
         <table>
             <tr>
-                <th  style="text-align:right; margin-right: 0%">
+                <th style="text-align:right; margin-right: 0%">
                     <h3>Договор перевозки №</h3>
                 </th>
-                <th  style="text-align:left;" >
+                <th style="text-align:left;">
                     <h3 th:utext="${carriage.number}">...</h3>
                 </th>
             </tr>
             <tr>
                 <th style="width: 10%">
-                <h4 style="align:top;">Грузоотправитель</h4>
-                <br>
-                <label>Наименование организации грузоотправителя</label>
-                <p th:utext="${carriage.shipper_name}">...</p>
-                <label>Подписант со стороны грузоотправителя</label>
-                <p th:utext="${carriage.shipper_signatory}">...</p>
+                    <h4 style="align:top;">Грузоотправитель</h4>
+                    <br>
+                    <label>Наименование организации грузоотправителя</label>
+                    <p th:utext="${carriage.shipper_name}">...</p>
+                    <label>Подписант со стороны грузоотправителя</label>
+                    <p th:utext="${carriage.shipper_signatory}">...</p>
 
-                <label>Реквизиты грузотправителя</label>
-                <p th:utext="${carriage.shipper_requisites}">...</p>
-            </th>
-            <th style="align:top;">
-                <h4 style="align:top;">Перевозчик</h4>
-                <br>
-                <label>Наименование организации перевозчика</label>
-                <p th:utext="${carriage.carrier_name}">...</p>
-                <label >Подписант со стороны переевозчика</label>
-                <p th:utext="${carriage.carrier_signatory}">...</p>
-                <label>Реквизиты перевозчика</label>
-                <p th:utext="${carriage.carrier_requisites}">...</p>
-            </th>
+                    <label>Реквизиты грузотправителя</label>
+                    <p th:utext="${carriage.shipper_requisites}">...</p>
+                </th>
+                <th style="align:top;">
+                    <h4 style="align:top;">Перевозчик</h4>
+                    <br>
+                    <label>Наименование организации перевозчика</label>
+                    <p th:utext="${carriage.carrier_name}">...</p>
+                    <label>Подписант со стороны переевозчика</label>
+                    <p th:utext="${carriage.carrier_signatory}">...</p>
+                    <label>Реквизиты перевозчика</label>
+                    <p th:utext="${carriage.carrier_requisites}">...</p>
+                </th>
             </tr>
 
 
             <th style="text-align:right;">
-                <h4 >Детали перевозки</h4>
+                <h4>Детали перевозки</h4>
             </th>
             <th>
             </th>
             </tr>
             <br>
             <tr>
-            <th >
-                <span >Места погрузки</span>
-                <p th:utext="${carriage.loading_place} ">...</p>
-                <span >Места выгрузки</span>
-                <p th:utext="${carriage.unloading_place}">...</p>
+                <th>
+                    <span>Места погрузки</span>
+                    <p th:utext="${carriage.loading_place} ">...</p>
+                    <span>Места выгрузки</span>
+                    <p th:utext="${carriage.unloading_place}">...</p>
 
-                <span >Описание груза</span>
-                <p th:utext="${carriage.cargo}">...</p>
-            </th>
-            <th>
-                <span >Даты погрузки</span>
-                <p th:utext="${carriage.pick_up_date}">...</p>
-                <span >Даты выгрузки</span>
-                <p th:utext="${carriage.pick_down_date}">...</p>
-                </label>
-                <span >Стоимость перевозки</span>
+                    <span>Описание груза</span>
+                    <p th:utext="${carriage.cargo}">...</p>
+                </th>
+                <th>
+                    <span>Даты погрузки</span>
+                    <p th:utext="${carriage.pick_up_date}">...</p>
+                    <span>Даты выгрузки</span>
+                    <p th:utext="${carriage.pick_down_date}">...</p>
+                    </label>
+                    <span>Стоимость перевозки</span>
 
-                <p th:utext="${carriage.price}" > рублей </p>
-                <div th:switch="${carriage.tax}">
-                    <p th:case="true">с НДС</p>
-                    <p th:case="false">без НДС</p>
-                </div>
-            </th>
+                    <p th:utext="${carriage.price}"> рублей </p>
+                    <div th:switch="${carriage.tax}">
+                        <p th:case="true">с НДС</p>
+                        <p th:case="false">без НДС</p>
+                    </div>
+                </th>
             </tr>
             <tr>
                 <th style="text-align:right">
                     <a href="carriage" style="font-size: 130%; margin-right: 5%;">Изменить договор</a>
                 </th>
                 <th style="text-align:left">
-                    <a href="carriage_file" style="font-size: 130%" > Скачать договор перевозки </a>
+                    <a href="carriage_file" style="font-size: 130%"> Скачать договор перевозки </a>
                 </th>
             </tr>
         </table>
@@ -133,5 +103,5 @@
 </div>
 </div>
 </body>
-<footer th:insert = "blocks/footerGT :: footer"></footer>
+<footer th:insert="blocks/footerGT :: footer"></footer>
 </html>
