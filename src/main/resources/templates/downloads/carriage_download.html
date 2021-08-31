@@ -2,11 +2,10 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:tn="http://www.w3.org/1999/xhtml">
 <header th:insert = "blocks/headerGT :: header"></header>
 <body>
+
 <style>
     table {
-
-    margin-left:20%;
-        margin-top: 2%;
+    margin-top: 2%;
     word-wrap:break-word;
     }
     p {
@@ -17,7 +16,39 @@
         vertical-align: top;
     }
 </style>
+<header>
 
+    <nav class="tabs">
+        <div class="level">
+            <a href="/ru-RU/cabinet/manager/transport_types/transportation_requests" class="
+										selected
+									">
+                Заявки на грузоперевозки
+            </a>
+            <a href="/ru-RU/cabinet/manager/carriers" class="
+
+									">
+                Перевозчики
+            </a>
+            <a href="/ru-RU/cabinet/manager/b2b/shippers" class="
+
+									">
+                B2B Грузоотправители
+            </a>
+            <a href="/ru-RU/cabinet/manager/configuration" class="
+
+									">
+                Конфигурация
+            </a>
+            <a href="/ru-RU/cabinet/manager/accounts" class="
+
+									">
+                Аккаунты
+            </a>
+
+        </div>
+    </nav>
+</header>
 
 <div id="transportation_request_form" class="container"  style="margin-bottom: 2%">
 
@@ -82,15 +113,18 @@
                 <span >Стоимость перевозки</span>
 
                 <p th:utext="${carriage.price}" > рублей </p>
-                <p th:utext="${carriage.tax}"  style="float:left;margin:0 10px;" >...</p>
+                <div th:switch="${carriage.tax}">
+                    <p th:case="true">с НДС</p>
+                    <p th:case="false">без НДС</p>
+                </div>
             </th>
             </tr>
             <tr>
                 <th style="text-align:right">
-                    <a href="carriage" style="margin-right: 5%">Изменить договор</a>
+                    <a href="carriage" style="font-size: 130%; margin-right: 5%;">Изменить договор</a>
                 </th>
                 <th style="text-align:left">
-                    <a href="carriage_file" > Скачать договор перевозки </a>
+                    <a href="carriage_file" style="font-size: 130%" > Скачать договор перевозки </a>
                 </th>
             </tr>
         </table>
