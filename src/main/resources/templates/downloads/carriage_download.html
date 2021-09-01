@@ -57,7 +57,7 @@
             </tr>
 
 
-            <th style="text-align:right;">
+            <th>
                 <h4>Детали перевозки</h4>
             </th>
             <th>
@@ -81,11 +81,12 @@
                     <p th:utext="${carriage.pick_down_date}">...</p>
                     </label>
                     <span>Стоимость перевозки</span>
-
-                    <p th:utext="${carriage.price}"> рублей </p>
+                    <div style="overflow: hidden;">
+                    <p th:utext="${carriage.price}" style="float: left;">  </p>
                     <div th:switch="${carriage.tax}">
-                        <p th:case="true">с НДС</p>
-                        <p th:case="false">без НДС</p>
+                        <p th:case="true" style="float: left;">&nbsp; рублей с НДС</p>
+                        <p th:case="false" style="float: left;">&nbsp; рублей без НДС</p>
+                    </div>
                     </div>
                 </th>
             </tr>

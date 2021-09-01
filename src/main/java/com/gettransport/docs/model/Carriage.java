@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class Carriage implements Data {
+public class Carriage{
 
     private String carrier_name;
     private String carrier_signatory;
@@ -30,7 +30,7 @@ public class Carriage implements Data {
 
     public Carriage() {}
 
-    @Override
+
     public Map<String, String> getMapCarriage() {
 
 
@@ -60,7 +60,7 @@ public class Carriage implements Data {
 
     }
 
-    @Override
+
     public Map<String, String> getMapAgency() {
 
             Map<String, String> variable = new HashMap<>();
@@ -75,7 +75,7 @@ public class Carriage implements Data {
     }
 
 
-    @Override
+
     public Map<String, String> getMapLicense() {
 
             Map<String, String> variable = new HashMap<>();
@@ -91,7 +91,7 @@ public class Carriage implements Data {
     }
 
 
-    @Override
+
     public boolean isTax() {
 //        if(tax.isEmpty()) return false;
          return true;

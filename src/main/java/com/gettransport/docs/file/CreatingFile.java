@@ -28,7 +28,7 @@ public class CreatingFile {
     }
     private static void agencyCreating(Carriage carriage){
         File fileFinish = new File("src/main/resources/docs/Agency_contract_" + carriage.getNumber() + ".docx");
-        if(carriage.isTax()) fileAgency = new File("src/main/resources/docs/start/Agency_contract/Agency_contract_Enterprise_start.docx");
+        if(carriage.getTax() == true) fileAgency = new File("src/main/resources/docs/start/Agency_contract/Agency_contract_Enterprise_start.docx");
         else  fileAgency = new File("src/main/resources/docs/start/Agency_contract/Agency_contract_Business_start.docx");
         findAndWrite(carriage.getMapAgency(), fileAgency, fileFinish);
     }
@@ -40,7 +40,7 @@ public class CreatingFile {
     }
     private static void carriageCreating(Carriage carriage){
         File fileFinish =  new File("src/main/resources/docs/Contract_of_carriage_" + carriage.getNumber() + ".docx");
-        if(carriage.isTax()) fileCarriage = new File("src/main/resources/docs/start/Carriage_contract/Carriage_contract_Enterprise_start.docx");
+        if(carriage.getTax() == true) fileCarriage = new File("src/main/resources/docs/start/Carriage_contract/Carriage_contract_Enterprise_start.docx");
         else fileCarriage = new File("src/main/resources/docs/start/Carriage_contract/Carriage_contract_Business_start.docx");
         findAndWrite(carriage.getMapCarriage(), fileCarriage, fileFinish);
     }
