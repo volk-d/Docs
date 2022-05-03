@@ -1,4 +1,10 @@
-# docs
+# Сервис по по созданию договоров
+Для менеджеров платформы https://gettransport.com/
 
-Модуль по созданию документом для платформы https://gettransport.com/ </br>
-Собственно сам модуль https://sleepy-refuge-98624.herokuapp.com/carriage
+### Стек
+Java 8 </br>
+Spring MVC </br>
+Thymeleaf </br>
+Apache POI </br>
+
+##### Развёрнут на heroku https://sleepy-refuge-98624.herokuapp.com
